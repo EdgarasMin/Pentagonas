@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ciiuwkr5egx34"]
+
+[ext_resource type="Texture2D" uid="uid://c7gdmr6t1lk8y" path="res://assets/HeroTemp.jpg" id="1_btofp"]
+[ext_resource type="Script" path="res://scripts/HeroTemp.cs" id="2_u3xlg"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(382.688, 184.094)
+scale = Vector2(0.088474, 0.0796949)
+texture = ExtResource("1_btofp")
+script = ExtResource("2_u3xlg")
