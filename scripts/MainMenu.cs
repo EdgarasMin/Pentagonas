@@ -26,7 +26,9 @@ public partial class MainMenu : Control
 	private void OnStartNewGamePressed()
 	{
 		GD.Print("Start Game Button Pressed");
-	}
+        GetTree().ChangeSceneToFile("res://scenes/HeroScene.tscn");
+    }
+    
     private void OnContinuePressed()
     {
         GD.Print("Continue  Button Pressed");
