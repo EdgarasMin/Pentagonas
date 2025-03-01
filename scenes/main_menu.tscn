@@ -1,0 +1,107 @@
+[gd_scene load_steps=5 format=3 uid="uid://d087fjk8o1k4t"]
+
+[ext_resource type="Script" path="res://scripts/MainMenu.cs" id="1_g65tr"]
+[ext_resource type="FontFile" uid="uid://dvivlgdnl26k7" path="res://assets/Fonts/Bright DEMO.otf" id="2_7uqo4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u1snv"]
+bg_color = Color(0.180392, 0.282353, 0.27451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3dd7"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g65tr")
+
+[node name="Panel" type="Panel" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 650.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_u1snv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -152.0
+offset_top = -401.0
+offset_right = 155.0
+offset_bottom = -116.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 13
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxFlat_p3dd7")
+text = "Naujas žadimas"
+
+[node name="Continue" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxFlat_p3dd7")
+text = "Esamas žaidimas
+"
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_p3dd7")
+text = "Nustatymai
+"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_p3dd7")
+text = "ate ir iki"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -454.0
+offset_top = 66.0
+offset_right = 454.0
+offset_bottom = 188.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.886275, 0.545098, 0.141176, 1)
+theme_override_fonts/font = ExtResource("2_7uqo4")
+theme_override_font_sizes/font_size = 100
+text = "ByteBound: The Code Quest"
