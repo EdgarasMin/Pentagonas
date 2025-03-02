@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dvb2wfr4iknv7"
+path="res://.godot/imported/The Emptiness Machine.mp3-d4848a38e8a572ffe3cf65edbb758685.mp3str"
+
+[deps]
+
+source_file="res://music/The Emptiness Machine.mp3"
+dest_files=["res://.godot/imported/The Emptiness Machine.mp3-d4848a38e8a572ffe3cf65edbb758685.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

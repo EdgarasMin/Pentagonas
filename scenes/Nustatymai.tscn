@@ -1,8 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://dr0baotgbhapo"]
 
 [ext_resource type="Script" path="res://scripts/Nustatymai.cs" id="1_sgbyh"]
-[ext_resource type="AudioStream" uid="uid://dvb2wfr4iknv7" path="res://assets/The Emptiness Machine.mp3" id="2_ecrcm"]
+[ext_resource type="AudioStream" uid="uid://dvb2wfr4iknv7" path="res://music/The Emptiness Machine.mp3" id="2_ecrcm"]
 [ext_resource type="FontFile" uid="uid://dvivlgdnl26k7" path="res://assets/Fonts/Bright DEMO.otf" id="3_gx0yv"]
+
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_25qdc"]
 bg_color = Color(0.180392, 0.282353, 0.27451, 1)
