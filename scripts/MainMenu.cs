@@ -12,13 +12,13 @@ public partial class MainMenu : Control
 		Button exit = GetNode<Button>("VBoxContainer/Exit");
 		
 		startNewGame.Pressed += OnStartNewGamePressed;
-        continueGame.Pressed += OnContinuePressed;
-        options.Pressed += OnOptionsPressed;
-        exit.Pressed += OnExitPressed;
+		continueGame.Pressed += OnContinuePressed;
+		options.Pressed += OnOptionsPressed;
+		exit.Pressed += OnExitPressed;
 	}
-    
-    // Called every frame. 'delta' is the elapsed time since the previous frame.
-    public override void _Process(double delta)
+	
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
 	{
 		
 	}
@@ -26,18 +26,19 @@ public partial class MainMenu : Control
 	private void OnStartNewGamePressed()
 	{
 		GD.Print("Start Game Button Pressed");
-        GetTree().ChangeSceneToFile("res://scenes/HeroScene.tscn");
-    }
-    
-    private void OnContinuePressed()
-    {
-        GD.Print("Continue  Button Pressed");
-    }
-    private void OnOptionsPressed()
-    {
-        GD.Print("Options Button Pressed");
-    }
-    private void OnExitPressed()
+		GetTree().ChangeSceneToFile("res://scenes/HeroScene.tscn");
+	}
+	
+	private void OnContinuePressed()
+	{
+		GD.Print("Continue  Button Pressed");
+	}
+	private void OnOptionsPressed()
+	{
+		Global.LastScene = "res://scenes/main_menu.tscn";
+		GetTree().ChangeSceneToFile("res://scenes/Nustatymai.tscn");
+	}
+	private void OnExitPressed()
 	{
 		GD.Print("Exit Game Button Pressed");
 		GetTree().Quit();
