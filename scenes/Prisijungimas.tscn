@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://d0ug3anb3fbd1"]
 
-[ext_resource type="Script" path="res://Prisijungimas.cs" id="1_521to"]
+[ext_resource type="Script" path="res://scripts/Prisijungimas.cs" id="1_521to"]
 [ext_resource type="FontFile" uid="uid://dvivlgdnl26k7" path="res://assets/Fonts/Bright DEMO.otf" id="1_qqoxs"]
 [ext_resource type="FontFile" uid="uid://c46mhbbu2u3fg" path="res://assets/Fonts/Magic Retro.ttf" id="2_hej3h"]
 
