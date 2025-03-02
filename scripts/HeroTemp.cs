@@ -2,7 +2,7 @@ using Godot;
 
 public partial class HeroTemp : Sprite2D
 {
-	int speed = 300; // Increased speed for better visibility
+	int speed = 500; // Increased speed for better visibility
 	public Vector2 vel = Vector2.Zero;
 
 	public override void _Ready()
@@ -15,7 +15,7 @@ public partial class HeroTemp : Sprite2D
 		
 
 		// Reset velocity to zero at the start of each frame
-		vel += vel/1.2f;
+		
 		vel *= 0.55f ;
 		
 		// Update velocity based on input
