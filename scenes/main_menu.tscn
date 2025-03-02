@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://d087fjk8o1k4t"]
+[gd_scene load_steps=5 format=3 uid="uid://rkg840hae4m0"]
 
 [ext_resource type="Script" path="res://scripts/MainMenu.cs" id="1_g65tr"]
 [ext_resource type="FontFile" uid="uid://dvivlgdnl26k7" path="res://assets/Fonts/Bright DEMO.otf" id="2_7uqo4"]

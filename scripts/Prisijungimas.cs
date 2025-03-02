@@ -7,7 +7,7 @@ public partial class Prisijungimas : Control
 	public override void _Ready()
 	{
 		
-		Godot.Button Start = GetNodeOrNull<Godot.Button>("Panel/Button");
+		Button Start = GetNodeOrNull<Button>("Panel/Button");
 		Start.Pressed += StartPressed;
 		GD.Print("Login phase");
 	}

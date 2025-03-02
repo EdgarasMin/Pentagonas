@@ -13,7 +13,11 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
+<<<<<<< HEAD
           "DockedWidth": 222,
+=======
+          "DockedWidth": 200,
+>>>>>>> TestEmilio
           "SelectedChildIndex": 0,
           "Children": [
             {
@@ -24,9 +28,15 @@
               "RelativeDocumentMoniker": "scripts\\MainMenu.cs",
               "ToolTip": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\MainMenu.cs",
               "RelativeToolTip": "scripts\\MainMenu.cs",
+<<<<<<< HEAD
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-26T17:35:23.595Z",
+=======
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-01T15:55:59.551Z",
+>>>>>>> TestEmilio
               "EditorCaption": ""
             },
             {
