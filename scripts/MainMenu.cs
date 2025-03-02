@@ -51,23 +51,27 @@ private void PlayClickingSound()
 	
 	private void OnStartNewGamePressed()
 	{
-		GD.Print("Start Game Button Pressed");
-		GetTree().ChangeSceneToFile("res://scenes/HeroScene.tscn");
-		//PlayClickingSound();
+        
+        GD.Print("Start Game Button Pressed");
+        AudioManager.PlaySound(ClickingSound.Stream);
+        GetTree().ChangeSceneToFile("res://scenes/HeroScene.tscn");
+		
 	}
 	
 	private void OnContinuePressed()
 	{
-		GD.Print("Continue  Button Pressed");
-		//PlayClickingSound();
+        AudioManager.PlaySound(ClickingSound.Stream);
+        GD.Print("Continue  Button Pressed");
 	}
 	
 	private void OnOptionsPressed()
 	{
-		Global.LastScene = "res://scenes/main_menu.tscn";
-		GetTree().ChangeSceneToFile("res://scenes/Nustatymai.tscn");
-		//PlayClickingSound();
-	}
+
+        Global.LastScene = "res://scenes/main_menu.tscn";
+        AudioManager.PlaySound(ClickingSound.Stream);
+        GetTree().ChangeSceneToFile("res://scenes/Nustatymai.tscn");
+        
+    }
 	
 	
 	
@@ -75,9 +79,10 @@ private void PlayClickingSound()
    
 	private void OnExitPressed()
 	{
-		//PlayClickingSound();
-		GD.Print("Exit Game Button Pressed");
-		GetTree().Quit();
+        
+        GD.Print("Exit Game Button Pressed");
+        AudioManager.PlaySound(ClickingSound.Stream);
+        GetTree().Quit();
 	}
 	
 }

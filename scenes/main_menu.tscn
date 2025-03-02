@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://rkg840hae4m0"]
+[gd_scene load_steps=7 format=3 uid="uid://rkg840hae4m0"]
 
 [ext_resource type="Script" path="res://scripts/MainMenu.cs" id="1_g65tr"]
 [ext_resource type="FontFile" uid="uid://dvivlgdnl26k7" path="res://assets/Fonts/Bright DEMO.otf" id="2_7uqo4"]
+[ext_resource type="AudioStream" uid="uid://4hdsgabi2omd" path="res://assets/202314__7778__click-1.mp3" id="3_n1tsl"]
+[ext_resource type="AudioStream" uid="uid://bvk462mjt1hv1" path="res://assets/478197__jonnyruss01__click_1.wav" id="4_t1kep"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u1snv"]
 bg_color = Color(0.180392, 0.282353, 0.27451, 1)
@@ -45,7 +47,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 13
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Button" type="Button" parent="VBoxContainer" groups=["MenuButtons"]]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
@@ -56,7 +58,7 @@ theme_override_font_sizes/font_size = 29
 theme_override_styles/normal = SubResource("StyleBoxFlat_p3dd7")
 text = "Naujas žadimas"
 
-[node name="Continue" type="Button" parent="VBoxContainer"]
+[node name="Continue" type="Button" parent="VBoxContainer" groups=["MenuButtons"]]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
@@ -68,7 +70,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_p3dd7")
 text = "Esamas žaidimas
 "
 
-[node name="Options" type="Button" parent="VBoxContainer"]
+[node name="Options" type="Button" parent="VBoxContainer" groups=["MenuButtons"]]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
@@ -80,7 +82,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_p3dd7")
 text = "Nustatymai
 "
 
-[node name="Exit" type="Button" parent="VBoxContainer"]
+[node name="Exit" type="Button" parent="VBoxContainer" groups=["MenuButtons"]]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
@@ -105,3 +107,13 @@ theme_override_colors/font_color = Color(0.886275, 0.545098, 0.141176, 1)
 theme_override_fonts/font = ExtResource("2_7uqo4")
 theme_override_font_sizes/font_size = 100
 text = "ByteBound: The Code Quest"
+
+[node name="ClickingSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_n1tsl")
+volume_db = -1.268
+pitch_scale = 1.43
+
+[node name="HoveringSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_t1kep")
+volume_db = -3.251
+pitch_scale = 0.64
