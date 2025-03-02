@@ -35,12 +35,10 @@ public partial class MainMenu : Control
 	}
 	private void OnOptionsPressed()
 	{
-<<<<<<< HEAD
-		GD.Print("Options Button Pressed");
-=======
+
 		Global.LastScene = "res://scenes/main_menu.tscn";
 		GetTree().ChangeSceneToFile("res://scenes/Nustatymai.tscn");
->>>>>>> 1Spr
+
 	}
 	private void OnExitPressed()
 	{
