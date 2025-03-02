@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://ciiuwkr5egx34"]
 
-[ext_resource type="Texture2D" uid="uid://c7gdmr6t1lk8y" path="res://assets/HeroTemp.jpg" id="1_btofp"]
+[ext_resource type="Texture2D" uid="uid://cdobg4oeppsry" path="res://assets/front.png" id="1_2tmxi"]
 [ext_resource type="Script" path="res://scripts/HeroTemp.cs" id="2_u3xlg"]
 [ext_resource type="Script" path="res://scripts/PauseMenu.cs" id="3_dulrh"]
 [ext_resource type="FontFile" uid="uid://c46mhbbu2u3fg" path="res://assets/Fonts/Magic Retro.ttf" id="3_jhd58"]
@@ -20,9 +20,9 @@ bg_color = Color(1, 1, 1, 1)
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(542, 371)
-scale = Vector2(0.088474, 0.0796949)
-texture = ExtResource("1_btofp")
+position = Vector2(563.532, 390.482)
+scale = Vector2(0.110904, 0.115773)
+texture = ExtResource("1_2tmxi")
 script = ExtResource("2_u3xlg")
 
 [node name="Window" type="Window" parent="."]
