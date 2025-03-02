@@ -6,10 +6,10 @@ public partial class MainMenu : Control
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		Godot.Button startNewGame = GetNode<Godot.Button>("VBoxContainer/Button");
-		Godot.Button continueGame = GetNode<Godot.Button>("VBoxContainer/Continue");
-		Godot.Button options = GetNode<Godot.Button>("VBoxContainer/Options");
-		Godot.Button exit = GetNode<Godot.Button>("VBoxContainer/Exit");
+		Button startNewGame = GetNode<Button>("VBoxContainer/Button");
+		Button continueGame = GetNode<Button>("VBoxContainer/Continue");
+		Button options = GetNode<Button>("VBoxContainer/Options");
+		Button exit = GetNode<Button>("VBoxContainer/Exit");
 		
 		startNewGame.Pressed += OnStartNewGamePressed;
 		continueGame.Pressed += OnContinuePressed;
@@ -35,7 +35,12 @@ public partial class MainMenu : Control
 	}
 	private void OnOptionsPressed()
 	{
+<<<<<<< HEAD
 		GD.Print("Options Button Pressed");
+=======
+		Global.LastScene = "res://scenes/main_menu.tscn";
+		GetTree().ChangeSceneToFile("res://scenes/Nustatymai.tscn");
+>>>>>>> 1Spr
 	}
 	private void OnExitPressed()
 	{

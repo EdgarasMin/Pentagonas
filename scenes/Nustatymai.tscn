@@ -1,0 +1,104 @@
+[gd_scene load_steps=7 format=3 uid="uid://dr0baotgbhapo"]
+
+[ext_resource type="Script" path="res://scripts/Nustatymai.cs" id="1_sgbyh"]
+[ext_resource type="AudioStream" uid="uid://dvb2wfr4iknv7" path="res://assets/The Emptiness Machine.mp3" id="2_ecrcm"]
+[ext_resource type="FontFile" uid="uid://dvivlgdnl26k7" path="res://assets/Fonts/Bright DEMO.otf" id="3_gx0yv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_25qdc"]
+bg_color = Color(0.180392, 0.282353, 0.27451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pgtob"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3mbrw"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sgbyh")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_25qdc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 400.0
+offset_top = 100.0
+offset_right = -400.0
+offset_bottom = -320.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Garsas" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Garsas"
+
+[node name="Volume" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Mute" type="CheckBox" parent="VBoxContainer"]
+layout_mode = 2
+text = "Mute"
+
+[node name="Resolution" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Rezoliucija"
+
+[node name="Resolutions" type="OptionButton" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_pgtob")
+item_count = 3
+popup/item_0/text = "1920x1080"
+popup/item_1/text = "1600x900"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+
+[node name="Back" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_3mbrw")
+text = "Atgal"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ecrcm")
+autoplay = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 10.0
+offset_right = 880.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(0.886275, 0.545098, 0.141176, 1)
+theme_override_fonts/font = ExtResource("3_gx0yv")
+theme_override_font_sizes/font_size = 44
+text = "Nustatymai"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="value_changed" from="VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="VBoxContainer/Mute" to="." method="_on_mute_toggled"]
+[connection signal="item_selected" from="VBoxContainer/Resolutions" to="." method="_on_resolutions_item_selected"]
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
