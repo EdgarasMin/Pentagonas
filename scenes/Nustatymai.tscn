@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dr0baotgbhapo"]
 
 [ext_resource type="Script" path="res://scripts/Nustatymai.cs" id="1_sgbyh"]
-[ext_resource type="AudioStream" uid="uid://dvb2wfr4iknv7" path="res://music/The Emptiness Machine.mp3" id="2_ecrcm"]
+[ext_resource type="AudioStream" uid="uid://ep4wxxf3b4nd" path="res://music/Audio_File_1.mp3" id="3_43qib"]
 [ext_resource type="FontFile" uid="uid://dvivlgdnl26k7" path="res://assets/Fonts/Bright DEMO.otf" id="3_gx0yv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_25qdc"]
@@ -49,9 +49,22 @@ text = "Garsas"
 
 [node name="Volume" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
+max_value = 80.0
+value = 80.0
+
+[node name="GarsasSFX" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "VFX
+"
+
+[node name="VolumeSFX" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+max_value = 80.0
+value = 80.0
 
 [node name="Mute" type="CheckBox" parent="VBoxContainer"]
 layout_mode = 2
+focus_mode = 0
 text = "Mute"
 
 [node name="Resolution" type="Label" parent="VBoxContainer"]
@@ -81,10 +94,6 @@ theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_3mbrw")
 text = "Atgal"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_ecrcm")
-autoplay = true
-
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 400.0
@@ -98,7 +107,13 @@ text = "Nustatymai"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_43qib")
+autoplay = true
+bus = &"Music"
+
 [connection signal="value_changed" from="VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/VolumeSFX" to="." method="_on_volume_sfx_value_changed"]
 [connection signal="toggled" from="VBoxContainer/Mute" to="." method="_on_mute_toggled"]
 [connection signal="item_selected" from="VBoxContainer/Resolutions" to="." method="_on_resolutions_item_selected"]
 [connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
