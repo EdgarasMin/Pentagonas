@@ -1,17 +1,27 @@
 [gd_scene load_steps=7 format=3 uid="uid://dr0baotgbhapo"]
 
 [ext_resource type="Script" path="res://scripts/Nustatymai.cs" id="1_sgbyh"]
-[ext_resource type="AudioStream" uid="uid://ep4wxxf3b4nd" path="res://music/Audio_File_1.mp3" id="3_43qib"]
 [ext_resource type="FontFile" uid="uid://dvivlgdnl26k7" path="res://assets/Fonts/Bright DEMO.otf" id="3_gx0yv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_25qdc"]
 bg_color = Color(0.180392, 0.282353, 0.27451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cq1dj"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pgtob"]
 bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3mbrw"]
 bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -73,10 +83,12 @@ text = "Rezoliucija"
 
 [node name="Resolutions" type="OptionButton" parent="VBoxContainer"]
 layout_mode = 2
+focus_mode = 0
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_cq1dj")
 theme_override_styles/normal = SubResource("StyleBoxFlat_pgtob")
 item_count = 3
 popup/item_0/text = "1920x1080"
@@ -85,8 +97,34 @@ popup/item_1/id = 1
 popup/item_2/text = "1280x720"
 popup/item_2/id = 2
 
+[node name="FPS" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "FPS"
+
+[node name="FPSchoose" type="OptionButton" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_cq1dj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_pgtob")
+item_count = 3
+popup/item_0/text = "60 fps"
+popup/item_1/text = "45 fps"
+popup/item_1/id = 1
+popup/item_2/text = "30 fps"
+popup/item_2/id = 2
+
+[node name="Fullscreen" type="CheckBox" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Fullscreen"
+
 [node name="Back" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+focus_mode = 0
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
@@ -107,13 +145,10 @@ text = "Nustatymai"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_43qib")
-autoplay = true
-bus = &"Music"
-
 [connection signal="value_changed" from="VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/VolumeSFX" to="." method="_on_volume_sfx_value_changed"]
 [connection signal="toggled" from="VBoxContainer/Mute" to="." method="_on_mute_toggled"]
 [connection signal="item_selected" from="VBoxContainer/Resolutions" to="." method="_on_resolutions_item_selected"]
+[connection signal="item_selected" from="VBoxContainer/FPSchoose" to="." method="_on_fp_schoose_item_selected"]
+[connection signal="toggled" from="VBoxContainer/Fullscreen" to="." method="_on_fullscreen_toggled"]
 [connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]

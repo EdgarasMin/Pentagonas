@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://cf2hqdnwxg2h2"]
+
+[ext_resource type="Script" path="res://scripts/Music.cs" id="1_ht75i"]
+[ext_resource type="AudioStream" uid="uid://ep4wxxf3b4nd" path="res://music/Audio_File_1.mp3" id="1_yr7bj"]
+[ext_resource type="AudioStream" uid="uid://bbf12cf24aagh" path="res://music/Audio_File_2.mp3" id="3_sig0o"]
+[ext_resource type="AudioStream" uid="uid://ccny7q23kwea3" path="res://music/Audio_File_3.mp3" id="4_a5rpl"]
+[ext_resource type="AudioStream" uid="uid://dm8k8g3xp6xkk" path="res://music/Audio_File_4.mp3" id="5_pxy42"]
+[ext_resource type="AudioStream" uid="uid://bvyg7oyn1di1a" path="res://music/Audio_File_5.mp3" id="6_sewnl"]
+
+[node name="Control" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ht75i")
+
+[node name="Song1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_yr7bj")
+bus = &"Music"
+
+[node name="Song2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_sig0o")
+bus = &"Music"
+
+[node name="Song3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_a5rpl")
+bus = &"Music"
+
+[node name="Song4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_pxy42")
+bus = &"Music"
+
+[node name="Song5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_sewnl")
+bus = &"Music"
