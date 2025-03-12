@@ -1,18 +1,11 @@
-<<<<<<< HEAD
-[gd_scene load_steps=4 format=3 uid="uid://ciiuwkr5egx34"]
-
-[ext_resource type="Texture2D" uid="uid://cdobg4oeppsry" path="res://assets/front.png" id="1_2tmxi"]
-[ext_resource type="Script" path="res://scripts/HeroTemp.cs" id="2_u3xlg"]
-[ext_resource type="PackedScene" uid="uid://bujj1bnmismal" path="res://scenes/pauseMenu.tscn" id="6_lqtxg"]
-=======
 [gd_scene load_steps=13 format=3 uid="uid://ciiuwkr5egx34"]
 
 [ext_resource type="Texture2D" uid="uid://cdobg4oeppsry" path="res://assets/front.png" id="1_2tmxi"]
+[ext_resource type="Texture2D" uid="uid://bs2r2xuafpsf7" path="res://assets/openart-7b15c5c6-38b8-4f64-97e2-a606ad4e2349.webp" id="1_bjo48"]
 [ext_resource type="Script" path="res://scripts/HeroTemp.cs" id="2_u3xlg"]
-[ext_resource type="Script" path="res://scripts/PauseMenu.cs" id="3_dulrh"]
 [ext_resource type="FontFile" uid="uid://c46mhbbu2u3fg" path="res://assets/Fonts/Magic Retro.ttf" id="3_jhd58"]
 [ext_resource type="Script" path="res://scripts/CodeEditing.cs" id="5_vsk6e"]
-[ext_resource type="Texture2D" uid="uid://qgbke3h0dy85" path="res://assets/pngwing.com (3).png" id="6_olmyw"]
+[ext_resource type="PackedScene" uid="uid://bujj1bnmismal" path="res://scenes/pauseMenu.tscn" id="6_lqtxg"]
 [ext_resource type="Texture2D" uid="uid://ce08qytvbfscg" path="res://assets/pngwing.com (5).png" id="7_bqu08"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aloxj"]
@@ -31,29 +24,35 @@ bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxt4o"]
 bg_color = Color(1, 1, 1, 1)
->>>>>>> testE
 
 [sub_resource type="Theme" id="Theme_v1wif"]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(193, 155)
+
+[node name="Openart-7b15c5c6-38b8-4f64-97e2-a606Ad4e2349" type="Sprite2D" parent="."]
+position = Vector2(762, 385)
+scale = Vector2(1.97371, 1.75856)
+texture = ExtResource("1_bjo48")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(563.532, 390.482)
+position = Vector2(552, 388)
 scale = Vector2(0.110904, 0.115773)
 texture = ExtResource("1_2tmxi")
 script = ExtResource("2_u3xlg")
 
-[node name="Control" parent="." instance=ExtResource("6_lqtxg")]
+[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+position = Vector2(1915.78, -4.16311)
+scale = Vector2(9.01681, 8.63759)
+
+[node name="Window" type="Window" parent="."]
+process_mode = 3
+title = "Meniu"
+initial_position = 1
+size = Vector2i(500, 500)
 visible = false
-<<<<<<< HEAD
-offset_left = 597.0
-offset_top = 364.0
-offset_right = 597.0
-offset_bottom = 364.0
-=======
 borderless = true
 theme_override_fonts/title_font = ExtResource("3_jhd58")
-script = ExtResource("3_dulrh")
 
 [node name="Panel" type="Panel" parent="Window"]
 anchors_preset = 15
@@ -106,19 +105,19 @@ script = ExtResource("5_vsk6e")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 607.0
-offset_top = 82.0
-offset_right = -200.0
-offset_bottom = -90.0
+offset_left = 892.0
+offset_top = 356.0
+offset_right = -450.0
+offset_bottom = -137.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_aloxj")
 
 [node name="CodeEdit1" type="CodeEdit" parent="CanvasLayer"]
-offset_left = 646.0
-offset_top = 102.0
-offset_right = 1000.0
-offset_bottom = 512.0
+offset_left = 929.0
+offset_top = 376.0
+offset_right = 1283.0
+offset_bottom = 786.0
 theme = SubResource("Theme_v1wif")
 theme_override_colors/font_selected_color = Color(0, 0, 0.290196, 1)
 text = "#include <iostream>
@@ -135,35 +134,27 @@ auto_brace_completion_enabled = true
 auto_brace_completion_highlight_matching = true
 
 [node name="Submit" type="Button" parent="CanvasLayer"]
-offset_left = 670.0
-offset_top = 569.0
-offset_right = 751.0
-offset_bottom = 608.0
+offset_left = 953.0
+offset_top = 843.0
+offset_right = 1034.0
+offset_bottom = 882.0
 text = "Pateikti"
 
 [node name="Save" type="Button" parent="CanvasLayer"]
-offset_left = 796.0
-offset_top = 569.0
-offset_right = 875.0
-offset_bottom = 607.0
+offset_left = 1079.0
+offset_top = 843.0
+offset_right = 1158.0
+offset_bottom = 881.0
 text = "išsaugoti"
-
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
-offset_left = 1657.0
-offset_top = 688.0
-offset_right = 2662.0
-offset_bottom = 1861.0
-texture_normal = ExtResource("6_olmyw")
-ignore_texture_size = true
 
 [node name="Button" type="Button" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_right = 0.077
 anchor_bottom = 0.08
-offset_left = 926.0
-offset_top = 566.0
-offset_right = 866.44
-offset_bottom = 548.4
+offset_left = 1209.0
+offset_top = 840.0
+offset_right = 1149.44
+offset_bottom = 822.4
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Button"]
 layout_mode = 1
@@ -179,10 +170,10 @@ expand_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 86.0
-offset_top = 31.0
-offset_right = -699.0
-offset_bottom = -359.0
+offset_left = 260.0
+offset_top = 197.0
+offset_right = -1148.0
+offset_bottom = -509.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_aloxj")
@@ -211,7 +202,13 @@ offset_right = 412.0
 offset_bottom = 316.0
 placeholder_text = "> "
 
+[node name="Control" parent="." instance=ExtResource("6_lqtxg")]
+visible = false
+offset_left = 578.0
+offset_top = 339.0
+offset_right = 578.0
+offset_bottom = 339.0
+
 [connection signal="pressed" from="Window/Resume" to="Window" method="_on_resume_pressed"]
 [connection signal="pressed" from="Window/Options" to="Window" method="_on_options_pressed"]
 [connection signal="pressed" from="Window/mainMenu" to="Window" method="_on_main_menu_pressed"]
->>>>>>> testE
