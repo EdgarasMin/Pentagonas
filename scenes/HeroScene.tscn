@@ -1,21 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://ciiuwkr5egx34"]
+[gd_scene load_steps=4 format=3 uid="uid://ciiuwkr5egx34"]
 
 [ext_resource type="Texture2D" uid="uid://cdobg4oeppsry" path="res://assets/front.png" id="1_2tmxi"]
 [ext_resource type="Script" path="res://scripts/HeroTemp.cs" id="2_u3xlg"]
-[ext_resource type="Script" path="res://scripts/PauseMenu.cs" id="3_dulrh"]
-[ext_resource type="FontFile" uid="uid://c46mhbbu2u3fg" path="res://assets/Fonts/Magic Retro.ttf" id="3_jhd58"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aloxj"]
-bg_color = Color(0.180392, 0.282353, 0.27451, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lb8lm"]
-bg_color = Color(1, 1, 1, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4bb3"]
-bg_color = Color(1, 1, 1, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxt4o"]
-bg_color = Color(1, 1, 1, 1)
+[ext_resource type="PackedScene" uid="uid://bujj1bnmismal" path="res://scenes/pauseMenu.tscn" id="6_lqtxg"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -25,60 +12,9 @@ scale = Vector2(0.110904, 0.115773)
 texture = ExtResource("1_2tmxi")
 script = ExtResource("2_u3xlg")
 
-[node name="Window" type="Window" parent="."]
-process_mode = 3
-title = "Meniu"
-initial_position = 1
-size = Vector2i(500, 500)
+[node name="Control" parent="." instance=ExtResource("6_lqtxg")]
 visible = false
-borderless = true
-theme_override_fonts/title_font = ExtResource("3_jhd58")
-script = ExtResource("3_dulrh")
-
-[node name="Panel" type="Panel" parent="Window"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_aloxj")
-
-[node name="Resume" type="Button" parent="Window"]
-offset_left = 100.0
-offset_top = 50.0
-offset_right = 400.0
-offset_bottom = 100.0
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_lb8lm")
-text = "Tęsti žaidimą"
-
-[node name="Options" type="Button" parent="Window"]
-offset_left = 100.0
-offset_top = 150.0
-offset_right = 400.0
-offset_bottom = 200.0
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_t4bb3")
-text = "Nustatymai"
-
-[node name="mainMenu" type="Button" parent="Window"]
-offset_left = 100.0
-offset_top = 250.0
-offset_right = 400.0
-offset_bottom = 300.0
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_gxt4o")
-text = "Pagrindinis meniu"
-
-[connection signal="pressed" from="Window/Resume" to="Window" method="_on_resume_pressed"]
-[connection signal="pressed" from="Window/Options" to="Window" method="_on_options_pressed"]
-[connection signal="pressed" from="Window/mainMenu" to="Window" method="_on_main_menu_pressed"]
+offset_left = 597.0
+offset_top = 364.0
+offset_right = 597.0
+offset_bottom = 364.0

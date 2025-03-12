@@ -112,8 +112,10 @@ text = "ByteBound: The Code Quest"
 stream = ExtResource("3_n1tsl")
 volume_db = -1.268
 pitch_scale = 1.43
+bus = &"SFX"
 
 [node name="HoveringSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_t1kep")
 volume_db = -3.251
 pitch_scale = 0.64
+bus = &"SFX"
