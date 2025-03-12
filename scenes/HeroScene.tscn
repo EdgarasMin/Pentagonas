@@ -1,12 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://ciiuwkr5egx34"]
+[gd_scene load_steps=13 format=3 uid="uid://ciiuwkr5egx34"]
 
 [ext_resource type="Texture2D" uid="uid://cdobg4oeppsry" path="res://assets/front.png" id="1_2tmxi"]
 [ext_resource type="Script" path="res://scripts/HeroTemp.cs" id="2_u3xlg"]
 [ext_resource type="Script" path="res://scripts/PauseMenu.cs" id="3_dulrh"]
 [ext_resource type="FontFile" uid="uid://c46mhbbu2u3fg" path="res://assets/Fonts/Magic Retro.ttf" id="3_jhd58"]
+[ext_resource type="Script" path="res://scripts/CodeEditing.cs" id="5_vsk6e"]
+[ext_resource type="Texture2D" uid="uid://qgbke3h0dy85" path="res://assets/pngwing.com (3).png" id="6_olmyw"]
+[ext_resource type="Texture2D" uid="uid://ce08qytvbfscg" path="res://assets/pngwing.com (5).png" id="7_bqu08"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aloxj"]
-bg_color = Color(0.180392, 0.282353, 0.27451, 1)
+bg_color = Color(0.350224, 0.505087, 0.491675, 0.847059)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.144063, 0.144063, 0.144062, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lb8lm"]
 bg_color = Color(1, 1, 1, 1)
@@ -16,6 +24,8 @@ bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxt4o"]
 bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_v1wif"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -78,6 +88,116 @@ theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_gxt4o")
 text = "Pagrindinis meniu"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("5_vsk6e")
+
+[node name="PanelCode" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 607.0
+offset_top = 82.0
+offset_right = -200.0
+offset_bottom = -90.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_aloxj")
+
+[node name="CodeEdit1" type="CodeEdit" parent="CanvasLayer"]
+offset_left = 646.0
+offset_top = 102.0
+offset_right = 1000.0
+offset_bottom = 512.0
+theme = SubResource("Theme_v1wif")
+theme_override_colors/font_selected_color = Color(0, 0, 0.290196, 1)
+text = "#include <iostream>
+
+using namespace std;
+
+int main() {
+    cout << \"Hello, World!\" << endl;
+    cout << \"Hello,\" << \"World\" << endl;
+	cin >> x;
+}"
+code_completion_enabled = true
+auto_brace_completion_enabled = true
+auto_brace_completion_highlight_matching = true
+
+[node name="Submit" type="Button" parent="CanvasLayer"]
+offset_left = 670.0
+offset_top = 569.0
+offset_right = 751.0
+offset_bottom = 608.0
+text = "Pateikti"
+
+[node name="Save" type="Button" parent="CanvasLayer"]
+offset_left = 796.0
+offset_top = 569.0
+offset_right = 875.0
+offset_bottom = 607.0
+text = "išsaugoti"
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
+offset_left = 1657.0
+offset_top = 688.0
+offset_right = 2662.0
+offset_bottom = 1861.0
+texture_normal = ExtResource("6_olmyw")
+ignore_texture_size = true
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 0.077
+anchor_bottom = 0.08
+offset_left = 926.0
+offset_top = 566.0
+offset_right = 866.44
+offset_bottom = 548.4
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Button"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -2.0
+offset_top = -3.0
+offset_right = 40.0
+offset_bottom = 41.0
+texture = ExtResource("7_bqu08")
+expand_mode = 1
+
+[node name="PanelConsole" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 86.0
+offset_top = 31.0
+offset_right = -699.0
+offset_bottom = -359.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_aloxj")
+
+[node name="Submit" type="Button" parent="CanvasLayer/PanelConsole"]
+offset_left = 418.0
+offset_top = 281.0
+offset_right = 484.0
+offset_bottom = 315.0
+text = "enter
+"
+
+[node name="Console" type="TextEdit" parent="CanvasLayer/PanelConsole"]
+offset_left = 17.0
+offset_top = 15.0
+offset_right = 475.0
+offset_bottom = 271.0
+
+[node name="ConsoleLine" type="TextEdit" parent="CanvasLayer/PanelConsole"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 280.0
+offset_right = 412.0
+offset_bottom = 316.0
+placeholder_text = "> "
 
 [connection signal="pressed" from="Window/Resume" to="Window" method="_on_resume_pressed"]
 [connection signal="pressed" from="Window/Options" to="Window" method="_on_options_pressed"]

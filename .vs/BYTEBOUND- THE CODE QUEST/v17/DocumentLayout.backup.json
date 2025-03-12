@@ -3,8 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|c:\\users\\emis\\desktop\\godot\\pentagonas\\scripts\\codeediting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|solutionrelative:scripts\\codeediting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|c:\\users\\emis\\desktop\\godot\\pentagonas\\scenes\\codeedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|solutionrelative:scenes\\codeedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|c:\\users\\emis\\desktop\\godot\\pentagonas\\scripts\\highlight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|solutionrelative:scripts\\highlight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|c:\\users\\emis\\desktop\\godot\\pentagonas\\scripts\\cppsyntaxhighlighter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|solutionrelative:scripts\\cppsyntaxhighlighter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\CppHighlighter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:scripts\\CppHighlighter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|c:\\users\\emis\\desktop\\godot\\pentagonas\\scripts\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|solutionrelative:scripts\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|c:\\users\\emis\\desktop\\godot\\pentagonas\\scripts\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|solutionrelative:scripts\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|c:\\users\\emis\\desktop\\godot\\pentagonas\\scripts\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|solutionrelative:scripts\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|c:\\users\\emis\\desktop\\godot\\pentagonas\\scripts\\herotemp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|solutionrelative:scripts\\herotemp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|c:\\users\\emis\\desktop\\godot\\pentagonas\\scripts\\global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|solutionrelative:scripts\\global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -13,31 +49,129 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-<<<<<<< HEAD
-          "DockedWidth": 222,
-=======
-          "DockedWidth": 200,
->>>>>>> TestEmilio
-          "SelectedChildIndex": 0,
+          "DockedWidth": 177,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Highlight.cs",
+              "DocumentMoniker": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\Highlight.cs",
+              "RelativeDocumentMoniker": "scripts\\Highlight.cs",
+              "ToolTip": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\Highlight.cs",
+              "RelativeToolTip": "scripts\\Highlight.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T17:08:19.65Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "CodeEditing.cs",
+              "DocumentMoniker": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\CodeEditing.cs",
+              "RelativeDocumentMoniker": "scripts\\CodeEditing.cs",
+              "ToolTip": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\CodeEditing.cs",
+              "RelativeToolTip": "scripts\\CodeEditing.cs",
+              "ViewState": "AgIAAMwAAAAAAAAAAAAwwNoAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T15:19:21.455Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CodeEdit.cs",
+              "DocumentMoniker": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scenes\\CodeEdit.cs",
+              "RelativeDocumentMoniker": "scenes\\CodeEdit.cs",
+              "ToolTip": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scenes\\CodeEdit.cs",
+              "RelativeToolTip": "scenes\\CodeEdit.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T16:51:30.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CppSyntaxHighlighter.cs",
+              "DocumentMoniker": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\CppSyntaxHighlighter.cs",
+              "RelativeDocumentMoniker": "scripts\\CppSyntaxHighlighter.cs",
+              "ToolTip": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\CppSyntaxHighlighter.cs",
+              "RelativeToolTip": "scripts\\CppSyntaxHighlighter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T16:44:23.39Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CppHighlighter.cs",
+              "DocumentMoniker": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\CppHighlighter.cs",
+              "RelativeDocumentMoniker": "scripts\\CppHighlighter.cs",
+              "ToolTip": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\CppHighlighter.cs",
+              "RelativeToolTip": "scripts\\CppHighlighter.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T16:04:16.407Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PauseMenu.cs",
+              "DocumentMoniker": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\PauseMenu.cs",
+              "RelativeDocumentMoniker": "scripts\\PauseMenu.cs",
+              "ToolTip": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\PauseMenu.cs",
+              "RelativeToolTip": "scripts\\PauseMenu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T15:31:37.211Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AudioManager.cs",
+              "DocumentMoniker": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\AudioManager.cs",
+              "RelativeDocumentMoniker": "scripts\\AudioManager.cs",
+              "ToolTip": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\AudioManager.cs",
+              "RelativeToolTip": "scripts\\AudioManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T19:57:30.777Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "MainMenu.cs",
               "DocumentMoniker": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\MainMenu.cs",
               "RelativeDocumentMoniker": "scripts\\MainMenu.cs",
               "ToolTip": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\MainMenu.cs",
               "RelativeToolTip": "scripts\\MainMenu.cs",
-<<<<<<< HEAD
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T17:35:23.595Z",
-=======
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBwAAAAMAAAAAAAAAA==",
+              "WhenOpened": "2025-03-02T19:39:25.955Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HeroTemp.cs",
+              "DocumentMoniker": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\HeroTemp.cs",
+              "RelativeDocumentMoniker": "scripts\\HeroTemp.cs",
+              "ToolTip": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\HeroTemp.cs",
+              "RelativeToolTip": "scripts\\HeroTemp.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T15:55:59.551Z",
->>>>>>> TestEmilio
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-02T19:39:25.622Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Global.cs",
+              "DocumentMoniker": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\Global.cs",
+              "RelativeDocumentMoniker": "scripts\\Global.cs",
+              "ToolTip": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\Global.cs",
+              "RelativeToolTip": "scripts\\Global.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T19:39:25.652Z"
             },
             {
               "$type": "Bookmark",
