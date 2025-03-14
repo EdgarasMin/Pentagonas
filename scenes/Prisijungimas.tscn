@@ -95,7 +95,7 @@ offset_top = 408.0
 offset_right = 1223.0
 offset_bottom = 446.0
 theme_override_font_sizes/font_size = 21
-text = "Kolkas permeti į main (netikrina)"
+text = "admin (usr and passw.)"
 
 [node name="Button" type="Button" parent="Panel"]
 layout_mode = 0
