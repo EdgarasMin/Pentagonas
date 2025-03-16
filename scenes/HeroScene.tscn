@@ -179,6 +179,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_gxt4o")
 text = "Pagrindinis meniu"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("5_vsk6e")
 
 [node name="PanelCode" type="Panel" parent="CanvasLayer"]
