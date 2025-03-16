@@ -179,11 +179,9 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_gxt4o")
 text = "Pagrindinis meniu"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("5_vsk6e")
 
 [node name="PanelCode" type="Panel" parent="CanvasLayer"]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -221,11 +219,6 @@ Kiekvieną kartą, kai naudotojas įveda reikšmę ir paspaudžia Enter mygtuką
 Atmink, kad turi įvesti teisingą duomenų tipą. Jei kintamasis yra tipo int, įvesk sveiką skaičių!"
 
 [node name="CodeEdit1" type="CodeEdit" parent="CanvasLayer"]
-offset_left = 928.0
-offset_top = 391.0
-offset_right = 1282.0
-offset_bottom = 801.0
-visible = false
 offset_left = 929.0
 offset_top = 376.0
 offset_right = 1283.0
@@ -253,23 +246,6 @@ offset_bottom = 891.0
 text = "išsaugoti"
 
 [node name="Refresh" type="Button" parent="CanvasLayer"]
-visible = false
-offset_left = 953.0
-offset_top = 843.0
-offset_right = 1034.0
-offset_bottom = 882.0
-text = "Pateikti"
-
-[node name="Save" type="Button" parent="CanvasLayer"]
-visible = false
-offset_left = 1079.0
-offset_top = 843.0
-offset_right = 1158.0
-offset_bottom = 881.0
-text = "išsaugoti"
-
-[node name="Button" type="Button" parent="CanvasLayer"]
-visible = false
 anchors_preset = -1
 anchor_right = 0.077
 anchor_bottom = 0.08
@@ -279,8 +255,6 @@ offset_right = 1123.16
 offset_bottom = 800.6
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Refresh"]
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Button"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 offset_left = -2.0
@@ -291,7 +265,6 @@ texture = ExtResource("7_bqu08")
 expand_mode = 1
 
 [node name="PanelConsole" type="Panel" parent="CanvasLayer"]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -313,7 +286,6 @@ text = "enter
 "
 
 [node name="Console" type="TextEdit" parent="CanvasLayer/PanelConsole"]
-visible = false
 layout_mode = 0
 offset_left = 17.0
 offset_top = 15.0
@@ -321,7 +293,6 @@ offset_right = 475.0
 offset_bottom = 271.0
 
 [node name="ConsoleLine" type="TextEdit" parent="CanvasLayer/PanelConsole"]
-visible = false
 layout_mode = 0
 offset_left = 19.0
 offset_top = 280.0

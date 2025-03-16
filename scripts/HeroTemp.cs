@@ -5,26 +5,9 @@ public partial class HeroTemp : AnimatedSprite2D
 	int speed = 500;
 	public Vector2 vel = Vector2.Zero;
 
-
-    public override void _Ready()
-	{
-		GD.Print("HeroTemp script is running!"); // Debug message
-       
-    }
-
-	public override void _Process(double delta)
-	{
-
-
-        if (CodeEditing.Instance != null && CodeEditing.Instance.editorShown)
-        {
-            // If the editor is visible, don't process movement
-
-            return;
-        }
         // Reset velocity to zero at the start of each frame
 
-        vel *= 0.55f ;
+      
 	
 	// Define boundaries
 	private const float LEFT_BOUND = 0;
@@ -52,8 +35,14 @@ public partial class HeroTemp : AnimatedSprite2D
 	
 	public override void _Process(double delta)
 	{
-		// Reset velocity to zero at the start of each frame
-		vel *= 0.55f;
+        if (CodeEditing.Instance != null && CodeEditing.Instance.editorShown)
+        {
+            // If the editor is visible, don't process movement
+
+            return;
+        }
+        // Reset velocity to zero at the start of each frame
+        vel *= 0.55f;
 		
 		// Track if the character is moving in this frame
 		bool isMoving = false;
