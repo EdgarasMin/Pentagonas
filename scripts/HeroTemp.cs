@@ -4,9 +4,12 @@ public partial class HeroTemp : Sprite2D
 {
 	int speed = 500; // Increased speed for better visibility
 	public Vector2 vel = Vector2.Zero;
+	public Music musicScene;
 
 	public override void _Ready()
 	{
+		musicScene = GetNode<Music>("/root/Music");
+		musicScene.switchSong("Song4");
 		GD.Print("HeroTemp script is running!"); // Debug message
 	}
 
