@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://ciiuwkr5egx34"]
 
 [ext_resource type="Texture2D" uid="uid://cdobg4oeppsry" path="res://assets/front.png" id="1_2tmxi"]
-[ext_resource type="Texture2D" uid="uid://bs2r2xuafpsf7" path="res://assets/openart-7b15c5c6-38b8-4f64-97e2-a606ad4e2349.webp" id="1_bjo48"]
+[ext_resource type="Texture2D" path="res://assets/openart-7b15c5c6-38b8-4f64-97e2-a606ad4e2349.webp" id="1_bjo48"]
 [ext_resource type="Script" path="res://scripts/HeroTemp.cs" id="2_u3xlg"]
 [ext_resource type="FontFile" uid="uid://c46mhbbu2u3fg" path="res://assets/Fonts/Magic Retro.ttf" id="3_jhd58"]
 [ext_resource type="Script" path="res://scripts/CodeEditing.cs" id="5_vsk6e"]
