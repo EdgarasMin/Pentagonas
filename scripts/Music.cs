@@ -13,7 +13,8 @@ public partial class Music : Control
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		song1 = GetNode<AudioStreamPlayer>("Song1");
+		
+        song1 = GetNode<AudioStreamPlayer>("Song1");
 		song2 = GetNode<AudioStreamPlayer>("Song2");
 		song3 = GetNode<AudioStreamPlayer>("Song3");
 		song4 = GetNode<AudioStreamPlayer>("Song4");
@@ -34,6 +35,9 @@ public partial class Music : Control
 
 			switch(song)
 			{
+				case "Stop":
+					current.Stop();
+				break;
 				case "Song1":
 					current.Stop();
 					current = song1;

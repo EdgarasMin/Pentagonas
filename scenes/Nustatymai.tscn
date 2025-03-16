@@ -75,6 +75,7 @@ value = 80.0
 [node name="Mute" type="CheckBox" parent="VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
+button_pressed = true
 text = "Mute"
 
 [node name="Resolution" type="Label" parent="VBoxContainer"]
