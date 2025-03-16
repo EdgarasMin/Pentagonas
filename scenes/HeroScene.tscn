@@ -26,6 +26,7 @@ bg_color = Color(1, 1, 1, 1)
 bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="Theme" id="Theme_v1wif"]
+default_font_size = 18
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(193, 155)
@@ -99,70 +100,89 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_gxt4o")
 text = "Pagrindinis meniu"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("5_vsk6e")
 
 [node name="PanelCode" type="Panel" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 892.0
-offset_top = 356.0
-offset_right = -450.0
-offset_bottom = -137.0
+offset_left = 904.0
+offset_top = 364.0
+offset_right = -154.0
+offset_bottom = -140.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_aloxj")
 
+[node name="TaskDescription" type="RichTextLabel" parent="CanvasLayer"]
+top_level = true
+offset_left = 1319.0
+offset_top = 401.0
+offset_right = 1730.0
+offset_bottom = 838.0
+theme_override_colors/table_border = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 17
+bbcode_enabled = true
+text = "[color=orange][b]Turi sugebėti priimti vartotojo įvestį. C++ programavimo kalboje tai atliekama naudojant komandą cin, kuri leidžia nuskaityti vartotojo įvestą tekstą ar skaičių[/b] [/color]
+
+[color=#FF6347][b]*[/b][/color]*Tavo užduotis yra priimti konsole įvestį, kuri yra skaičius 7, ir ją išvesti ekrane.
+
+[color=lightblue]Paaiškinimas:
+
+cin reiškia „console input“ – tai būdas gauti duomenis iš vartotojo.
+
+\">>\" yra operatorius, kuris nurodo, kad duomenys turi būti saugomi nurodytoje kintamojoje.
+
+Pvz., jei nori priimti skaičių, gali naudoti:
+cin >> kintamasis;
+
+Kiekvieną kartą, kai naudotojas įveda reikšmę ir paspaudžia Enter mygtuką, ši reikšmė bus priskirta kintamajam.
+Atmink, kad turi įvesti teisingą duomenų tipą. Jei kintamasis yra tipo int, įvesk sveiką skaičių!"
+
 [node name="CodeEdit1" type="CodeEdit" parent="CanvasLayer"]
-offset_left = 929.0
-offset_top = 376.0
-offset_right = 1283.0
-offset_bottom = 786.0
+offset_left = 928.0
+offset_top = 391.0
+offset_right = 1282.0
+offset_bottom = 801.0
 theme = SubResource("Theme_v1wif")
 theme_override_colors/font_selected_color = Color(0, 0, 0.290196, 1)
-text = "#include <iostream>
-
-using namespace std;
-
-int main() {
-    cout << \"Hello, World!\" << endl;
-    cout << \"Hello,\" << \"World\" << endl;
-	cin >> x;
-}"
+text = "cout << \"Hello, World!\" << endl;
+    "
 code_completion_enabled = true
 auto_brace_completion_enabled = true
 auto_brace_completion_highlight_matching = true
 
 [node name="Submit" type="Button" parent="CanvasLayer"]
-offset_left = 953.0
-offset_top = 843.0
-offset_right = 1034.0
-offset_bottom = 882.0
+offset_left = 954.0
+offset_top = 849.0
+offset_right = 1035.0
+offset_bottom = 888.0
 text = "Pateikti"
 
 [node name="Save" type="Button" parent="CanvasLayer"]
-offset_left = 1079.0
-offset_top = 843.0
-offset_right = 1158.0
-offset_bottom = 881.0
+offset_left = 1093.0
+offset_top = 853.0
+offset_right = 1172.0
+offset_bottom = 891.0
 text = "išsaugoti"
 
-[node name="Button" type="Button" parent="CanvasLayer"]
+[node name="Refresh" type="Button" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_right = 0.077
 anchor_bottom = 0.08
-offset_left = 1209.0
-offset_top = 840.0
-offset_right = 1149.44
-offset_bottom = 822.4
+offset_left = 1222.0
+offset_top = 844.0
+offset_right = 1123.16
+offset_bottom = 800.6
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Button"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Refresh"]
 layout_mode = 1
 anchors_preset = -1
 offset_left = -2.0
-offset_top = -3.0
-offset_right = 40.0
-offset_bottom = 41.0
+offset_top = -1.0
+offset_right = 47.0
+offset_bottom = 46.0
 texture = ExtResource("7_bqu08")
 expand_mode = 1
 

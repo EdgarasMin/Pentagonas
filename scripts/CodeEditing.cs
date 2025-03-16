@@ -1,25 +1,64 @@
-using Godot;
+﻿using Godot;
 using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using static CodeEditing;
 using static Godot.CodeEdit;
+using static System.Net.Mime.MediaTypeNames;
 
 public partial class CodeEditing : CanvasLayer
 {
-    bool editorShown = false;
-
+    public bool editorShown = false;
+   
     private CodeEdit codeBox;
     private TextEdit console; // Single node for both input and output
     private TextEdit consoleLine;
     private bool isConsoleLineFocused = false;
+    private RichTextLabel taskDescription;
     Button submitConsoleButton;
+    private List<Task> tasks = new List<Task>();
+    private Button refreshButton;
+    private int currentTask = 0;
+
+    public HeroTemp heroTemp;
+
+    public static CodeEditing Instance { get; private set; }
+    // Užduoties klasė
+    public class Task
+    {
+        public string Description { get; set; }
+        public string ExpectedOutput { get; set; }
+        public TaskType Type { get; set; }
+
+        public string CodeBoxText { get; set; }
+
+        public Task(string CodeBoxText, string description, string expectedOutput, TaskType type)
+        {
+            this.CodeBoxText = CodeBoxText;
+            Description = description;
+            ExpectedOutput = expectedOutput;
+            Type = type;
+        }
+    }
+
+    // Užduočių tipai
+    public enum TaskType
+    {
+        Text,  // Užduotis, kur reikia įvesti tekstą
+        Number // Užduotis, kur reikia įvesti skaičių
+    }
 
     public override void _Ready()
     {
         // Try to get the Submit button node and ensure it's found
+        Instance = this;
         Button submitButton = GetNodeOrNull<Button>("Submit");
 
-       
+        if (heroTemp == null)
+        {
+            heroTemp = GetNodeOrNull<HeroTemp>("res://scripts/HeroTemp.cs");
+        }
         if (submitButton != null)
         {
             submitButton.Pressed += OnSubmitButtonPressedAsync; // Connect the signal
@@ -53,20 +92,23 @@ public partial class CodeEditing : CanvasLayer
         // Get the consoleLine node
         consoleLine = GetNode<TextEdit>("PanelConsole/ConsoleLine");
 
-        // Connect the TextChanged signal (optional, if you want real-time updates)
-        codeBox.TextChanged += OnTextChanged;
 
-        // Connect focus events
-        consoleLine.FocusEntered += _on_FocusEntered;
-        consoleLine.FocusExited += _on_FocusExited;
+        taskDescription = GetNode<RichTextLabel>("TaskDescription");
+
+        // Connect the TextChanged signal (optional, if you want real-time updates)
+        //codeBox.TextChanged += OnTextChanged;
+
+        refreshButton = GetNode<Button>("Refresh");
+
+        refreshButton.Pressed += OnRefreshButtonPressed;
 
         // Connect the GUI input signal to handle Enter key press
         consoleLine.GuiInput += OnConsoleLineGuiInput;
 
         // Set up syntax highlighting, code completion, and editor features
         SetupSyntaxHighlighting();
-        SetupCodeCompletion();
-        SetupEditorFeatures();
+        //SetupCodeCompletion();
+        //SetupEditorFeatures();
 
         // Set up syntax highlighter
         CodeHighlighter cppHighlighter = new CodeHighlighter();
@@ -110,6 +152,12 @@ public partial class CodeEditing : CanvasLayer
 
         // Assign the highlighter to the CodeEdit node
         codeBox.SyntaxHighlighter = cppHighlighter;
+
+        tasks.Add(new Task("cout << \"Hello, World!\" << endl;", "[color=orange][b]Norėdamas pradėti savo kelionę požemiuose, tu turi sugebėti parašyti savo pirmąją kodo eilutę[/b][/color]\r\n\r\nC++ programavimo kalboje tai atliekama naudojant komandą cout, kuri leidžia parodyti tekstą ekrane.\r\n\r\n[color=#FF6347][b]*[/b][/color]Tavo užduotis yra pakeisti teksto išvedimą į \"Hello, Dungeon!\"\r\n\r\n[color=lightblue]Paaiškinimas:\r\n\r\ncout reiškia „console output“ – tai būdas išvesti tekstą į ekraną.\r\n\r\n\"<<\" yra kaip rodyklė, nukreipianti, ką rodyti.\r\n\r\n\"Hello, dungeon!\" – tai tavo sveikinimo žinutė.\r\n\r\n\"endl\" reiškia eilutės pabaigą – tai tiesiog perkelia tekstą į naują eilutę.[/color]", "Hello, Dungeon!", TaskType.Text));
+        tasks.Add(new Task("int x;\ncout << \"Įveskite x reikšmę\" << endl;\ncin >> x;\ncout << x << endl;", "[color=orange][b]Turi sugebėti priimti vartotojo įvestį. C++ programavimo kalboje tai atliekama naudojant komandą cin, kuri leidžia nuskaityti vartotojo įvestą tekstą ar skaičių[/b] [/color]\r\n\r\n[color=#FF6347][b]*[/b][/color]*Tavo užduotis yra priimti konsole įvestį, kuri yra skaičius 7, ir ją išvesti ekrane.\r\n\r\n[color=lightblue]Paaiškinimas:\r\n\r\ncin reiškia „console input“ – tai būdas gauti duomenis iš vartotojo.\r\n\r\n\">>\" yra operatorius, kuris nurodo, kad duomenys turi būti saugomi nurodytoje kintamojoje.\r\n\r\nPvz., jei nori priimti skaičių, gali naudoti:\r\ncin >> kintamasis;\r\n\r\nKiekvieną kartą, kai naudotojas įveda reikšmę ir paspaudžia Enter mygtuką, ši reikšmė bus priskirta kintamajam.\r\nAtmink, kad turi įvesti teisingą duomenų tipą. Jei kintamasis yra tipo int, įvesk sveiką skaičių!", "7", TaskType.Number));
+
+        UpdateTaskDescription();
+
     }
 
     public override void _Process(double delta)
@@ -125,53 +173,76 @@ public partial class CodeEditing : CanvasLayer
 
     private void SetupSyntaxHighlighting()
     {
-        // Add string delimiters for C++
-        codeBox.AddStringDelimiter("\"", "\"", false); // Double quotes for strings
-        codeBox.AddStringDelimiter("'", "'", false);   // Single quotes for characters
+        // Pridėkite string delimitatorius C++ kalbai
+        codeBox.AddStringDelimiter("\"", "\"", false); // Dvigubos kabutės eilutėms
+        codeBox.AddStringDelimiter("'", "'", false);   // Viengubos kabutės simboliams
 
-        // Add comment delimiters for C++
-        codeBox.AddCommentDelimiter("//", "\n", true); // Single-line comments
-        codeBox.AddCommentDelimiter("/*", "*/", false); // Multi-line comments
+        // Pridėkite komentarų delimitatorius C++ kalbai
 
-        // Enable auto brace completion
+        //codeBox.AddCommentDelimiter("//", "\n", true);  // Vienos eilutės komentarai
+        codeBox.AddCommentDelimiter("/*", "*/", false); // Daugiau eilutės komentarai
+
+        // Įjungti automatinį skliaustų užbaigimą
         codeBox.AutoBraceCompletionEnabled = true;
         codeBox.SetAutoBraceCompletionPairs(new Godot.Collections.Dictionary
+    {
+        { "{", "}" },
+        { "[", "]" },
+        { "(", ")" },
+        { "\"", "\"" },
+        { "'", "'" }
+    });
+    }
+
+
+    //private void SetupCodeCompletion()
+    //{
+    //    // Add C++ keywords
+    //    codeBox.AddCodeCompletionOption(CodeCompletionKind.PlainText, "int", "int ");
+    //    codeBox.AddCodeCompletionOption(CodeCompletionKind.PlainText, "float", "float ");
+    //    codeBox.AddCodeCompletionOption(CodeCompletionKind.PlainText, "double", "double ");
+    //    codeBox.AddCodeCompletionOption(CodeCompletionKind.PlainText, "char", "char ");
+    //    codeBox.AddCodeCompletionOption(CodeCompletionKind.PlainText, "void", "void ");
+    //    codeBox.AddCodeCompletionOption(CodeCompletionKind.PlainText, "return", "return ");
+
+    //    // Add common functions
+    //    codeBox.AddCodeCompletionOption(CodeCompletionKind.Function, "cout", "cout << ");
+    //    codeBox.AddCodeCompletionOption(CodeCompletionKind.Function, "cin", "cin >> ");
+
+    //    // Enable code completion
+    //    codeBox.CodeCompletionEnabled = true;
+    //}
+
+    //private void SetupEditorFeatures()
+    //{
+    //    // Enable line numbers
+    //    codeBox.GuttersDrawLineNumbers = true;
+
+    //    // Enable line folding
+    //    codeBox.LineFolding = true;
+    //}
+    private void OnRefreshButtonPressed()
+    {
+        codeBox.Text = tasks[currentTask].CodeBoxText;
+    }
+    private void UpdateTaskDescription()
+    {
+        if (currentTask < tasks.Count)
         {
-            { "{", "}" },
-            { "[", "]" },
-            { "(", ")" },
-            { "\"", "\"" },
-            { "'", "'" }
-        });
+            taskDescription.Text = "[color=green][b]Užduotis:[/b][/color] " + tasks[currentTask].Description;
+        }
+        else
+        {
+            taskDescription.Text = "[color=green][b]Visos užduotys baigtos![/b][/color] Sveikiname!";
+        }
     }
-
-    private void SetupCodeCompletion()
+    private void UpdateCodeBoxText()
     {
-        // Add C++ keywords
-        codeBox.AddCodeCompletionOption(CodeCompletionKind.PlainText, "int", "int ");
-        codeBox.AddCodeCompletionOption(CodeCompletionKind.PlainText, "float", "float ");
-        codeBox.AddCodeCompletionOption(CodeCompletionKind.PlainText, "double", "double ");
-        codeBox.AddCodeCompletionOption(CodeCompletionKind.PlainText, "char", "char ");
-        codeBox.AddCodeCompletionOption(CodeCompletionKind.PlainText, "void", "void ");
-        codeBox.AddCodeCompletionOption(CodeCompletionKind.PlainText, "return", "return ");
-
-        // Add common functions
-        codeBox.AddCodeCompletionOption(CodeCompletionKind.Function, "cout", "cout << ");
-        codeBox.AddCodeCompletionOption(CodeCompletionKind.Function, "cin", "cin >> ");
-
-        // Enable code completion
-        codeBox.CodeCompletionEnabled = true;
+        if (currentTask < tasks.Count)
+        {
+            codeBox.Text = tasks[currentTask].CodeBoxText;
+        }
     }
-
-    private void SetupEditorFeatures()
-    {
-        // Enable line numbers
-        codeBox.GuttersDrawLineNumbers = true;
-
-        // Enable line folding
-        codeBox.LineFolding = true;
-    }
-
     private void OnTextChanged()
     {
         // Optional: Use this for real-time updates (e.g., syntax validation)
@@ -181,6 +252,11 @@ public partial class CodeEditing : CanvasLayer
     private void AppendToConsole(string text)
     {
         // Append text to the console and scroll to the bottom
+        if(text == tasks[currentTask].ExpectedOutput)
+        {
+            UpdateCodeBoxText();
+            UpdateTaskDescription();
+        }
         console.Text += text + "\n";
         console.ScrollVertical = (int)console.GetLineCount() - 1;
     }
@@ -229,53 +305,159 @@ public partial class CodeEditing : CanvasLayer
 
         string codeText = codeBox.Text;
 
-        // Handle cout statements
-        string coutPattern = @"cout\s*((?:<<\s*""[^""]*""\s*)+)(?:<<\s*endl\s*)?;";
-        var coutMatches = Regex.Matches(codeText, coutPattern);
-        GD.Print("Found " + coutMatches.Count + " cout statements.");
+        // Split the code into lines
+        string[] lines = codeText.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
-        foreach (Match match in coutMatches)
+        // Dictionary to store variable values
+        Dictionary<string, string> variables = new Dictionary<string, string>();
+
+        // Process each line
+        for (int i = 0; i < lines.Length; i++)
         {
-            if (match.Groups.Count > 1)
+            string line = lines[i].Trim();
+
+            // Handle cout statements
+            if (line.StartsWith("cout"))
             {
-                string fullChain = match.Groups[1].Value;
+                string coutPattern = @"cout\s*((?:<<\s*(?:""[^""]*""|[^;]+)\s*)+)(?:<<\s*endl\s*)?;";
+                var coutMatch = Regex.Match(line, coutPattern);
 
-                // Extract all the quoted strings inside the chain
-                var stringMatches = Regex.Matches(fullChain, "\"([^\"]*)\"");
-                string finalOutput = "";
-
-                foreach (Match sm in stringMatches)
+                if (coutMatch.Success)
                 {
-                    finalOutput += sm.Groups[1].Value;
-                }
+                    string fullChain = coutMatch.Groups[1].Value;
 
-                AppendToConsole("[Output] " + finalOutput);
+                    // Extract all the quoted strings and variables inside the chain
+                    var stringMatches = Regex.Matches(fullChain, "\"([^\"]*)\"");
+                    var variableMatches = Regex.Matches(fullChain, @"<<\s*([a-zA-Z_][a-zA-Z0-9_]*)");
+
+                    string finalOutput = "";
+
+                    // Process literal strings
+                    foreach (Match sm in stringMatches)
+                    {
+                        finalOutput += sm.Groups[1].Value;
+                    }
+
+                    // Process variables
+                    foreach (Match vm in variableMatches)
+                    {
+                        string variableName = vm.Groups[1].Value;
+
+                        if (variableName == "endl")
+                        {
+                            // Handle endl as a newline character
+                            finalOutput += "\n";
+                        }
+                        else if (variables.ContainsKey(variableName))
+                        {
+                            // Use the variable's value
+                            finalOutput += variables[variableName];
+                        }
+                        else
+                        {
+                            AppendToConsole($"[Error] Variable '{variableName}' has no assigned value.");
+                        }
+                    }
+
+                    // Trim any extra whitespace (including newlines) from finalOutput
+                    finalOutput = finalOutput.Trim();
+
+                    // Output the result
+                    AppendToConsole("[Output] " + finalOutput);
+
+                    // Check if the output matches the expected output
+                    if (finalOutput == tasks[currentTask].ExpectedOutput)
+                    {
+                        AppendToConsole("Užduotis ivykdyta");
+                        currentTask++;
+                        UpdateTaskDescription();
+                        UpdateCodeBoxText();
+                    }
+                }
+            }
+            // Handle cin statements
+            else if (line.StartsWith("cin"))
+            {
+                string cinPattern = @"cin\s*>>\s*([^;]+);";
+                var cinMatch = Regex.Match(line, cinPattern);
+
+                if (cinMatch.Success)
+                {
+                    string variableName = cinMatch.Groups[1].Value.ToString().Trim();
+
+                    // Determine the variable type
+                    string typePattern = $@"\b(int|float|double|char|bool|string)\s+{variableName}\b";
+                    var typeMatch = Regex.Match(codeBox.Text, typePattern);
+
+                    if (typeMatch.Success)
+                    {
+                        string type = typeMatch.Groups[1].Value;
+                        GD.Print($"Variable '{variableName}' is of type: {type}");
+
+                        // Prompt the player for input
+                        AppendToConsole($"[Input] Please enter a value for {variableName} (type: {type}):");
+
+                        consoleLine.Editable = true;
+                        consoleLine.Clear();
+                        consoleLine.GrabFocus();
+
+                        string input = await WaitForInput();
+                        AppendToConsole("[Input] You entered: " + input);
+
+                        // Validate the input based on the variable type
+                        if (ValidateInput(input, type))
+                        {
+                            // Store the variable's value
+                            variables[variableName] = input;
+                        }
+                        else
+                        {
+                            AppendToConsole($"[Error] Invalid input for variable '{variableName}' of type '{type}'.");
+                        }
+                    }
+                    else
+                    {
+                        GD.PrintErr($"[Warning] Could not determine type for variable '{variableName}'.");
+                    }
+                }
+            }
+            // Handle variable assignments
+            else if (line.Contains("="))
+            {
+                string assignmentPattern = @"([a-zA-Z_][a-zA-Z0-9_]*)\s*=\s*([^;]+);";
+                var assignmentMatch = Regex.Match(line, assignmentPattern);
+
+                if (assignmentMatch.Success)
+                {
+                    string variableName = assignmentMatch.Groups[1].Value;
+                    string value = assignmentMatch.Groups[2].Value;
+
+                    // Store the variable's value
+                    variables[variableName] = value;
+                }
             }
         }
+    }
 
-        // Handle cin statements
-        string cinPattern = @"cin\s*>>\s*([^;]+);";
-        var cinMatches = Regex.Matches(codeText, cinPattern);
-        GD.Print("Found " + cinMatches.Count + " cin statements.");
-        foreach (Match match in cinMatches)
+
+    private bool ValidateInput(string input, string type)
+    {
+        switch (type)
         {
-            if (match.Groups.Count > 1)
-            {
-                string variableName = match.Groups[1].Value.ToString().Trim();
-                AppendToConsole("[Input] Please enter a value for " + variableName + ":");
-
-                // Enable the consoleLine for input
-                consoleLine.Editable = true;
-                consoleLine.Clear(); // Clear previous input
-                consoleLine.GrabFocus(); // Focus the consoleLine
-
-                // Wait for input
-                string input = await WaitForInput();
-                AppendToConsole("[Input] You entered: " + input);
-
-                // Process the input
-                OnCinInputSubmitted(input, variableName);
-            }
+            case "int":
+                return int.TryParse(input, out _);
+            case "float":
+                return float.TryParse(input, out _);
+            case "double":
+                return double.TryParse(input, out _);
+            case "char":
+                return input.Length == 1;
+            case "bool":
+                return bool.TryParse(input, out _);
+            case "string":
+                return true; // Any input is valid for string
+            default:
+                return false;
         }
     }
     private async void OnSubmitConsoleButtonPressed()
@@ -332,17 +514,7 @@ public partial class CodeEditing : CanvasLayer
     }
 
 
-    private void _on_FocusEntered()
-    {
-        GD.Print("ConsoleLine has gained focus!");
-        isConsoleLineFocused = true;
-    }
-
-    private void _on_FocusExited()
-    {
-        GD.Print("ConsoleLine has exited focus!");
-        isConsoleLineFocused = false;
-    }
+    
 
     private void OnConsoleLineGuiInput(InputEvent @event)
     {
