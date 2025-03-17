@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|solutionrelative:scripts\\codeediting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|c:\\users\\emis\\desktop\\godot\\pentagonas\\scripts\\script.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|solutionrelative:scripts\\script.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|c:\\users\\emis\\desktop\\godot\\pentagonas\\scripts\\herotemp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|solutionrelative:scripts\\herotemp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -50,11 +54,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 177,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
+              "Title": "script.cs",
+              "DocumentMoniker": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\script.cs",
+              "RelativeDocumentMoniker": "scripts\\script.cs",
+              "ToolTip": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\script.cs",
+              "RelativeToolTip": "scripts\\script.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T07:56:34.164Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Highlight.cs",
               "DocumentMoniker": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\Highlight.cs",
               "RelativeDocumentMoniker": "scripts\\Highlight.cs",
@@ -71,14 +88,14 @@
               "RelativeDocumentMoniker": "scripts\\CodeEditing.cs",
               "ToolTip": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\CodeEditing.cs",
               "RelativeToolTip": "scripts\\CodeEditing.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAPsBAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-11T15:19:21.455Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "CodeEdit.cs",
               "DocumentMoniker": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scenes\\CodeEdit.cs",
               "RelativeDocumentMoniker": "scenes\\CodeEdit.cs",
@@ -90,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "CppSyntaxHighlighter.cs",
               "DocumentMoniker": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\CppSyntaxHighlighter.cs",
               "RelativeDocumentMoniker": "scripts\\CppSyntaxHighlighter.cs",
@@ -102,7 +119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "CppHighlighter.cs",
               "DocumentMoniker": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\CppHighlighter.cs",
               "RelativeDocumentMoniker": "scripts\\CppHighlighter.cs",
@@ -113,7 +130,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "PauseMenu.cs",
               "DocumentMoniker": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\PauseMenu.cs",
               "RelativeDocumentMoniker": "scripts\\PauseMenu.cs",
@@ -125,7 +142,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "AudioManager.cs",
               "DocumentMoniker": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\AudioManager.cs",
               "RelativeDocumentMoniker": "scripts\\AudioManager.cs",
@@ -137,7 +154,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "MainMenu.cs",
               "DocumentMoniker": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\MainMenu.cs",
               "RelativeDocumentMoniker": "scripts\\MainMenu.cs",
@@ -145,12 +162,11 @@
               "RelativeToolTip": "scripts\\MainMenu.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAArwCgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-02T19:39:25.955Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-02T19:39:25.955Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "HeroTemp.cs",
               "DocumentMoniker": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\HeroTemp.cs",
               "RelativeDocumentMoniker": "scripts\\HeroTemp.cs",
@@ -158,12 +174,11 @@
               "RelativeToolTip": "scripts\\HeroTemp.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-02T19:39:25.622Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-02T19:39:25.622Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Global.cs",
               "DocumentMoniker": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\Global.cs",
               "RelativeDocumentMoniker": "scripts\\Global.cs",
