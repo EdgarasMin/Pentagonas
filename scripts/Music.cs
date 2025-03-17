@@ -31,38 +31,39 @@ public partial class Music : Control
 
 	public void switchSong(string song)
 	{
-		switch(song)
-		{
-			case "Song1":
-				current.Stop();
-				current = song1;
-				current.Play();
-				break;
-			case "Song2":
-				current.Stop();
-				current = song2;
-				current.Play();
-				break;
-			case "Song3":
-				current.Stop();
-				current = song3;
-				current.Play();
-				break;
-			case "Song4":
-				current.Stop();
-				current = song4;
-				current.Play();
-				break;
-			case "Song5":
-				current.Stop();
-				current = song5;
-				current.Play();
-				break;
-			default:
-				Console.WriteLine("Song not found.");
-				break;
 
-		}
+			switch(song)
+			{
+				case "Song1":
+					current.Stop();
+					current = song1;
+					current.Play();
+					break;
+				case "Song2":
+					current.Stop();
+					current = song2;
+					current.Play();
+					break;
+				case "Song3":
+					current.Stop();
+					current = song3;
+					current.Play();
+					break;
+				case "Song4":
+					current.Stop();
+					current = song4;
+					current.Play();
+					break;
+				case "Song5":
+					current.Stop();
+					current = song5;
+					current.Play();
+					break;
+				default:
+					Console.WriteLine("Song not found.");
+					break;
+			}
+		
 
 
 	}

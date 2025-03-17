@@ -3,7 +3,8 @@ using System;
 
 public partial class MainMenu : Control
 {
-	private void PlayClickingSound()
+	public Music musicScene;
+private void PlayClickingSound()
 	{
 		
 		ClickingSound.Play();
@@ -19,7 +20,8 @@ public partial class MainMenu : Control
 	public override void _Ready()
 	{
 	
-		
+		musicScene = GetNode<Music>("/root/Music");
+		musicScene.switchSong("Song3");
 		ClickingSound = GetNode<AudioStreamPlayer>("ClickingSound");
 		HoveringSound = GetNode<AudioStreamPlayer>("HoveringSound");
 		Button startNewGame = GetNode<Button>("VBoxContainer/Button");
@@ -55,7 +57,9 @@ public partial class MainMenu : Control
 		
 		GD.Print("Start Game Button Pressed");
 		//AudioManager.PlaySound(ClickingSound.Stream);
+		//PlayClickingSound();
 		GetTree().ChangeSceneToFile("res://scenes/HeroScene.tscn");
+		
 		
 	}
 	

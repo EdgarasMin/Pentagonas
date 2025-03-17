@@ -4,6 +4,7 @@ public partial class HeroTemp : AnimatedSprite2D
 {
 	int speed = 500;
 	public Vector2 vel = Vector2.Zero;
+	public Music musicScene;
 
         // Reset velocity to zero at the start of each frame
 
@@ -29,8 +30,9 @@ public partial class HeroTemp : AnimatedSprite2D
 	
 	public override void _Ready()
 	{
-		GD.Print("HeroTemp script is running!");
-		Play("idle");
+		musicScene = GetNode<Music>("/root/Music");
+		musicScene.switchSong("Song4");
+		GD.Print("HeroTemp script is running!"); // Debug message
 	}
 	
 	public override void _Process(double delta)

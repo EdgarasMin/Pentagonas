@@ -9,6 +9,7 @@ public partial class Nustatymai : Control
 	public CheckBox muteButton;
 	public OptionButton resolutionButton;
 	public Music musicScene;
+	
 	public CheckBox Fullscreen;
 	public OptionButton FpsButton;
 
@@ -17,6 +18,7 @@ public partial class Nustatymai : Control
 	{
 		musicScene = GetNode<Music>("/root/Music");
 		musicScene.switchSong("Song2");
+
 		VBoxContainer vbox = GetNode<VBoxContainer>("VBoxContainer");
 
 		sliderMusic = vbox.GetNode<HSlider>("Volume");
@@ -71,7 +73,7 @@ public partial class Nustatymai : Control
 	public void _on_mute_toggled(bool toggled)
 	{
 		//int Music_id = AudioServer.GetBusIndex("Music");
-		AudioServer.SetBusMute(Music_id,toggled);
+		AudioServer.SetBusMute(0,toggled);
 		Global.MuteToggled = toggled;
 	}
 	
@@ -95,14 +97,29 @@ public partial class Nustatymai : Control
 		{
 			case 0:
 	 			DisplayServer.WindowSetSize(new Vector2I(1920, 1080));
+				CenterWindow();
 	 			break;
  			case 1:
 				DisplayServer.WindowSetSize(new Vector2I(1600, 900));
+				CenterWindow();
 				break;
 			case 2:
 				DisplayServer.WindowSetSize(new Vector2I(1280, 720));
+				CenterWindow();
 				break;
 		}
+	}
+	
+	public void CenterWindow()
+	{
+		// Get the position and size of the screen
+		Vector2I center = DisplayServer.ScreenGetPosition(0) + DisplayServer.ScreenGetSize(0) / 2;
+		
+		// Get the size of the window (including decorations)
+		Vector2I windowSize = GetWindow().GetSizeWithDecorations();
+
+		// Set the window position to center it on the screen
+		GetWindow().SetPosition(center - windowSize / 2);
 	}
 	
 	public void _on_fp_schoose_item_selected(int item)
