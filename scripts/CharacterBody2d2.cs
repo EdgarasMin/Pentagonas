@@ -10,19 +10,19 @@ public  partial  class CharacterBody2d2 : CharacterBody2D
 	{
 		for (int i = 0; i < GetSlideCollisionCount(); i++)
 		{
-			var collision = GetSlideCollision(i);
-			var collider = collision.GetCollider();
+			var collision1 = GetSlideCollision(i);
+			var collider1 = collision1.GetCollider();
 
 			
 			
-			if (collider is StaticBody2D staticBody && staticBody.Name == "StaticBody2D2")
+			if (collider1 is StaticBody2D staticBody1 && staticBody1.Name == "StaticBody2D2")
 			{
 				Teleport(0,0);
 
 				// Optional: custom logic here
 				// Example: QueueFree(), Play effect, etc.
 			}
-			if (collider is StaticBody2D staticBody && staticBody.Name == "X")
+			if (collider1 is StaticBody2D staticBody0 && staticBody0.Name == "X")
 			{
 				Teleport(0,0);
 
