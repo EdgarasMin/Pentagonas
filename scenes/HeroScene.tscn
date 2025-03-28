@@ -1,11 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://ciiuwkr5egx34"]
+[gd_scene load_steps=27 format=3 uid="uid://ciiuwkr5egx34"]
 
 [ext_resource type="Texture2D" uid="uid://cdobg4oeppsry" path="res://assets/front.png" id="1_2tmxi"]
 [ext_resource type="Texture2D" uid="uid://bio17h0t3vptw" path="res://assets/front_leg.png" id="2_kxnql"]
 [ext_resource type="Script" path="res://scripts/CharacterBody2d.cs" id="2_pkdci"]
 [ext_resource type="Script" path="res://scripts/HeroTemp.cs" id="2_u3xlg"]
 [ext_resource type="Texture2D" uid="uid://b4h16ioyci8n5" path="res://assets/front_leg2.png" id="3_h35yv"]
-[ext_resource type="FontFile" uid="uid://c46mhbbu2u3fg" path="res://assets/Fonts/Magic Retro.ttf" id="3_jhd58"]
 [ext_resource type="Texture2D" uid="uid://c2ywjsb44xmt4" path="res://assets/side2_leg.png" id="4_8fhg7"]
 [ext_resource type="Texture2D" uid="uid://nhv7hid1ywkc" path="res://assets/side2.png" id="5_cf5dy"]
 [ext_resource type="Texture2D" uid="uid://vx4sgyv2mp85" path="res://assets/side1_leg2.png" id="5_k2v7k"]
@@ -17,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://ctwhkywuox55i" path="res://assets/side1.png" id="8_e4trk"]
 [ext_resource type="Texture2D" uid="uid://cpnwmacri5j3s" path="res://assets/back_leg.png" id="8_kq066"]
 [ext_resource type="Texture2D" uid="uid://dibn4rrvimpo0" path="res://assets/back_leg2.png" id="9_kwm7x"]
+[ext_resource type="AudioStream" uid="uid://by2maf38wlj6i" path="res://music/Walking_1.mp3" id="16_kjd13"]
 [ext_resource type="Texture2D" uid="uid://ba1gedlkko2ns" path="res://assets/Level2/Portal.png" id="18_7k2wg"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i3uda"]
@@ -109,20 +109,15 @@ border_width_right = 4
 border_width_bottom = 4
 border_color = Color(0.144063, 0.144063, 0.144062, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lb8lm"]
-bg_color = Color(1, 1, 1, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4bb3"]
-bg_color = Color(1, 1, 1, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxt4o"]
-bg_color = Color(1, 1, 1, 1)
-
 [sub_resource type="Theme" id="Theme_v1wif"]
 default_font_size = 18
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(193, 155)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer2" instance=ExtResource("6_lqtxg")]
 
 [node name="Openart-7b15c5c6-38b8-4f64-97e2-a606Ad4e2349" type="Sprite2D" parent="."]
 position = Vector2(762, 385)
@@ -181,67 +176,9 @@ script = ExtResource("2_u3xlg")
 position = Vector2(-54.1007, 120.926)
 scale = Vector2(9.01681, 8.63759)
 
-[node name="Control" parent="CharacterBody2D" instance=ExtResource("6_lqtxg")]
-visible = false
-offset_left = 18.0332
-offset_top = -328.229
-offset_right = 18.0332
-offset_bottom = -328.229
-scale = Vector2(9.485, 9.485)
-metadata/_edit_use_anchors_ = true
-
-[node name="Window" type="Window" parent="."]
-process_mode = 3
-title = "Meniu"
-initial_position = 1
-size = Vector2i(500, 500)
-visible = false
-borderless = true
-theme_override_fonts/title_font = ExtResource("3_jhd58")
-
-[node name="Panel" type="Panel" parent="Window"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_aloxj")
-
-[node name="Resume" type="Button" parent="Window"]
-offset_left = 100.0
-offset_top = 50.0
-offset_right = 400.0
-offset_bottom = 100.0
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_lb8lm")
-text = "Tęsti žaidimą"
-
-[node name="Options" type="Button" parent="Window"]
-offset_left = 100.0
-offset_top = 150.0
-offset_right = 400.0
-offset_bottom = 200.0
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_t4bb3")
-text = "Nustatymai"
-
-[node name="mainMenu" type="Button" parent="Window"]
-offset_left = 100.0
-offset_top = 250.0
-offset_right = 400.0
-offset_bottom = 300.0
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_gxt4o")
-text = "Pagrindinis meniu"
+[node name="Walking" type="AudioStreamPlayer" parent="CharacterBody2D/AnimatedSprite2D"]
+stream = ExtResource("16_kjd13")
+bus = &"SFX"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
@@ -365,7 +302,3 @@ offset_top = 280.0
 offset_right = 412.0
 offset_bottom = 316.0
 placeholder_text = "> "
-
-[connection signal="pressed" from="Window/Resume" to="Window" method="_on_resume_pressed"]
-[connection signal="pressed" from="Window/Options" to="Window" method="_on_options_pressed"]
-[connection signal="pressed" from="Window/mainMenu" to="Window" method="_on_main_menu_pressed"]

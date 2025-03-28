@@ -71,7 +71,7 @@ public partial class Nustatymai : Control
 	public void _on_mute_toggled(bool toggled)
 	{
 		//int Music_id = AudioServer.GetBusIndex("Music");
-		AudioServer.SetBusMute(Music_id,toggled);
+		AudioServer.SetBusMute(0,toggled);
 		Global.MuteToggled = toggled;
 	}
 	

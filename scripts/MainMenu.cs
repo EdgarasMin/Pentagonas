@@ -3,6 +3,7 @@ using System;
 
 public partial class MainMenu : Control
 {
+	public Music musicScene;
 	private void PlayClickingSound()
 	{
 		
@@ -19,7 +20,8 @@ public partial class MainMenu : Control
 	public override void _Ready()
 	{
 	
-		
+		musicScene = GetNode<Music>("/root/Music");
+		musicScene.switchSong("Song1");
 		ClickingSound = GetNode<AudioStreamPlayer>("ClickingSound");
 		HoveringSound = GetNode<AudioStreamPlayer>("HoveringSound");
 		Button startNewGame = GetNode<Button>("VBoxContainer/Button");
@@ -35,7 +37,7 @@ public partial class MainMenu : Control
 		{
 			button.MouseEntered += () => PlayHoveringSound(button);
 			button.Pressed += () => AudioManager.PlaySound(ClickingSound.Stream);
-        }
+		}
 	}
 	
 	

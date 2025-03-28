@@ -109,6 +109,18 @@ theme_override_font_sizes/font_size = 28
 action_mode = 0
 text = "Prisijungti"
 
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 712.0
+offset_top = 461.0
+offset_right = 878.0
+offset_bottom = 514.0
+theme_override_colors/font_color = Color(1, 0.635294, 0, 0.898039)
+theme_override_fonts/font = ExtResource("2_hej3h")
+theme_override_font_sizes/font_size = 28
+action_mode = 0
+text = "Registruotis"
+
 [node name="LineEdit2" type="LineEdit" parent="."]
 layout_mode = 0
 offset_left = 714.0

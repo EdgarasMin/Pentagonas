@@ -1,0 +1,118 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsc3bndcjn0gu"]
+
+[ext_resource type="Script" path="res://scripts/Registracija.cs" id="1_buwln"]
+[ext_resource type="FontFile" uid="uid://dvivlgdnl26k7" path="res://assets/Fonts/Bright DEMO.otf" id="1_i6y1s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1yew"]
+bg_color = Color(0.180392, 0.282353, 0.27451, 1)
+
+[node name="Registracija" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_buwln")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h1yew")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -296.0
+offset_right = 296.0
+offset_bottom = 99.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.886275, 0.545098, 0.141176, 1)
+theme_override_fonts/font = ExtResource("1_i6y1s")
+theme_override_font_sizes/font_size = 120
+text = "Registracija"
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = -219.0
+offset_right = 294.0
+offset_bottom = -120.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.886275, 0.545098, 0.141176, 1)
+theme_override_fonts/font = ExtResource("1_i6y1s")
+theme_override_font_sizes/font_size = 70
+text = "Prisijungimo vardas"
+
+[node name="Label3" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -551.0
+offset_right = 400.0
+offset_bottom = -390.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.886275, 0.545098, 0.141176, 1)
+theme_override_fonts/font = ExtResource("1_i6y1s")
+theme_override_font_sizes/font_size = 70
+text = "Slaptažodis"
+
+[node name="LineEdit" type="LineEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 670.0
+offset_top = 384.0
+offset_right = 1170.0
+offset_bottom = 484.0
+
+[node name="LineEdit2" type="LineEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 674.0
+offset_top = 620.0
+offset_right = 1174.0
+offset_bottom = 720.0
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -146.0
+offset_top = -114.0
+offset_right = 79.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.886275, 0.545098, 0.141176, 1)
+theme_override_fonts/font = ExtResource("1_i6y1s")
+theme_override_font_sizes/font_size = 50
+text = "Grįžti"
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 780.0
+offset_top = 766.0
+offset_right = 1076.0
+offset_bottom = 846.0
+theme_override_colors/font_color = Color(0.886275, 0.545098, 0.141176, 1)
+theme_override_fonts/font = ExtResource("1_i6y1s")
+theme_override_font_sizes/font_size = 50
+text = "Registruotis"

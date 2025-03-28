@@ -4,6 +4,8 @@ public partial class HeroTemp : AnimatedSprite2D
 {
 	int speed = 500;
 	public Vector2 vel = Vector2.Zero;
+	public Music musicScene;
+	public AudioStreamPlayer walkSound;
 
 		// Reset velocity to zero at the start of each frame
 
@@ -24,6 +26,9 @@ public partial class HeroTemp : AnimatedSprite2D
 	
 	public override void _Ready()
 	{
+		walkSound = GetNode<AudioStreamPlayer>("Walking");
+		//musicScene = GetNode<Music>("/root/Music");
+		//musicScene.switchSong("Song4");
 		GD.Print("HeroTemp script is running!");
 		Play("idle");
 	}
@@ -72,7 +77,13 @@ public partial class HeroTemp : AnimatedSprite2D
 		// If not moving, go to idle state
 		if (!isMoving)
 		{
+			walkSound.Stop();
 			newState = AnimationState.idle;
+		}
+		
+		if (isMoving && !walkSound.Playing)
+		{
+			walkSound.Play();
 		}
 		
 		// Update animation if state changed

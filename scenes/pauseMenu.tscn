@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bujj1bnmismal"]
+[gd_scene load_steps=8 format=3 uid="uid://bujj1bnmismal"]
 
 [ext_resource type="Script" path="res://scripts/Pause.cs" id="1_o05qg"]
+[ext_resource type="Script" path="res://scripts/Settings.cs" id="2_bp46j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m0afq"]
 bg_color = Color(0.180392, 0.282353, 0.27451, 0.760784)
@@ -30,6 +31,9 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_irgbd"]
+bg_color = Color(0.180392, 0.282353, 0.27451, 0.760784)
+
 [node name="Control" type="Control"]
 process_mode = 3
 layout_mode = 3
@@ -41,6 +45,7 @@ grow_vertical = 2
 script = ExtResource("1_o05qg")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -95,3 +100,87 @@ theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_cg4r4")
 text = "Pagrindinis meniu"
+
+[node name="PanelContainer2" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_irgbd")
+script = ExtResource("2_bp46j")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Garsas" type="Label" parent="PanelContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Garsas"
+
+[node name="Volume" type="HSlider" parent="PanelContainer2/VBoxContainer"]
+layout_mode = 2
+max_value = 80.0
+value = 80.0
+
+[node name="GarsasSFX" type="Label" parent="PanelContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Garso efektai"
+
+[node name="VolumeSFX" type="HSlider" parent="PanelContainer2/VBoxContainer"]
+layout_mode = 2
+max_value = 80.0
+value = 80.0
+
+[node name="Mute" type="CheckBox" parent="PanelContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Mute"
+
+[node name="Resolution" type="Label" parent="PanelContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Resoliucija"
+
+[node name="Resolutions" type="OptionButton" parent="PanelContainer2/VBoxContainer"]
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "1920x1080"
+popup/item_1/text = "1600x900"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+
+[node name="FPS" type="Label" parent="PanelContainer2/VBoxContainer"]
+layout_mode = 2
+text = "FPS"
+
+[node name="FPSchoose" type="OptionButton" parent="PanelContainer2/VBoxContainer"]
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "60"
+popup/item_1/text = "45"
+popup/item_1/id = 1
+popup/item_2/text = "30"
+popup/item_2/id = 2
+
+[node name="Fullscreen" type="CheckBox" parent="PanelContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Fullscreen
+"
+
+[node name="Back" type="Button" parent="PanelContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Grizti
+"
+
+[connection signal="value_changed" from="PanelContainer2/VBoxContainer/Volume" to="PanelContainer2" method="_on_volume_value_changed"]
+[connection signal="value_changed" from="PanelContainer2/VBoxContainer/VolumeSFX" to="PanelContainer2" method="_on_volume_sfx_value_changed"]
+[connection signal="toggled" from="PanelContainer2/VBoxContainer/Mute" to="PanelContainer2" method="_on_mute_toggled"]
+[connection signal="item_selected" from="PanelContainer2/VBoxContainer/Resolutions" to="PanelContainer2" method="_on_resolutions_item_selected"]
+[connection signal="item_selected" from="PanelContainer2/VBoxContainer/FPSchoose" to="PanelContainer2" method="_on_fp_schoose_item_selected"]
+[connection signal="toggled" from="PanelContainer2/VBoxContainer/Fullscreen" to="PanelContainer2" method="_on_fullscreen_toggled"]
+[connection signal="pressed" from="PanelContainer2/VBoxContainer/Back" to="PanelContainer2" method="_on_back_pressed"]

@@ -6,7 +6,13 @@ public partial class CharacterBody2d : CharacterBody2D
 	void Teleport(int x, int y){
 		Position = new Vector2(x,y);
 	}
+	public Music musicScene;
 	
+	public override void _Ready()
+	{
+		musicScene = GetNode<Music>("/root/Music");
+		musicScene.switchSong("Song4");
+	}
 	void Collision()
 	{
 		for (int i = 0; i < GetSlideCollisionCount(); i++)
