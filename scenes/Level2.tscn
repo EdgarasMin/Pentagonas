@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c2tbrtxq3l5wl"]
+[gd_scene load_steps=28 format=3 uid="uid://c2tbrtxq3l5wl"]
 
 [ext_resource type="Texture2D" uid="uid://c75vc0pv0fdrs" path="res://assets/Level2/Ground.png" id="1_j1t0g"]
 [ext_resource type="Texture2D" uid="uid://ba1gedlkko2ns" path="res://assets/Level2/Portal.png" id="1_soubu"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://b877pye1vcdjd" path="res://assets/Level2/wall1.png" id="17_orn3e"]
 [ext_resource type="Texture2D" uid="uid://dhroe83hbpl14" path="res://assets/Level2/wall2.png" id="18_kqr1h"]
 [ext_resource type="Texture2D" uid="uid://mca05vncmhm7" path="res://assets/Level2/wall3.png" id="19_nnu3n"]
+[ext_resource type="AudioStream" uid="uid://by2maf38wlj6i" path="res://music/Walking_1.mp3" id="19_pnh53"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e8ic6"]
 radius = 47.0
@@ -503,9 +504,11 @@ script = ExtResource("13_0cpg1")
 position = Vector2(18.0338, -8.6363)
 scale = Vector2(9.01681, 8.63759)
 
-[node name="Control" parent="CharacterBody2D" instance=ExtResource("3_f6nde")]
-visible = false
-offset_left = -9.01758
-offset_right = -9.01758
-scale = Vector2(8.38, 8.38)
+[node name="Walking" type="AudioStreamPlayer" parent="CharacterBody2D/AnimatedSprite2D"]
+stream = ExtResource("19_pnh53")
+bus = &"SFX"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="CharacterBody2D/AnimatedSprite2D"]
+
+[node name="Control" parent="CharacterBody2D/AnimatedSprite2D/CanvasLayer2" instance=ExtResource("3_f6nde")]
 metadata/_edit_use_anchors_ = true
