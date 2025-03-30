@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ciiuwkr5egx34"]
+[gd_scene load_steps=28 format=3 uid="uid://ciiuwkr5egx34"]
 
 [ext_resource type="Texture2D" uid="uid://cdobg4oeppsry" path="res://assets/front.png" id="1_2tmxi"]
 [ext_resource type="Texture2D" uid="uid://bio17h0t3vptw" path="res://assets/front_leg.png" id="2_kxnql"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://ctwhkywuox55i" path="res://assets/side1.png" id="8_e4trk"]
 [ext_resource type="Texture2D" uid="uid://cpnwmacri5j3s" path="res://assets/back_leg.png" id="8_kq066"]
 [ext_resource type="Texture2D" uid="uid://dibn4rrvimpo0" path="res://assets/back_leg2.png" id="9_kwm7x"]
+[ext_resource type="Texture2D" uid="uid://y0ff5tkcw7fu" path="res://assets/back.png" id="13_428ms"]
 [ext_resource type="AudioStream" uid="uid://by2maf38wlj6i" path="res://music/Walking_1.mp3" id="16_kjd13"]
 [ext_resource type="Texture2D" uid="uid://ba1gedlkko2ns" path="res://assets/Level2/Portal.png" id="18_7k2wg"]
 
@@ -55,6 +56,9 @@ animations = [{
 "texture": ExtResource("2_kxnql")
 }, {
 "duration": 1.0,
+"texture": ExtResource("1_2tmxi")
+}, {
+"duration": 1.0,
 "texture": ExtResource("3_h35yv")
 }],
 "loop": true,
@@ -92,6 +96,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("8_kq066")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_428ms")
 }, {
 "duration": 1.0,
 "texture": ExtResource("9_kwm7x")
@@ -165,7 +172,7 @@ one_way_collision_margin = 0.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(36.0674, -112.29)
 sprite_frames = SubResource("SpriteFrames_5cf6y")
-animation = &"walk_right"
+animation = &"walk_top"
 script = ExtResource("2_u3xlg")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D/AnimatedSprite2D"]
