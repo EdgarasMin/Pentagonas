@@ -1,27 +1,25 @@
 using Godot;
 using System;
+using System.Collections.Generic;
+using System.IO;
 
 public partial class Prisijungimas : Control
 {
-<<<<<<< HEAD
-
-    private LineEdit usernameLineEdit;
-    private LineEdit passwordLineEdit;
-    private Button loginButton;
-=======
 	private LineEdit usernameLineEdit;
 	private LineEdit passwordLineEdit;
 	private Button loginButton;
->>>>>>> origin/animacija
+	private Button registerButton;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		// Get references to UI elements
+		AudioServer.SetBusMute(0,true);
 		usernameLineEdit = GetNodeOrNull<LineEdit>("LineEdit2");
 		passwordLineEdit = GetNodeOrNull<LineEdit>("LineEdit3");
 		loginButton = GetNodeOrNull<Button>("Panel/Button");
-
+		registerButton = GetNodeOrNull<Button>("Panel/Button2");
+		registerButton.Pressed += registerButtonPressed;
 		// Debug output to check if nodes were found
 		GD.Print($"Username LineEdit found: {usernameLineEdit != null}");
 		GD.Print($"Password LineEdit found: {passwordLineEdit != null}");
@@ -78,12 +76,22 @@ public partial class Prisijungimas : Control
 			ShowErrorPopup("Login Failed", "Invalid username or password");
 		}
 	}
+	
+	public void registerButtonPressed()
+	{
+		GetTree().ChangeSceneToFile("res://scenes/Registracija.tscn");
+	}
 
 	private bool ValidateLogin(string username, string password)
 	{
+		Dictionary<string, string> userDictionary = ReadDataFileToDictionary("dataTest");
+		
 		// Replace with your actual login validation logic
 		// For example, check against database, API, or hardcoded values
-		return username == "admin" && password == "admin";
+		//return username == "admin" && password == "admin";
+		if (userDictionary.ContainsKey(username))
+			return password == userDictionary[username];
+		return false;
 	}
 
 	private void ShowErrorPopup(string title, string message)
@@ -105,5 +113,37 @@ public partial class Prisijungimas : Control
 		popup.Canceled += () => popup.QueueFree();
 
 		// No need to manually position the dialog since PopupCentered() does this
+	}
+	
+	static Dictionary<string, string> ReadDataFileToDictionary(string filePath)
+	{
+		// Initialize a dictionary to store the key-value pairs
+		Dictionary<string, string> dataDict = new Dictionary<string, string>();
+
+		// Read the file line by line
+		try
+		{
+			foreach (var line in File.ReadLines(filePath))
+			{
+				// Split each line by the colon ':'
+				var parts = line.Split(':');
+
+				if (parts.Length == 2)
+				{
+					// Add key-value pair to the dictionary
+					dataDict[parts[0].Trim()] = parts[1].Trim();
+				}
+				else
+				{
+					GD.Print($"Skipping invalid line: {line}");
+				}
+			}
+		}
+		catch (Exception ex)
+		{
+			Console.WriteLine($"Error reading file: {ex.Message}");
+		}
+
+		return dataDict;
 	}
 }

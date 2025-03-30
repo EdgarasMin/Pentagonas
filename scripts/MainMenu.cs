@@ -4,7 +4,7 @@ using System;
 public partial class MainMenu : Control
 {
 	public Music musicScene;
-private void PlayClickingSound()
+	private void PlayClickingSound()
 	{
 		
 		ClickingSound.Play();
@@ -21,7 +21,7 @@ private void PlayClickingSound()
 	{
 	
 		musicScene = GetNode<Music>("/root/Music");
-		musicScene.switchSong("Song3");
+		musicScene.switchSong("Song1");
 		ClickingSound = GetNode<AudioStreamPlayer>("ClickingSound");
 		HoveringSound = GetNode<AudioStreamPlayer>("HoveringSound");
 		Button startNewGame = GetNode<Button>("VBoxContainer/Button");
@@ -36,6 +36,7 @@ private void PlayClickingSound()
 		 foreach (Button button in GetTree().GetNodesInGroup("MenuButtons"))
 		{
 			button.MouseEntered += () => PlayHoveringSound(button);
+			button.Pressed += () => AudioManager.PlaySound(ClickingSound.Stream);
 		}
 	}
 	
@@ -55,17 +56,14 @@ private void PlayClickingSound()
 	{
 		
 		GD.Print("Start Game Button Pressed");
-		AudioManager.PlaySound(ClickingSound.Stream);
-		//PlayClickingSound();
+		//AudioManager.PlaySound(ClickingSound.Stream);
 		GetTree().ChangeSceneToFile("res://scenes/HeroScene.tscn");
-		
 		
 	}
 	
 	private void OnContinuePressed()
 	{
-		AudioManager.PlaySound(ClickingSound.Stream);
-		//PlayClickingSound();
+		//AudioManager.PlaySound(ClickingSound.Stream);
 		GD.Print("Continue  Button Pressed");
 	}
 	
@@ -73,8 +71,7 @@ private void PlayClickingSound()
 	{
 
 		Global.LastScene = "res://scenes/main_menu.tscn";
-		AudioManager.PlaySound(ClickingSound.Stream);
-		//PlayClickingSound();
+		//AudioManager.PlaySound(ClickingSound.Stream);
 		GetTree().ChangeSceneToFile("res://scenes/Nustatymai.tscn");
 		
 	}
@@ -87,8 +84,7 @@ private void PlayClickingSound()
 	{
 		
 		GD.Print("Exit Game Button Pressed");
-		AudioManager.PlaySound(ClickingSound.Stream);
-		//PlayClickingSound();
+		//AudioManager.PlaySound(ClickingSound.Stream);
 		GetTree().Quit();
 	}
 	
