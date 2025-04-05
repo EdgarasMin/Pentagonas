@@ -57,7 +57,7 @@ public partial class MainMenu : Control
 		
 		GD.Print("Start Game Button Pressed");
 		//AudioManager.PlaySound(ClickingSound.Stream);
-		GetTree().ChangeSceneToFile("res://scenes/HeroScene.tscn");
+		GetTree().ChangeSceneToFile("res://scenes/Ivadinis.tscn");
 		
 	}
 	
@@ -65,6 +65,7 @@ public partial class MainMenu : Control
 	{
 		//AudioManager.PlaySound(ClickingSound.Stream);
 		GD.Print("Continue  Button Pressed");
+		GetTree().ChangeSceneToFile("res://scenes/HeroScene.tscn");
 	}
 	
 	private void OnOptionsPressed()
