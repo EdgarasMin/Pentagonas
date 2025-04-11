@@ -63,8 +63,9 @@ public partial class MainMenu : Control
 	
 	private void OnContinuePressed()
 	{
-		//AudioManager.PlaySound(ClickingSound.Stream);
-		GD.Print("Continue  Button Pressed");
+        //AudioManager.PlaySound(ClickingSound.Stream);
+        GameManager.Instance.LoadCurrentLevel();
+        GD.Print("Continue  Button Pressed");
 		GetTree().ChangeSceneToFile("res://scenes/HeroScene.tscn");
 	}
 	

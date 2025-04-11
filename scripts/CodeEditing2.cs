@@ -23,6 +23,9 @@ public partial class CodeEditing2 : CanvasLayer
     private Button refreshButton;
     private int currentTask = 0;
 
+    private AnimatedSprite2D door;
+    private CollisionShape2D doorCollision;
+
     public HeroTemp heroTemp;
 
     public static CodeEditing2 Instance { get; private set; }
@@ -61,7 +64,12 @@ public partial class CodeEditing2 : CanvasLayer
         request = GetNode<HttpRequest>("HTTPRequest");
         request.RequestCompleted += OnRequestCompleted;
 
-
+        door = GetNodeOrNull<AnimatedSprite2D>("../StaticBody2D3/DoorAnimatedSprite2d");
+        doorCollision = GetNodeOrNull<CollisionShape2D>("../StaticBody2D3/nu");
+        if (doorCollision == null)
+        {
+            GD.PrintErr("Door collision shape not found!");
+        }
         Instance = this;
         Button submitButton = GetNodeOrNull<Button>("Submit");
 
@@ -71,14 +79,14 @@ public partial class CodeEditing2 : CanvasLayer
         }
         if (submitButton != null)
         {
-            submitButton.Pressed += OnSubmitButtonPressedAsync; // Connect the signal
+            submitButton.Pressed += OnSubmitButtonPressed; // Connect the signal
         }
         else
         {
             GD.PrintErr("Submit button not found! Please check the node path.");
         }
         submitConsoleButton = GetNodeOrNull<Button>("PanelConsole/Submit");
-        submitConsoleButton.Pressed += OnSubmitConsoleButtonPressed;
+        //submitConsoleButton.Pressed += OnSubmitConsoleButtonPressed;
 
         // Get the console node (TextEdit for both input and output)
         console = GetNodeOrNull<TextEdit>("PanelConsole/Console");
@@ -113,7 +121,7 @@ public partial class CodeEditing2 : CanvasLayer
         refreshButton.Pressed += OnRefreshButtonPressed;
 
         // Connect the GUI input signal to handle Enter key press
-        consoleLine.GuiInput += OnConsoleLineGuiInput;
+        //consoleLine.GuiInput += OnConsoleLineGuiInput;
 
         // Set up syntax highlighting, code completion, and editor features
         SetupSyntaxHighlighting();
@@ -164,7 +172,7 @@ public partial class CodeEditing2 : CanvasLayer
         codeBox.SyntaxHighlighter = cppHighlighter;
 
         tasks.Add(new Task("cout << \"Hello, World!\" << endl;", "[color=orange][b]Norėdamas pradėti savo kelionę požemiuose, tu turi sugebėti parašyti savo pirmąją kodo eilutę[/b][/color]\r\n\r\nC++ programavimo kalboje tai atliekama naudojant komandą cout, kuri leidžia parodyti tekstą ekrane.\r\n\r\n[color=#FF6347][b]*[/b][/color]Tavo užduotis yra pakeisti teksto išvedimą į \"Hello, Dungeon!\"\r\n\r\n[color=lightblue]Paaiškinimas:\r\n\r\ncout reiškia „console output“ – tai būdas išvesti tekstą į ekraną.\r\n\r\n\"<<\" yra kaip rodyklė, nukreipianti, ką rodyti.\r\n\r\n\"Hello, dungeon!\" – tai tavo sveikinimo žinutė.\r\n\r\n\"endl\" reiškia eilutės pabaigą – tai tiesiog perkelia tekstą į naują eilutę.[/color]", "Hello, Dungeon!", TaskType.Text));
-        tasks.Add(new Task("int x;\ncout << \"Įveskite x reikšmę\" << endl;\ncin >> x;\ncout << x << endl;", "[color=orange][b]Turi sugebėti priimti vartotojo įvestį. C++ programavimo kalboje tai atliekama naudojant komandą cin, kuri leidžia nuskaityti vartotojo įvestą tekstą ar skaičių[/b] [/color]\r\n\r\n[color=#FF6347][b]*[/b][/color]*Tavo užduotis yra priimti konsole įvestį, kuri yra skaičius 7, ir ją išvesti ekrane.\r\n\r\n[color=lightblue]Paaiškinimas:\r\n\r\ncin reiškia „console input“ – tai būdas gauti duomenis iš vartotojo.\r\n\r\n\">>\" yra operatorius, kuris nurodo, kad duomenys turi būti saugomi nurodytoje kintamojoje.\r\n\r\nPvz., jei nori priimti skaičių, gali naudoti:\r\ncin >> kintamasis;\r\n\r\nKiekvieną kartą, kai naudotojas įveda reikšmę ir paspaudžia Enter mygtuką, ši reikšmė bus priskirta kintamajam.\r\nAtmink, kad turi įvesti teisingą duomenų tipą. Jei kintamasis yra tipo int, įvesk sveiką skaičių!", "7", TaskType.Number));
+        //tasks.Add(new Task("int x;\ncout << \"Įveskite x reikšmę\" << endl;\ncin >> x;\ncout << x << endl;", "[color=orange][b]Turi sugebėti priimti vartotojo įvestį. C++ programavimo kalboje tai atliekama naudojant komandą cin, kuri leidžia nuskaityti vartotojo įvestą tekstą ar skaičių[/b] [/color]\r\n\r\n[color=#FF6347][b]*[/b][/color]*Tavo užduotis yra priimti konsole įvestį, kuri yra skaičius 7, ir ją išvesti ekrane.\r\n\r\n[color=lightblue]Paaiškinimas:\r\n\r\ncin reiškia „console input“ – tai būdas gauti duomenis iš vartotojo.\r\n\r\n\">>\" yra operatorius, kuris nurodo, kad duomenys turi būti saugomi nurodytoje kintamojoje.\r\n\r\nPvz., jei nori priimti skaičių, gali naudoti:\r\ncin >> kintamasis;\r\n\r\nKiekvieną kartą, kai naudotojas įveda reikšmę ir paspaudžia Enter mygtuką, ši reikšmė bus priskirta kintamajam.\r\nAtmink, kad turi įvesti teisingą duomenų tipą. Jei kintamasis yra tipo int, įvesk sveiką skaičių!", "7", TaskType.Number));
 
         UpdateTaskDescription();
 
@@ -203,8 +211,13 @@ public partial class CodeEditing2 : CanvasLayer
         { "'", "'" }
     });
     }
+    private void OnSubmitButtonPressed()
+    {
+        GD.Print("Submit button pressed!");
+        ExecuteCodeViaCompilerExplorer(codeBox.Text);
+    }
 
-    private async void ExecuteCodeViaCompilerExplorer(string code)
+    private void ExecuteCodeViaCompilerExplorer(string code)
     {
         var requestData = new Godot.Collections.Dictionary
     {
@@ -219,6 +232,7 @@ public partial class CodeEditing2 : CanvasLayer
     };
 
         string[] headers = { "Content-Type: application/json" };
+        // aktyvuoja OnRequestCompleted
         Error err = request.Request(COMPILER_API, headers, HttpClient.Method.Post, Json.Stringify(requestData));
 
         if (err != Error.Ok)
@@ -229,7 +243,7 @@ public partial class CodeEditing2 : CanvasLayer
     private void OnRequestCompleted(long result, long responseCode, string[] headers, byte[] body)
     {
         string responseText = body.GetStringFromUtf8();
-
+        //HTTP status code (200 = OK, 404 = Not Found, etc.) 
         if (responseCode != 200)
         {
             AppendToConsole($"[Error] API request failed (HTTP {responseCode})");
@@ -242,7 +256,7 @@ public partial class CodeEditing2 : CanvasLayer
         if (!string.IsNullOrEmpty(output))
         {
             output = output.Trim();
-            AppendToConsole("[Output] " + output);
+            AppendToConsole("[Output]\n" + output);
 
             if (currentTask < tasks.Count && output.Contains(tasks[currentTask].ExpectedOutput))
             {
@@ -292,6 +306,13 @@ public partial class CodeEditing2 : CanvasLayer
         }
         else
         {
+            //atsidaro durys``
+            //door.Play("open_door");
+
+            door.Frame = 1;
+            doorCollision.Disabled = true;  
+
+            
             taskDescription.Text = "[color=green][b]Visos užduotys baigtos![/b][/color] Sveikiname!";
         }
     }
@@ -322,82 +343,77 @@ public partial class CodeEditing2 : CanvasLayer
 
     
 
-    private async void OnSubmitButtonPressedAsync()
-    {
-        GD.Print("Submit button pressed!");
-        ExecuteCodeViaCompilerExplorer(codeBox.Text);
-    }
-
+    
 
     
-    private async void OnSubmitConsoleButtonPressed()
-    {
-        GD.Print("Submit Console button pressed!");
+    //private async void OnSubmitConsoleButtonPressed()
+    //{
+    //    GD.Print("Submit Console button pressed!");
 
-        // Wait for input
-        string inputText = await WaitForInput();
+    //    // Wait for input
+    //    string inputText = await WaitForInput();
 
-        // Process the input text
-        ProcessInputText(inputText);
-    }
-    private void ProcessInputText(string inputText)
-    {
-        // Example: Append the input text to the main console
-        AppendToConsole("[Input] You entered: " + inputText);
+    //    // Process the input text
+    //    ProcessInputText(inputText);
+    //}
+    //private void ProcessInputText(string inputText)
+    //{
+    //    // Example: Append the input text to the main console
+    //    AppendToConsole("[Input] You entered: " + inputText);
 
-        // Example: Handle specific commands or logic
-        if (inputText == "clear")
-        {
-            console.Text = ""; // Clear the main console
-        }
-        else
-        {
-            // Add your custom logic here
-        }
-    }
-    private async Task<string> WaitForInput()
-    {
-        // Flag to track if the button has been pressed
-        bool isButtonPressed = false;
+    //    // Example: Handle specific commands or logic
+    //    if (inputText == "clear")
+    //    {
+    //        console.Text = ""; // Clear the main console
+    //    }
+    //    else
+    //    {
+    //        // Add your custom logic here
+    //    }
+    //}
+    //private async Task<string> WaitForInput()
+    //{
+    //    // Flag to track if the button has been pressed
+    //    bool isButtonPressed = false;
 
-        // Connect the button's Pressed signal to set the flag
-        submitConsoleButton.Pressed += () =>
-        {
-            isButtonPressed = true;
-        };
+    //    // Connect the button's Pressed signal to set the flag
+    //    submitConsoleButton.Pressed += () =>
+    //    {
+    //        isButtonPressed = true;
+    //    };
 
-        // Wait for the button to be pressed
-        while (!isButtonPressed)
-        {
-            // Wait for the next frame
-            await ToSignal(GetTree(), "process_frame");
-        }
+    //    // Wait for the button to be pressed
+    //    while (!isButtonPressed)
+    //    {
+    //        // Wait for the next frame
+    //        await ToSignal(GetTree(), "process_frame");
+    //    }
 
-        // Capture the input text
-        string inputText = consoleLine.Text;
-        GD.Print("Buvo nuskaitytas tekstas: " + inputText);
+    //    // Capture the input text
+    //    string inputText = consoleLine.Text;
+    //    GD.Print("Buvo nuskaitytas tekstas: " + inputText);
 
-        // Clear the consoleLine for the next input
-        consoleLine.Clear();
+    //    // Clear the consoleLine for the next input
+    //    consoleLine.Clear();
 
-        return inputText;
-    }
-
-
+    //    return inputText;
+    //}
 
 
-    private void OnConsoleLineGuiInput(InputEvent @event)
-    {
-        if (@event is InputEventKey keyEvent && keyEvent.Pressed)
-        {
-            if (keyEvent.Keycode == Key.Enter)
-            {
-                // Prevent the default behavior of inserting a newline
-                GetViewport().SetInputAsHandled();
 
-                // Trigger input submission
-                GetTree().CallGroup("input_submission", "OnInputSubmitted");
-            }
-        }
-    }
+
+    //private void OnConsoleLineGuiInput(InputEvent @event)
+    //{
+    //    if (@event is InputEventKey keyEvent && keyEvent.Pressed)
+    //    {
+    //        if (keyEvent.Keycode == Key.Enter)
+    //        {
+    //            // Prevent the default behavior of inserting a newline
+    //            GetViewport().SetInputAsHandled();
+
+    //            // Trigger input submission
+    //            GetTree().CallGroup("input_submission", "OnInputSubmitted");
+    //        }
+    //    }
+    //}
 }

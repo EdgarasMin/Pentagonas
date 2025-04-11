@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://ciiuwkr5egx34"]
+[gd_scene load_steps=32 format=3 uid="uid://ciiuwkr5egx34"]
 
 [ext_resource type="Texture2D" uid="uid://cdobg4oeppsry" path="res://assets/front.png" id="1_2tmxi"]
 [ext_resource type="Texture2D" uid="uid://bio17h0t3vptw" path="res://assets/front_leg.png" id="2_kxnql"]
@@ -17,21 +17,22 @@
 [ext_resource type="Texture2D" uid="uid://dibn4rrvimpo0" path="res://assets/back_leg2.png" id="9_kwm7x"]
 [ext_resource type="Texture2D" uid="uid://y0ff5tkcw7fu" path="res://assets/back.png" id="13_428ms"]
 [ext_resource type="AudioStream" uid="uid://by2maf38wlj6i" path="res://music/Walking_1.mp3" id="16_kjd13"]
-[ext_resource type="Texture2D" uid="uid://ba1gedlkko2ns" path="res://assets/Level2/Portal.png" id="18_7k2wg"]
 [ext_resource type="Script" path="res://scripts/CodeEditing2.cs" id="18_iiahn"]
+[ext_resource type="Texture2D" uid="uid://bylnw5x3wth1u" path="res://door level1-2.png" id="22_kkqg6"]
+[ext_resource type="Texture2D" uid="uid://cf0kdo8k7q54r" path="res://door level1-2_open.png" id="23_cl1j7"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i3uda"]
 load_path = "res://.godot/imported/Dizainas_Level1.png-7e622b776ea03b5122decb9230f255c8.ctex"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4jsir"]
 radius = 47.0
-height = 132.0
+height = 138.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cmycb"]
 size = Vector2(554.178, 6.76828)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37gau"]
-size = Vector2(9.37316, 614.423)
+size = Vector2(15.2319, 242.687)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uymiw"]
 size = Vector2(229.928, 480.067)
@@ -119,23 +120,40 @@ border_color = Color(0.144063, 0.144063, 0.144062, 1)
 [sub_resource type="Theme" id="Theme_v1wif"]
 default_font_size = 18
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhc2r"]
+size = Vector2(476.422, 17.7432)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2j08j"]
+size = Vector2(10.29, 143.935)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ckhib"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_kkqg6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_cl1j7")
+}],
+"loop": true,
+"name": &"open_door",
+"speed": 5.0
+}]
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(193, 155)
 
 [node name="Openart-7b15c5c6-38b8-4f64-97e2-a606Ad4e2349" type="Sprite2D" parent="."]
-position = Vector2(762, 385)
+position = Vector2(743, 376)
 scale = Vector2(1.97371, 1.75856)
 texture = SubResource("CompressedTexture2D_i3uda")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(67, 305)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(1624, 219)
+position = Vector2(-604, 121)
 shape = SubResource("CapsuleShape2D_4jsir")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2/CollisionShape2D"]
-position = Vector2(7, 7)
-texture = ExtResource("18_7k2wg")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -150,13 +168,18 @@ scale = Vector2(3.89553, 3.09253)
 shape = SubResource("RectangleShape2D_cmycb")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-341, 477)
+position = Vector2(-337, 135)
 scale = Vector2(1.97371, 1.75856)
 shape = SubResource("RectangleShape2D_37gau")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1802, 491)
-scale = Vector2(1.97371, 1.75856)
+position = Vector2(1800, 500)
+scale = Vector2(1.122, 4.6)
+shape = SubResource("RectangleShape2D_37gau")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-336.589, 768.508)
+scale = Vector2(2.53, 2.254)
 shape = SubResource("RectangleShape2D_37gau")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -214,21 +237,6 @@ offset_bottom = 838.0
 theme_override_colors/table_border = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 17
 bbcode_enabled = true
-text = "[color=orange][b]Turi sugebėti priimti vartotojo įvestį. C++ programavimo kalboje tai atliekama naudojant komandą cin, kuri leidžia nuskaityti vartotojo įvestą tekstą ar skaičių[/b] [/color]
-
-[color=#FF6347][b]*[/b][/color]*Tavo užduotis yra priimti konsole įvestį, kuri yra skaičius 7, ir ją išvesti ekrane.
-
-[color=lightblue]Paaiškinimas:
-
-cin reiškia „console input“ – tai būdas gauti duomenis iš vartotojo.
-
-\">>\" yra operatorius, kuris nurodo, kad duomenys turi būti saugomi nurodytoje kintamojoje.
-
-Pvz., jei nori priimti skaičių, gali naudoti:
-cin >> kintamasis;
-
-Kiekvieną kartą, kai naudotojas įveda reikšmę ir paspaudžia Enter mygtuką, ši reikšmė bus priskirta kintamajam.
-Atmink, kad turi įvesti teisingą duomenų tipą. Jei kintamasis yra tipo int, įvesk sveiką skaičių!"
 
 [node name="CodeEdit1" type="CodeEdit" parent="CanvasLayer"]
 offset_left = 929.0
@@ -323,3 +331,31 @@ offset_top = 280.0
 offset_right = 412.0
 offset_bottom = 316.0
 placeholder_text = "> "
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-510.789, 502.257)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_lhc2r")
+one_way_collision_margin = 9.1
+
+[node name="nu" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-279.145, 421.033)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_2j08j")
+one_way_collision_margin = 25.0
+
+[node name="DoorAnimatedSprite2d" type="AnimatedSprite2D" parent="StaticBody2D3"]
+position = Vector2(-375, 380)
+rotation = 0.466003
+scale = Vector2(1.03004, 1.02768)
+skew = -0.471239
+sprite_frames = SubResource("SpriteFrames_ckhib")
+animation = &"open_door"
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-511, 349.128)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_lhc2r")
+one_way_collision_margin = 9.1
