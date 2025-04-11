@@ -162,6 +162,8 @@ shape = SubResource("RectangleShape2D_37gau")
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(618, 472)
 scale = Vector2(0.110904, 0.115773)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("2_pkdci")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]

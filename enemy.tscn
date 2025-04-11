@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://duuvlji1k4tya"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_thfb1"]
+[ext_resource type="Texture2D" uid="uid://baqj64e48hus1" path="res://assets/priešas/priešas.png" id="2_wapyj"]
+[ext_resource type="Texture2D" uid="uid://b57p3kr83mt5y" path="res://assets/priešas/untitled1.png" id="3_quaoe"]
+[ext_resource type="Texture2D" uid="uid://c37ee21hwdixj" path="res://assets/priešas/untitled2.png" id="4_6htx8"]
+[ext_resource type="Texture2D" uid="uid://quftmeas2nup" path="res://assets/priešas/untitled.png" id="5_ggyte"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rybcx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wapyj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_quaoe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6htx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ggyte")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tcv2r"]
+radius = 489.083
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tdkae"]
+radius = 164.21
+
+[node name="enemy" type="CharacterBody2D"]
+script = ExtResource("1_thfb1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rybcx")
+animation = &"move"
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1, -3)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4, 0)
+shape = SubResource("CircleShape2D_tcv2r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tdkae")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

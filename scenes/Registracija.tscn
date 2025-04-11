@@ -80,6 +80,7 @@ offset_left = 670.0
 offset_top = 384.0
 offset_right = 1170.0
 offset_bottom = 484.0
+theme_override_font_sizes/font_size = 45
 
 [node name="LineEdit2" type="LineEdit" parent="Panel"]
 layout_mode = 0
@@ -87,6 +88,7 @@ offset_left = 674.0
 offset_top = 620.0
 offset_right = 1174.0
 offset_bottom = 720.0
+theme_override_font_sizes/font_size = 45
 
 [node name="Button" type="Button" parent="Panel"]
 layout_mode = 1
