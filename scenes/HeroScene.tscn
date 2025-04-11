@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://c2ywjsb44xmt4" path="res://assets/side2_leg.png" id="4_8fhg7"]
 [ext_resource type="Texture2D" uid="uid://nhv7hid1ywkc" path="res://assets/side2.png" id="5_cf5dy"]
 [ext_resource type="Texture2D" uid="uid://vx4sgyv2mp85" path="res://assets/side1_leg2.png" id="5_k2v7k"]
-[ext_resource type="Script" path="res://scripts/CodeEditing.cs" id="5_vsk6e"]
 [ext_resource type="Texture2D" uid="uid://dvm47aiecl43s" path="res://assets/side2_leg2.png" id="6_fxbu0"]
 [ext_resource type="PackedScene" uid="uid://bujj1bnmismal" path="res://scenes/pauseMenu.tscn" id="6_lqtxg"]
 [ext_resource type="Texture2D" uid="uid://ce08qytvbfscg" path="res://assets/pngwing.com (5).png" id="7_bqu08"]
@@ -19,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://y0ff5tkcw7fu" path="res://assets/back.png" id="13_428ms"]
 [ext_resource type="AudioStream" uid="uid://by2maf38wlj6i" path="res://music/Walking_1.mp3" id="16_kjd13"]
 [ext_resource type="Texture2D" uid="uid://ba1gedlkko2ns" path="res://assets/Level2/Portal.png" id="18_7k2wg"]
+[ext_resource type="Script" path="res://scripts/CodeEditing2.cs" id="18_iiahn"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i3uda"]
 load_path = "res://.godot/imported/Dizainas_Level1.png-7e622b776ea03b5122decb9230f255c8.ctex"
@@ -189,8 +189,7 @@ bus = &"SFX"
 metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
-script = ExtResource("5_vsk6e")
+script = ExtResource("18_iiahn")
 
 [node name="PanelCode" type="Panel" parent="CanvasLayer"]
 anchors_preset = 15
@@ -203,6 +202,8 @@ offset_bottom = -140.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_aloxj")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="CanvasLayer"]
 
 [node name="TaskDescription" type="RichTextLabel" parent="CanvasLayer"]
 top_level = true
@@ -236,7 +237,19 @@ offset_right = 1283.0
 offset_bottom = 786.0
 theme = SubResource("Theme_v1wif")
 theme_override_colors/font_selected_color = Color(0, 0, 0.290196, 1)
-text = "cout << \"Hello, World!\" << endl;
+text = "#include <iostream>
+
+using namespace std;
+
+int main() {
+
+   cout << \"Hello, World!\" << endl;
+    return 0;
+
+}
+
+
+
     "
 code_completion_enabled = true
 auto_brace_completion_enabled = true

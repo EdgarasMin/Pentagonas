@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|c:\\users\\emis\\desktop\\godot\\pentagonas\\scripts\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|solutionrelative:scripts\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|c:\\users\\emis\\desktop\\godot\\pentagonas\\scripts\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|solutionrelative:scripts\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|c:\\users\\emis\\desktop\\godot\\pentagonas\\scripts\\codeediting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|solutionrelative:scripts\\codeediting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|c:\\users\\emis\\desktop\\godot\\pentagonas\\scripts\\herotemp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|solutionrelative:scripts\\herotemp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|c:\\users\\emis\\desktop\\godot\\pentagonas\\scripts\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|solutionrelative:scripts\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|c:\\users\\emis\\desktop\\godot\\pentagonas\\scripts\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|solutionrelative:scripts\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\Highlight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 177,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -65,13 +65,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "CodeEditing.cs",
               "DocumentMoniker": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\CodeEditing.cs",
               "RelativeDocumentMoniker": "scripts\\CodeEditing.cs",
               "ToolTip": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\CodeEditing.cs",
               "RelativeToolTip": "scripts\\CodeEditing.cs",
-              "ViewState": "AgIAABMBAAAAAAAAAAAmwC4AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-11T15:19:21.455Z",
               "EditorCaption": ""
@@ -125,7 +125,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "AudioManager.cs",
               "DocumentMoniker": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\AudioManager.cs",
               "RelativeDocumentMoniker": "scripts\\AudioManager.cs",
@@ -133,12 +133,11 @@
               "RelativeToolTip": "scripts\\AudioManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-02T19:57:30.777Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-02T19:57:30.777Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "MainMenu.cs",
               "DocumentMoniker": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\MainMenu.cs",
               "RelativeDocumentMoniker": "scripts\\MainMenu.cs",
@@ -151,13 +150,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "HeroTemp.cs",
               "DocumentMoniker": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\HeroTemp.cs",
               "RelativeDocumentMoniker": "scripts\\HeroTemp.cs",
               "ToolTip": "C:\\Users\\Emis\\Desktop\\GODOT\\Pentagonas\\scripts\\HeroTemp.cs",
               "RelativeToolTip": "scripts\\HeroTemp.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-02T19:39:25.622Z",
               "EditorCaption": ""
