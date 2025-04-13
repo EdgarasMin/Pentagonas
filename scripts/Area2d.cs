@@ -11,6 +11,7 @@ public partial class Area2d : Area2D
 		// Check if the body is of type CharacterBody2D
 		if (body == specificCharacter)
 		{
+			
 			if (langas != null)
 				langas.Show();
 			//GD.Print("Character entered the area!");

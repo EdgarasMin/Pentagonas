@@ -1,47 +1,33 @@
-// SaveSystem.cs
 using Godot;
-using System;
 
 public static class SaveSystem
 {
     private const string SAVE_PATH = "user://savegame.save";
 
-    public static void SaveProgress(int currentLevel)
+    public static void SaveCurrentScene(string scenePath)
     {
         using var file = FileAccess.Open(SAVE_PATH, FileAccess.ModeFlags.Write);
-        if (file == null)
+        if (file != null)
         {
-            GD.PrintErr("Failed to save: ", FileAccess.GetOpenError());
-            return;
+            var data = new Godot.Collections.Dictionary
+            {
+                { "last_scene", scenePath }
+            };
+            file.StoreLine(Json.Stringify(data));
         }
-
-        var data = new Godot.Collections.Dictionary
-        {
-            { "current_level", currentLevel }
-        };
-
-        file.StoreLine(Json.Stringify(data));
     }
 
-    public static string LoadProgress()
+    public static string LoadLastScene()
     {
         if (!FileAccess.FileExists(SAVE_PATH))
-            return "res://scenes/Ivadinis.tscn"; // Default to first level
+            return null;
 
         using var file = FileAccess.Open(SAVE_PATH, FileAccess.ModeFlags.Read);
-        if (file == null)
+        if (file != null)
         {
-            GD.PrintErr("Failed to load: ", FileAccess.GetOpenError());
-            return "res://scenes/Ivadinis.tscn";
+            var data = Json.ParseString(file.GetLine()).AsGodotDictionary();
+            return (string)data["last_scene"];
         }
-
-        var data = Json.ParseString(file.GetLine()).AsGodotDictionary();
-        return "res://scenes/Ivadinis.tscn";
-    }
-
-    public static void ResetProgress()
-    {
-        if (FileAccess.FileExists(SAVE_PATH))
-            DirAccess.RemoveAbsolute(SAVE_PATH);
+        return null;
     }
 }

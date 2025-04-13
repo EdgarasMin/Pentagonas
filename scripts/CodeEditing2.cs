@@ -120,13 +120,9 @@ public partial class CodeEditing2 : CanvasLayer
 
         refreshButton.Pressed += OnRefreshButtonPressed;
 
-        // Connect the GUI input signal to handle Enter key press
-        //consoleLine.GuiInput += OnConsoleLineGuiInput;
-
-        // Set up syntax highlighting, code completion, and editor features
+      
         SetupSyntaxHighlighting();
-        //SetupCodeCompletion();
-        //SetupEditorFeatures();
+        
 
         // Set up syntax highlighter
         CodeHighlighter cppHighlighter = new CodeHighlighter();
@@ -306,8 +302,7 @@ public partial class CodeEditing2 : CanvasLayer
         }
         else
         {
-            //atsidaro durys``
-            //door.Play("open_door");
+            //atsidaro durys negaliu ieit bum bum
 
             door.Frame = 1;
             doorCollision.Disabled = true;  
@@ -325,13 +320,12 @@ public partial class CodeEditing2 : CanvasLayer
     }
     private void OnTextChanged()
     {
-        // Optional: Use this for real-time updates (e.g., syntax validation)
         GD.Print("Player modified the code! Current text:\n" + codeBox.Text);
     }
 
     private void AppendToConsole(string text)
     {
-        // Append text to the console and scroll to the bottom
+        
         if (text == tasks[currentTask].ExpectedOutput)
         {
             UpdateCodeBoxText();
@@ -341,79 +335,5 @@ public partial class CodeEditing2 : CanvasLayer
         console.ScrollVertical = (int)console.GetLineCount() - 1;
     }
 
-    
-
-    
-
-    
-    //private async void OnSubmitConsoleButtonPressed()
-    //{
-    //    GD.Print("Submit Console button pressed!");
-
-    //    // Wait for input
-    //    string inputText = await WaitForInput();
-
-    //    // Process the input text
-    //    ProcessInputText(inputText);
-    //}
-    //private void ProcessInputText(string inputText)
-    //{
-    //    // Example: Append the input text to the main console
-    //    AppendToConsole("[Input] You entered: " + inputText);
-
-    //    // Example: Handle specific commands or logic
-    //    if (inputText == "clear")
-    //    {
-    //        console.Text = ""; // Clear the main console
-    //    }
-    //    else
-    //    {
-    //        // Add your custom logic here
-    //    }
-    //}
-    //private async Task<string> WaitForInput()
-    //{
-    //    // Flag to track if the button has been pressed
-    //    bool isButtonPressed = false;
-
-    //    // Connect the button's Pressed signal to set the flag
-    //    submitConsoleButton.Pressed += () =>
-    //    {
-    //        isButtonPressed = true;
-    //    };
-
-    //    // Wait for the button to be pressed
-    //    while (!isButtonPressed)
-    //    {
-    //        // Wait for the next frame
-    //        await ToSignal(GetTree(), "process_frame");
-    //    }
-
-    //    // Capture the input text
-    //    string inputText = consoleLine.Text;
-    //    GD.Print("Buvo nuskaitytas tekstas: " + inputText);
-
-    //    // Clear the consoleLine for the next input
-    //    consoleLine.Clear();
-
-    //    return inputText;
-    //}
-
-
-
-
-    //private void OnConsoleLineGuiInput(InputEvent @event)
-    //{
-    //    if (@event is InputEventKey keyEvent && keyEvent.Pressed)
-    //    {
-    //        if (keyEvent.Keycode == Key.Enter)
-    //        {
-    //            // Prevent the default behavior of inserting a newline
-    //            GetViewport().SetInputAsHandled();
-
-    //            // Trigger input submission
-    //            GetTree().CallGroup("input_submission", "OnInputSubmitted");
-    //        }
-    //    }
-    //}
+   
 }
