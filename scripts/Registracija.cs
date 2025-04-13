@@ -34,7 +34,7 @@ public partial class Registracija : Control
 		
 		Dictionary<string, string> userDictionary = ReadDataFileToDictionary("dataTest");
 		
-		if (String.IsNullOrEmpty(regUsername) || String.IsNullOrEmpty(regPassword))
+		if (String.IsNullOrEmpty(regUsername) || String.IsNullOrEmpty(regPassword) || regPassword.Length < 7)
 		{
 			ShowErrorPopup("Klaida", "Neteisingas vardas arba slaptazodis");
 			GD.Print("Netinkmas slaptazodis");
