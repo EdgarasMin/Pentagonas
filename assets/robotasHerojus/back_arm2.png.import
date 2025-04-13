@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq0ly3grrmpli"
-path="res://.godot/imported/side1_leg.png-a7ee3b2250c5216ac2fc348f3ebd201c.ctex"
+uid="uid://7wijtll0emc0"
+path="res://.godot/imported/back_arm2.png-2d2c1b78de51df9d4d76ee2d94363dce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/side1_leg.png"
-dest_files=["res://.godot/imported/side1_leg.png-a7ee3b2250c5216ac2fc348f3ebd201c.ctex"]
+source_file="res://assets/robotasHerojus/back_arm2.png"
+dest_files=["res://.godot/imported/back_arm2.png-2d2c1b78de51df9d4d76ee2d94363dce.ctex"]
 
 [params]
 

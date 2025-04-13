@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xkpmeevfihnx"
-path="res://.godot/imported/side2_arm.png-72997fa0c2f33cf7823d2be04a93993f.ctex"
+uid="uid://ddj8aeirrq1s8"
+path="res://.godot/imported/side1_arm.png-dd8c64136de3ea09c5b912e532889350.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/side2_arm.png"
-dest_files=["res://.godot/imported/side2_arm.png-72997fa0c2f33cf7823d2be04a93993f.ctex"]
+source_file="res://assets/robotasHerojus/side1_arm.png"
+dest_files=["res://.godot/imported/side1_arm.png-dd8c64136de3ea09c5b912e532889350.ctex"]
 
 [params]
 
