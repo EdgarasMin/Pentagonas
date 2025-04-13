@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baqj64e48hus1"
-path="res://.godot/imported/priešas.png-8e06a83f6b9e4865755b2870595ac03c.ctex"
+uid="uid://b57p3kr83mt5y"
+path="res://.godot/imported/untitled1.png-d4d0e48423a02d8eff30c703dfb752e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/priešas.png"
-dest_files=["res://.godot/imported/priešas.png-8e06a83f6b9e4865755b2870595ac03c.ctex"]
+source_file="res://assets/priešas/untitled1.png"
+dest_files=["res://.godot/imported/untitled1.png-d4d0e48423a02d8eff30c703dfb752e0.ctex"]
 
 [params]
 
