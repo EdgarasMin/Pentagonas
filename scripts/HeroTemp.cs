@@ -6,15 +6,15 @@ public partial class HeroTemp : AnimatedSprite2D
 	public Vector2 vel = Vector2.Zero;
 	public Music musicScene;
 	public AudioStreamPlayer walkSound;
-    private GameManageris gameManageris;
+	private GameManageris gameManageris;
 
-    // Reset velocity to zero at the start of each frame
-
-
+	// Reset velocity to zero at the start of each frame
 
 
-    // Animation states - fixed the typo in walk_right
-    private enum AnimationState
+
+
+	// Animation states - fixed the typo in walk_right
+	private enum AnimationState
 	{
 		idle,
 		walk_left,
@@ -27,9 +27,9 @@ public partial class HeroTemp : AnimatedSprite2D
 	
 	public override void _Ready()
 	{
-        gameManageris = GetNode<GameManageris>("/root/GameManageris");
+		gameManageris = GetNode<GameManageris>("/root/GameManageris");
 		gameManageris.SaveCurrentScene();
-        walkSound = GetNode<AudioStreamPlayer>("Walking");
+		walkSound = GetNode<AudioStreamPlayer>("Walking");
 		//musicScene = GetNode<Music>("/root/Music");
 		//musicScene.switchSong("Song4");
 		GD.Print("HeroTemp script is running!");

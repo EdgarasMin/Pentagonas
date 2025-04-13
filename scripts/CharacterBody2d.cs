@@ -4,19 +4,19 @@ using System;
 public partial class CharacterBody2d : CharacterBody2D
 {
 	
-    private CharacterBody2D player;
-    void Teleport(int x, int y){
+	private CharacterBody2D player;
+	void Teleport(int x, int y){
 		Position = new Vector2(x,y);
 	}
 	public Music musicScene;
 	
 	public override void _Ready()
 	{
-       
-        musicScene = GetNode<Music>("/root/Music");
+	   
+		musicScene = GetNode<Music>("/root/Music");
 		musicScene.switchSong("Song4");
-        
-    }
+		
+	}
 	void Collision()
 	{
 		for (int i = 0; i < GetSlideCollisionCount(); i++)
@@ -30,10 +30,10 @@ public partial class CharacterBody2d : CharacterBody2D
 			{
 				
 				GetTree().ChangeSceneToFile("res://scenes/Level2.tscn");
-                
-                // Optional: custom logic here
-                // Example: QueueFree(), Play effect, etc.
-            }
+				
+				// Optional: custom logic here
+				// Example: QueueFree(), Play effect, etc.
+			}
 		}
 	}
 	
@@ -51,10 +51,10 @@ public partial class CharacterBody2d : CharacterBody2D
 			return;
 		}
 
-       
+	   
 
-        // Dampen velocity slightly
-        vel *= 0.55f;
+		// Dampen velocity slightly
+		vel *= 0.55f;
 
 		// Update velocity based on input
 		if (Input.IsActionPressed("Move_L"))
@@ -84,6 +84,6 @@ public partial class CharacterBody2d : CharacterBody2D
 		MoveAndSlide();
 	}
    
-    
+	
 
 }
