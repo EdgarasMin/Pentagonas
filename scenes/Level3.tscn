@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cmgj43naheui6"]
+[gd_scene load_steps=34 format=3 uid="uid://cmgj43naheui6"]
 
 [ext_resource type="Texture2D" uid="uid://dhov7oql8eck8" path="res://assets/Level3/bac 3.png" id="1_btfua"]
 [ext_resource type="Texture2D" uid="uid://jr456bqwiche" path="res://assets/Level3/box 3a.png" id="2_2qekl"]
@@ -11,21 +11,20 @@
 [ext_resource type="Texture2D" uid="uid://dmwbvaom7fvoj" path="res://assets/Level3/gem4.png" id="9_okd43"]
 [ext_resource type="Texture2D" uid="uid://cwlvagp4iugcd" path="res://assets/Level3/box 3n.png" id="10_mbhic"]
 [ext_resource type="Script" path="res://scripts/CharacterBody2d2.cs" id="11_m1e20"]
-[ext_resource type="Texture2D" uid="uid://cdobg4oeppsry" path="res://assets/Animacija/front.png" id="12_dtke4"]
-[ext_resource type="Texture2D" uid="uid://bio17h0t3vptw" path="res://assets/Animacija/front_leg.png" id="13_5y6gk"]
-[ext_resource type="Texture2D" uid="uid://b4h16ioyci8n5" path="res://assets/Animacija/front_leg2.png" id="14_44ny4"]
-[ext_resource type="Texture2D" uid="uid://c2ywjsb44xmt4" path="res://assets/Animacija/side2_leg.png" id="15_nhwxq"]
-[ext_resource type="Texture2D" uid="uid://nhv7hid1ywkc" path="res://assets/Animacija/side2.png" id="16_c3kee"]
-[ext_resource type="Texture2D" uid="uid://vx4sgyv2mp85" path="res://assets/Animacija/side1_leg2.png" id="17_vpv7i"]
-[ext_resource type="Texture2D" uid="uid://dvm47aiecl43s" path="res://assets/Animacija/side2_leg2.png" id="18_d5xvs"]
-[ext_resource type="Texture2D" uid="uid://ctwhkywuox55i" path="res://assets/Animacija/side1.png" id="19_n0tbv"]
-[ext_resource type="Texture2D" uid="uid://cq0ly3grrmpli" path="res://assets/Animacija/side1_leg.png" id="20_2myhx"]
-[ext_resource type="Texture2D" uid="uid://cpnwmacri5j3s" path="res://assets/Animacija/back_leg.png" id="21_4k7rq"]
-[ext_resource type="Texture2D" uid="uid://dibn4rrvimpo0" path="res://assets/Animacija/back_leg2.png" id="22_3iedb"]
+[ext_resource type="Texture2D" uid="uid://cpsnvpkkkljow" path="res://assets/front.png" id="12_dtke4"]
+[ext_resource type="Texture2D" uid="uid://dwhmcbl74sjgg" path="res://assets/front_leg.png" id="13_5y6gk"]
+[ext_resource type="Texture2D" uid="uid://b86m57befc1wu" path="res://assets/front_leg2.png" id="14_44ny4"]
+[ext_resource type="Texture2D" uid="uid://vf1w88p1tt3j" path="res://assets/side2_leg.png" id="15_nhwxq"]
+[ext_resource type="Texture2D" uid="uid://ddt64m2yf0sh" path="res://assets/side2.png" id="16_c3kee"]
+[ext_resource type="Texture2D" uid="uid://h75ukc2ft6ux" path="res://assets/side1_leg2.png" id="17_vpv7i"]
+[ext_resource type="Texture2D" uid="uid://bxhxlw7dt424d" path="res://assets/side2_leg2.png" id="18_d5xvs"]
+[ext_resource type="Texture2D" uid="uid://cb4r4hx57gjrt" path="res://assets/side1.png" id="19_n0tbv"]
+[ext_resource type="Texture2D" uid="uid://bwuhpu4reh2qb" path="res://assets/side1_leg.png" id="20_2myhx"]
+[ext_resource type="Texture2D" uid="uid://c22rbanxfuiye" path="res://assets/back_leg.png" id="21_4k7rq"]
+[ext_resource type="Texture2D" uid="uid://d12aoab3kaej3" path="res://assets/back_leg2.png" id="22_3iedb"]
 [ext_resource type="Script" path="res://scripts/HeroTemp.cs" id="23_omg1c"]
 [ext_resource type="AudioStream" uid="uid://by2maf38wlj6i" path="res://music/Walking_1.mp3" id="24_u7rji"]
 [ext_resource type="PackedScene" uid="uid://bujj1bnmismal" path="res://scenes/pauseMenu.tscn" id="25_fjxc5"]
-[ext_resource type="Script" path="res://scripts/label.gd" id="26_vk0bd"]
 [ext_resource type="Script" path="res://scripts/CodeEditing.cs" id="27_0xhyv"]
 [ext_resource type="Texture2D" uid="uid://ce08qytvbfscg" path="res://assets/pngwing.com (5).png" id="28_k8kpm"]
 
@@ -1843,7 +1842,6 @@ offset_right = 8443.0
 offset_bottom = -3784.0
 theme_override_font_sizes/font_size = 500
 text = "00:00:000"
-script = ExtResource("26_vk0bd")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
