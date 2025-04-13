@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cmgj43naheui6"]
+[gd_scene load_steps=43 format=3 uid="uid://cmgj43naheui6"]
 
 [ext_resource type="Texture2D" uid="uid://dhov7oql8eck8" path="res://assets/Level3/bac 3.png" id="1_btfua"]
 [ext_resource type="Texture2D" uid="uid://jr456bqwiche" path="res://assets/Level3/box 3a.png" id="2_2qekl"]
@@ -26,7 +26,13 @@
 [ext_resource type="AudioStream" uid="uid://by2maf38wlj6i" path="res://music/Walking_1.mp3" id="24_u7rji"]
 [ext_resource type="PackedScene" uid="uid://bujj1bnmismal" path="res://scenes/pauseMenu.tscn" id="25_fjxc5"]
 [ext_resource type="Script" path="res://scripts/CodeEditing.cs" id="27_0xhyv"]
+[ext_resource type="Script" path="res://scripts/InventoryUI.cs" id="28_4bgqb"]
 [ext_resource type="Texture2D" uid="uid://ce08qytvbfscg" path="res://assets/pngwing.com (5).png" id="28_k8kpm"]
+[ext_resource type="StyleBox" uid="uid://c2llxtb2p0dry" path="res://buttonInventory.tres" id="29_obscx"]
+[ext_resource type="Texture2D" uid="uid://ct3f7kfe8ywql" path="res://assets/Inventorius/raktas.png" id="30_qxjdj"]
+[ext_resource type="Texture2D" uid="uid://eh27pif8nvxk" path="res://assets/Inventorius/energija.png" id="31_ahsgs"]
+[ext_resource type="Texture2D" uid="uid://3hmlwnym7iwp" path="res://assets/Inventorius/map.png" id="32_p00y4"]
+[ext_resource type="Texture2D" uid="uid://bgr3oglj84x6g" path="res://assets/Inventorius/vaistinele.png" id="33_tjioh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jl41s"]
 size = Vector2(12.9998, 14.7171)
@@ -113,6 +119,25 @@ border_color = Color(0.144063, 0.144063, 0.144062, 1)
 
 [sub_resource type="Theme" id="Theme_p6in2"]
 default_font_size = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jhn5e"]
+bg_color = Color(0.34902, 0.505882, 0.490196, 0.847059)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.34, 0.017, 0.167733, 0.454902)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vut2t"]
+bg_color = Color(1, 0.290731, 0.541124, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Theme" id="Theme_s18xa"]
+/styles/okay = SubResource("StyleBoxFlat_vut2t")
 
 [node name="Level3" type="Node2D"]
 position = Vector2(-3, -3)
@@ -1976,3 +2001,180 @@ offset_right = 412.0
 offset_bottom = 316.0
 placeholder_text = "> "
 metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("28_4bgqb")
+
+[node name="Panel" type="Panel" parent="CanvasLayer2"]
+offset_left = 735.0
+offset_top = 778.0
+offset_right = 1098.0
+offset_bottom = 1046.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jhn5e")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer2/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.022
+anchor_right = 0.022
+offset_left = 4.014
+offset_top = 77.0
+offset_right = 340.014
+offset_bottom = 251.0
+columns = 5
+
+[node name="Button" type="Button" parent="CanvasLayer2/Panel/GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("29_obscx")
+
+[node name="ItemIcon" type="TextureRect" parent="CanvasLayer2/Panel/GridContainer/Button"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_s18xa")
+texture = ExtResource("30_qxjdj")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Button2" type="Button" parent="CanvasLayer2/Panel/GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("29_obscx")
+
+[node name="ItemIcon" type="TextureRect" parent="CanvasLayer2/Panel/GridContainer/Button2"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_s18xa")
+texture = ExtResource("31_ahsgs")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Button3" type="Button" parent="CanvasLayer2/Panel/GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("29_obscx")
+
+[node name="ItemIcon" type="TextureRect" parent="CanvasLayer2/Panel/GridContainer/Button3"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_s18xa")
+texture = ExtResource("32_p00y4")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Button4" type="Button" parent="CanvasLayer2/Panel/GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("29_obscx")
+
+[node name="ItemIcon" type="TextureRect" parent="CanvasLayer2/Panel/GridContainer/Button4"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_s18xa")
+texture = ExtResource("33_tjioh")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Button5" type="Button" parent="CanvasLayer2/Panel/GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("29_obscx")
+
+[node name="ItemIcon" type="TextureRect" parent="CanvasLayer2/Panel/GridContainer/Button5"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_s18xa")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Button6" type="Button" parent="CanvasLayer2/Panel/GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("29_obscx")
+
+[node name="ItemIcon" type="TextureRect" parent="CanvasLayer2/Panel/GridContainer/Button6"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_s18xa")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Button7" type="Button" parent="CanvasLayer2/Panel/GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("29_obscx")
+
+[node name="ItemIcon" type="TextureRect" parent="CanvasLayer2/Panel/GridContainer/Button7"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_s18xa")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Button8" type="Button" parent="CanvasLayer2/Panel/GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("29_obscx")
+
+[node name="ItemIcon" type="TextureRect" parent="CanvasLayer2/Panel/GridContainer/Button8"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_s18xa")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Button9" type="Button" parent="CanvasLayer2/Panel/GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("29_obscx")
+
+[node name="ItemIcon" type="TextureRect" parent="CanvasLayer2/Panel/GridContainer/Button9"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_s18xa")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Button10" type="Button" parent="CanvasLayer2/Panel/GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("29_obscx")
+
+[node name="ItemIcon" type="TextureRect" parent="CanvasLayer2/Panel/GridContainer/Button10"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_s18xa")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer2/Panel"]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 21.0
+offset_right = 245.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.690196, 0.454902, 1)
+theme_override_font_sizes/font_size = 23
+text = "Inventorius"
