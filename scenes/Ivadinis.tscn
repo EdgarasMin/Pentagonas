@@ -1,0 +1,513 @@
+[gd_scene load_steps=49 format=3 uid="uid://bkdgmgklaq4sn"]
+
+[ext_resource type="Texture2D" uid="uid://dg78jpngdn7u1" path="res://assets/Ivadinis/preview.png" id="1_2rexs"]
+[ext_resource type="Script" path="res://scripts/CharacterBody2d.cs" id="2_18oye"]
+[ext_resource type="Script" path="res://scripts/Area2d.cs" id="2_f1y6r"]
+[ext_resource type="Texture2D" uid="uid://cdobg4oeppsry" path="res://assets/front.png" id="3_3xdko"]
+[ext_resource type="Texture2D" uid="uid://3hmlwnym7iwp" path="res://assets/Inventorius/map.png" id="4_0alp8"]
+[ext_resource type="Texture2D" uid="uid://bio17h0t3vptw" path="res://assets/front_leg.png" id="4_ia5lj"]
+[ext_resource type="Texture2D" uid="uid://b4h16ioyci8n5" path="res://assets/front_leg2.png" id="5_5xsup"]
+[ext_resource type="Texture2D" uid="uid://ct3f7kfe8ywql" path="res://assets/Inventorius/raktas.png" id="5_ef6bv"]
+[ext_resource type="Texture2D" uid="uid://c2ywjsb44xmt4" path="res://assets/side2_leg.png" id="6_lrwfg"]
+[ext_resource type="Texture2D" uid="uid://eh27pif8nvxk" path="res://assets/Inventorius/energija.png" id="6_rafq5"]
+[ext_resource type="Texture2D" uid="uid://bgr3oglj84x6g" path="res://assets/Inventorius/vaistinele.png" id="7_7xfa6"]
+[ext_resource type="Texture2D" uid="uid://nhv7hid1ywkc" path="res://assets/side2.png" id="7_lo5gv"]
+[ext_resource type="Texture2D" uid="uid://vx4sgyv2mp85" path="res://assets/side1_leg2.png" id="8_amtbp"]
+[ext_resource type="Texture2D" uid="uid://dvm47aiecl43s" path="res://assets/side2_leg2.png" id="9_4apat"]
+[ext_resource type="Texture2D" uid="uid://ctwhkywuox55i" path="res://assets/side1.png" id="10_sl4n8"]
+[ext_resource type="Texture2D" uid="uid://cq0ly3grrmpli" path="res://assets/side1_leg.png" id="11_iphw7"]
+[ext_resource type="Texture2D" uid="uid://cpnwmacri5j3s" path="res://assets/back_leg.png" id="12_7f23l"]
+[ext_resource type="Texture2D" uid="uid://y0ff5tkcw7fu" path="res://assets/back.png" id="13_wx2x6"]
+[ext_resource type="Texture2D" uid="uid://dibn4rrvimpo0" path="res://assets/back_leg2.png" id="14_6mfdf"]
+[ext_resource type="Script" path="res://scripts/HeroTemp.cs" id="15_ltjrf"]
+[ext_resource type="AudioStream" uid="uid://by2maf38wlj6i" path="res://music/Walking_1.mp3" id="16_s0e6g"]
+[ext_resource type="PackedScene" uid="uid://bujj1bnmismal" path="res://scenes/pauseMenu.tscn" id="17_fijip"]
+[ext_resource type="Texture2D" uid="uid://dqy2ite2shfg0" path="res://assets/Ivadinis/wall.png" id="19_uuce6"]
+[ext_resource type="Texture2D" uid="uid://dyxdhptt4tpb6" path="res://assets/Ivadinis/wall_v.png" id="20_bh8j5"]
+[ext_resource type="Texture2D" uid="uid://caf1e6b0g4306" path="res://assets/Ivadinis/wall_f.png" id="20_sw5cw"]
+[ext_resource type="Texture2D" uid="uid://csvomqysmgbwt" path="res://assets/Ivadinis/wall_v2.png" id="22_vmpqn"]
+[ext_resource type="Texture2D" uid="uid://bbihm855e0lqf" path="res://assets/Ivadinis/sign.png" id="23_j0y0o"]
+[ext_resource type="Script" path="res://scripts/Area2d4.cs" id="24_xgl4m"]
+[ext_resource type="Texture2D" uid="uid://ba1gedlkko2ns" path="res://assets/Level2/Portal.png" id="25_fwepb"]
+[ext_resource type="Texture2D" uid="uid://baqj64e48hus1" path="res://assets/priešas/priešas.png" id="30_tewoy"]
+[ext_resource type="Texture2D" uid="uid://b57p3kr83mt5y" path="res://assets/priešas/untitled1.png" id="31_mpi5o"]
+[ext_resource type="Texture2D" uid="uid://c37ee21hwdixj" path="res://assets/priešas/untitled2.png" id="32_c5xsd"]
+[ext_resource type="Texture2D" uid="uid://quftmeas2nup" path="res://assets/priešas/untitled.png" id="33_pfnm4"]
+[ext_resource type="Script" path="res://scripts/notMovingEnemy.gd" id="34_vxci1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3d7k4"]
+size = Vector2(621.5, 622.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4n4up"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_tewoy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_mpi5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_c5xsd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_pfnm4")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wvsa3"]
+size = Vector2(214, 1409)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xtqb4"]
+size = Vector2(526, 537)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nm1up"]
+size = Vector2(547, 504.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogrho"]
+size = Vector2(376.5, 344.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k8350"]
+size = Vector2(360.563, 328.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryv1s"]
+size = Vector2(28, 1368)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v1eq5"]
+size = Vector2(6870.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n74j1"]
+size = Vector2(6879, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfhoo"]
+size = Vector2(34, 1349.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ep6ue"]
+size = Vector2(122, 188.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xte7g"]
+size = Vector2(229.928, 480.067)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i7rnn"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_3xdko")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ia5lj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3xdko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5xsup")
+}],
+"loop": true,
+"name": &"walk_bottom",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_lrwfg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lo5gv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_amtbp")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_4apat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_sl4n8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_iphw7")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_7f23l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_wx2x6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_6mfdf")
+}],
+"loop": true,
+"name": &"walk_top",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Fonas" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect9" type="TextureRect" parent="Fonas"]
+layout_mode = 0
+offset_left = -1300.0
+offset_top = -1300.0
+offset_right = 7800.0
+offset_bottom = 2600.0
+texture = ExtResource("1_2rexs")
+stretch_mode = 1
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D11" type="Area2D" parent="."]
+script = ExtResource("2_f1y6r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D11"]
+position = Vector2(4949.25, 649.75)
+shape = SubResource("RectangleShape2D_3d7k4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D11"]
+position = Vector2(4945, 633)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_4n4up")
+animation = &"move"
+script = ExtResource("34_vxci1")
+
+[node name="AcceptDialog" type="AcceptDialog" parent="Area2D11"]
+title = "Priešai"
+initial_position = 1
+dialog_text = "Taip atrodys priešai, nuo kurių reikės pabėgti"
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_f1y6r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(628, 598)
+shape = SubResource("RectangleShape2D_wvsa3")
+
+[node name="AcceptDialog" type="AcceptDialog" parent="Area2D"]
+title = "Judėjimas"
+initial_position = 1
+size = Vector2i(300, 200)
+dialog_text = "Norint judėti naudokite WASD mygtukus"
+
+[node name="Area2D2" type="Area2D" parent="."]
+script = ExtResource("2_f1y6r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(5700, 666)
+shape = SubResource("RectangleShape2D_xtqb4")
+
+[node name="AcceptDialog" type="AcceptDialog" parent="Area2D2"]
+auto_translate_mode = 1
+title = "Portalai"
+initial_position = 1
+size = Vector2i(300, 200)
+dialog_text = "Portalai gali tave pernešti į kitą lygį"
+
+[node name="TextureRect2" type="TextureRect" parent="Area2D2"]
+offset_left = 5609.0
+offset_top = 563.0
+offset_right = 5809.0
+offset_bottom = 763.0
+texture = ExtResource("23_j0y0o")
+
+[node name="Area2D3" type="Area2D" parent="."]
+script = ExtResource("2_f1y6r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2(1265, 654)
+shape = SubResource("RectangleShape2D_nm1up")
+
+[node name="AcceptDialog" type="AcceptDialog" parent="Area2D3"]
+auto_translate_mode = 1
+title = "Rašymas"
+initial_position = 1
+size = Vector2i(300, 200)
+dialog_text = "Norint rašyti kodą spausk ` mygtuką"
+
+[node name="TextureRect" type="TextureRect" parent="Area2D3"]
+offset_left = 1170.0
+offset_top = 528.0
+offset_right = 1370.0
+offset_bottom = 728.0
+texture = ExtResource("23_j0y0o")
+
+[node name="Area2D10" type="Area2D" parent="."]
+script = ExtResource("2_f1y6r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D10"]
+position = Vector2(2000, 654)
+shape = SubResource("RectangleShape2D_nm1up")
+
+[node name="AcceptDialog" type="AcceptDialog" parent="Area2D10"]
+auto_translate_mode = 1
+title = "Meniu"
+initial_position = 1
+size = Vector2i(300, 200)
+dialog_text = "Meniu atsidaro paspaudus mygtuką \"ESC\""
+
+[node name="TextureRect" type="TextureRect" parent="Area2D10"]
+offset_left = 1892.0
+offset_top = 537.0
+offset_right = 2092.0
+offset_bottom = 737.0
+texture = ExtResource("23_j0y0o")
+
+[node name="Area2D9" type="Area2D" parent="."]
+script = ExtResource("2_f1y6r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D9"]
+position = Vector2(2800, 654)
+shape = SubResource("RectangleShape2D_nm1up")
+
+[node name="AcceptDialog" type="AcceptDialog" parent="Area2D9"]
+auto_translate_mode = 1
+title = "Inventorius"
+initial_position = 1
+size = Vector2i(300, 200)
+dialog_text = "Savo inventorių atidaryti galite paspaude \"I\""
+
+[node name="TextureRect" type="TextureRect" parent="Area2D9"]
+offset_left = 2700.0
+offset_top = 532.0
+offset_right = 2900.0
+offset_bottom = 732.0
+texture = ExtResource("23_j0y0o")
+
+[node name="Area2D5" type="Area2D" parent="."]
+script = ExtResource("2_f1y6r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D5"]
+position = Vector2(3600, 400)
+shape = SubResource("RectangleShape2D_ogrho")
+
+[node name="AcceptDialog" type="AcceptDialog" parent="Area2D5"]
+auto_translate_mode = 1
+title = "Žemėlapis"
+initial_position = 1
+size = Vector2i(300, 200)
+dialog_text = "Žemėlapis leis peržiūrėti pasaulį"
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D5"]
+position = Vector2(3600, 400)
+texture = ExtResource("4_0alp8")
+
+[node name="Area2D6" type="Area2D" parent="."]
+script = ExtResource("2_f1y6r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D6"]
+position = Vector2(4200, 400)
+shape = SubResource("RectangleShape2D_k8350")
+
+[node name="AcceptDialog" type="AcceptDialog" parent="Area2D6"]
+auto_translate_mode = 1
+title = "Raktas"
+initial_position = 1
+size = Vector2i(300, 200)
+dialog_text = "Raktas leis atrakinti būsimas duris"
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D6"]
+position = Vector2(4200, 400)
+texture = ExtResource("5_ef6bv")
+
+[node name="Area2D7" type="Area2D" parent="."]
+script = ExtResource("2_f1y6r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D7"]
+position = Vector2(3600, 900)
+shape = SubResource("RectangleShape2D_ogrho")
+
+[node name="AcceptDialog" type="AcceptDialog" parent="Area2D7"]
+auto_translate_mode = 1
+title = "Energija"
+initial_position = 1
+size = Vector2i(300, 200)
+dialog_text = "Energijos dėžė papildys tavo energiją"
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D7"]
+position = Vector2(3600, 900)
+texture = ExtResource("6_rafq5")
+
+[node name="Area2D8" type="Area2D" parent="."]
+script = ExtResource("2_f1y6r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D8"]
+position = Vector2(4200, 900)
+shape = SubResource("RectangleShape2D_ogrho")
+
+[node name="AcceptDialog" type="AcceptDialog" parent="Area2D8"]
+auto_translate_mode = 1
+title = "Vaistinėlė"
+initial_position = 1
+size = Vector2i(300, 200)
+dialog_text = "Vaistinėlė papildys tavo gyvybes"
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D8"]
+position = Vector2(4200, 900)
+texture = ExtResource("7_7xfa6")
+
+[node name="Sienos" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect3" type="TextureRect" parent="Sienos"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 0
+offset_left = -344.0
+offset_top = -198.0
+offset_right = 11056.0
+offset_bottom = 2.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("19_uuce6")
+stretch_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="Sienos"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 0
+offset_left = -342.0
+offset_top = 1183.0
+offset_right = 11058.0
+offset_bottom = 1383.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("19_uuce6")
+stretch_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Sienos"]
+layout_mode = 0
+offset_left = -410.0
+offset_top = -222.0
+offset_right = -210.0
+offset_bottom = -22.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("20_sw5cw")
+
+[node name="TextureRect" type="TextureRect" parent="Sienos"]
+custom_minimum_size = Vector2(0, 1400)
+layout_mode = 0
+offset_left = -398.0
+offset_top = -153.0
+offset_right = -198.0
+offset_bottom = 2247.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("20_bh8j5")
+stretch_mode = 1
+
+[node name="TextureRect7" type="TextureRect" parent="Sienos"]
+layout_mode = 0
+offset_left = 6429.0
+offset_top = -221.0
+offset_right = 6629.0
+offset_bottom = -21.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("20_sw5cw")
+
+[node name="TextureRect6" type="TextureRect" parent="Sienos"]
+custom_minimum_size = Vector2(0, 1400)
+layout_mode = 0
+offset_left = 6435.0
+offset_top = -149.0
+offset_right = 6635.0
+offset_bottom = 2251.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("22_vmpqn")
+stretch_mode = 1
+
+[node name="TextureRect5" type="TextureRect" parent="Sienos"]
+layout_mode = 0
+offset_left = -407.0
+offset_top = 1162.0
+offset_right = -207.0
+offset_bottom = 1362.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("20_sw5cw")
+
+[node name="TextureRect8" type="TextureRect" parent="Sienos"]
+layout_mode = 0
+offset_left = 6430.0
+offset_top = 1161.0
+offset_right = 6630.0
+offset_bottom = 1361.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("20_sw5cw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-340, 605)
+shape = SubResource("RectangleShape2D_ryv1s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3083.75, -80)
+shape = SubResource("RectangleShape2D_v1eq5")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3087.5, 1267)
+shape = SubResource("RectangleShape2D_n74j1")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(6507, 594)
+shape = SubResource("RectangleShape2D_jfhoo")
+
+[node name="Area2D4" type="Area2D" parent="."]
+script = ExtResource("24_xgl4m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
+position = Vector2(6268, 628)
+shape = SubResource("RectangleShape2D_ep6ue")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = 6151.0
+offset_top = 514.0
+offset_right = 6401.0
+offset_bottom = 764.0
+texture = ExtResource("25_fwepb")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(618, 472)
+scale = Vector2(0.110904, 0.115773)
+script = ExtResource("2_18oye")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(9.01758, -8.6377)
+shape = SubResource("RectangleShape2D_xte7g")
+one_way_collision_margin = 0.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(36.0674, -112.29)
+sprite_frames = SubResource("SpriteFrames_i7rnn")
+animation = &"walk_top"
+script = ExtResource("15_ltjrf")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D/AnimatedSprite2D"]
+position = Vector2(-54.1007, 120.926)
+scale = Vector2(9.01681, 8.63759)
+
+[node name="Walking" type="AudioStreamPlayer" parent="CharacterBody2D/AnimatedSprite2D"]
+stream = ExtResource("16_s0e6g")
+bus = &"SFX"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("17_fijip")]
