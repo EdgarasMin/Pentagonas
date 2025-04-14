@@ -14,49 +14,50 @@ public  partial  class CharacterBody2d2 : CharacterBody2D
 			var collider1 = collision1.GetCollider();
 
 			
-			
-			if (collider1 is StaticBody2D staticBody1 && (staticBody1.Name == "Portal1"||staticBody1.Name == "Portal3"||staticBody1.Name == "Portal5"||staticBody1.Name == "Portal9"))
+			if(collider1 is StaticBody2D staticBody){
+			if ( staticBody.Name == "Portal1"||staticBody.Name == "Portal3"||staticBody.Name == "Portal5"||staticBody.Name == "Portal9")
 			{
 				Teleport(0,475);
 
 				// Optional: custom logic here
 				// Example: QueueFree(), Play effect, etc.
 			}
-			if (collider1 is StaticBody2D staticBody0 && staticBody0.Name == "Portal2")
+			if ( staticBody.Name == "Portal2")
 			{
 				Teleport(3236,475);
 				// Optional: custom logic here
 				// Example: QueueFree(), Play effect, etc.
 			}
-			if (collider1 is StaticBody2D staticBody2 && staticBody2.Name == "Portal6")
-			{
-				Teleport(3236,475);
-				// Optional: custom logic here
-				// Example: QueueFree(), Play effect, etc.
-			}
-			if (collider1 is StaticBody2D  staticBody3 && staticBody3.Name == "Portal4")
+			if (staticBody.Name == "Portal6")
 			{
 				Teleport(4775,-239);
 				// Optional: custom logic here
 				// Example: QueueFree(), Play effect, etc.
 			}
-			if (collider1 is StaticBody2D  staticBody4 && staticBody4.Name == "Portal8")
+			if (staticBody.Name == "Portal4")
+			{
+				Teleport(4955,455);
+				// Optional: custom logic here
+				// Example: QueueFree(), Play effect, etc.
+			}
+			if (staticBody.Name == "Portal8")
 			{
 				Teleport(7800,475);
 				// Optional: custom logic here
 				// Example: QueueFree(), Play effect, etc.
 			}
-			if (collider1 is StaticBody2D  staticBody5 && staticBody5.Name == "Portal7")
+			if (staticBody.Name == "Portal7")
 			{
 				Teleport(6290,475);
 				// Optional: custom logic here
 				// Example: QueueFree(), Play effect, etc.
 			}
-			if (collider1 is StaticBody2D  staticBody6 && staticBody6.Name == "Portal10")
+			if (staticBody.Name == "Portal10")
 			{
-				GetTree().ChangeSceneToFile("res://scenes/HeroScene.tscn");
+				GetTree().ChangeSceneToFile("res://scenes/Level3.tscn");
 				// Optional: custom logic here
 				// Example: QueueFree(), Play effect, etc.
+			}
 			}
 		}
 	}

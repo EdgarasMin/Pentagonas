@@ -22,7 +22,7 @@ public partial class Area2d4 : Area2D
 	}
 	private void changeScene()
 	{
-		GetTree().ChangeSceneToFile("res://scenes/HeroScene.tscn");
+		GetTree().ChangeSceneToFile("res://scenes/level1.tscn");
 	}
 	
 	private void OnAreaBodyExited(Node body)

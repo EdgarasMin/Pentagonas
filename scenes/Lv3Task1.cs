@@ -9,10 +9,11 @@ using static CodeEditing2;
 using static Godot.CodeEdit;
 using static System.Net.Mime.MediaTypeNames;
 
-public partial class CodeEditing2 : CanvasLayer
+public partial class Lv3Task1 : CanvasLayer
 {
-	public bool editorShown = false;
 
+	public bool editorShown = false;
+	private Label stopwatchLabel;
 	private CodeEdit codeBox;
 	private TextEdit console; // Single node for both input and output
 	private TextEdit consoleLine;
@@ -28,7 +29,7 @@ public partial class CodeEditing2 : CanvasLayer
 
 	public HeroTemp heroTemp;
 
-	public static CodeEditing2 Instance { get; private set; }
+	public static Lv3Task1 Instance { get; private set; }
 
 	private const string COMPILER_API = "https://godbolt.org/api/compiler/g102/compile";
 	private HttpRequest request;
@@ -59,6 +60,14 @@ public partial class CodeEditing2 : CanvasLayer
 
 	public override void _Ready()
 	{
+		PrintSceneTree(GetTree().Root);
+		
+		
+		
+		
+		
+		
+		
 		// Try to get the Submit button node and ensure it's found
 		// Initialize HTTPRequest (must have the node in your scene)
 		request = GetNode<HttpRequest>("HTTPRequest");
@@ -167,11 +176,27 @@ public partial class CodeEditing2 : CanvasLayer
 		// Assign the highlighter to the CodeEdit node
 		codeBox.SyntaxHighlighter = cppHighlighter;
 
-		tasks.Add(new Task("cout << \"Hello, World!\" << endl;", "[color=orange][b]Norėdamas pradėti savo kelionę požemiuose, tu turi sugebėti parašyti savo pirmąją kodo eilutę[/b][/color]\r\n\r\nC++ programavimo kalboje tai atliekama naudojant komandą cout, kuri leidžia parodyti tekstą ekrane.\r\n\r\n[color=#FF6347][b]*[/b][/color]Tavo užduotis yra pakeisti teksto išvedimą į \"Hello, Dungeon!\"\r\n\r\n[color=lightblue]Paaiškinimas:\r\n\r\ncout reiškia „console output“ – tai būdas išvesti tekstą į ekraną.\r\n\r\n\"<<\" yra kaip rodyklė, nukreipianti, ką rodyti.\r\n\r\n\"Hello, dungeon!\" – tai tavo sveikinimo žinutė.\r\n\r\n\"endl\" reiškia eilutės pabaigą – tai tiesiog perkelia tekstą į naują eilutę.[/color]", "Hello, Dungeon!", TaskType.Text));
-		//tasks.Add(new Task("int x;\ncout << \"Įveskite x reikšmę\" << endl;\ncin >> x;\ncout << x << endl;", "[color=orange][b]Turi sugebėti priimti vartotojo įvestį. C++ programavimo kalboje tai atliekama naudojant komandą cin, kuri leidžia nuskaityti vartotojo įvestą tekstą ar skaičių[/b] [/color]\r\n\r\n[color=#FF6347][b]*[/b][/color]*Tavo užduotis yra priimti konsole įvestį, kuri yra skaičius 7, ir ją išvesti ekrane.\r\n\r\n[color=lightblue]Paaiškinimas:\r\n\r\ncin reiškia „console input“ – tai būdas gauti duomenis iš vartotojo.\r\n\r\n\">>\" yra operatorius, kuris nurodo, kad duomenys turi būti saugomi nurodytoje kintamojoje.\r\n\r\nPvz., jei nori priimti skaičių, gali naudoti:\r\ncin >> kintamasis;\r\n\r\nKiekvieną kartą, kai naudotojas įveda reikšmę ir paspaudžia Enter mygtuką, ši reikšmė bus priskirta kintamajam.\r\nAtmink, kad turi įvesti teisingą duomenų tipą. Jei kintamasis yra tipo int, įvesk sveiką skaičių!", "7", TaskType.Number));
+		tasks.Add(new Task("Nėra task atrakink užduotį su brangakmeniais", "","Nan", TaskType.Text));
+		tasks.Add(new Task("#include <iostream>\n\nusing namespace std;\n\nint main() {\n   int x;\ncout << \"Įveskite x reikšmę\" << endl;\ncin >> x;\ncout << x << endl;\n    return 0;\n}", "[color=orange][b]Turi sugebėti priimti vartotojo įvestį. C++ programavimo kalboje tai atliekama naudojant komandą cin, kuri leidžia nuskaityti vartotojo įvestą tekstą ar skaičių[/b] [/color]\r\n\r\n[color=#FF6347][b]*[/b][/color]*Tavo užduotis yra priimti konsole įvestį, kuri yra skaičius 7, ir ją išvesti ekrane.\r\n\r\n[color=lightblue]Paaiškinimas:\r\n\r\ncin reiškia „console input“ – tai būdas gauti duomenis iš vartotojo.\r\n\r\n\">>\" yra operatorius, kuris nurodo, kad duomenys turi būti saugomi nurodytoje kintamojoje.\r\n\r\nPvz., jei nori priimti skaičių, gali naudoti:\r\ncin >> kintamasis;\r\n\r\nKiekvieną kartą, kai naudotojas įveda reikšmę ir paspaudžia Enter mygtuką, ši reikšmė bus priskirta kintamajam.\r\nAtmink, kad turi įvesti teisingą duomenų tipą. Jei kintamasis yra tipo int, įvesk sveiką skaičių!", "7", TaskType.Number));
 
-		UpdateTaskDescription();
 
+//*********************************************************
+
+Task newTask = new Task(
+	"#include <iostream>\n\nusing namespace std;\n\nint main() {\n    int a = 5;\n    int b = 10;\n    std::cout << a + b << std::endl;\n    return 0;\n}",
+	"[color=orange][b]Sudėties užduotis[/b][/color]\n\nParašyk programą, kuri sudeda du skaičius ir išveda rezultatą.\n\n[color=lightblue]Patarimas: naudok std::cout, kad parodytum rezultatą.[/color]",
+	"15",
+	TaskType.Number
+);
+
+tasks.Add(newTask);
+
+currentTask = 0;
+
+// Atnaujinam UI
+UpdateTaskDescription();
+UpdateCodeBoxText();
+//*********************************************************
 	}
 
 	public override void _Process(double delta)
@@ -182,6 +207,23 @@ public partial class CodeEditing2 : CanvasLayer
 			// Toggle the editor visibility and the flag
 			editorShown = !editorShown;
 			this.Visible = editorShown;
+		}
+		
+		var h1 = GetNode<CanvasGroup>("../Hidden1");
+		var h2 = GetNode<CanvasGroup>("../Hidden2");
+		var h3 = GetNode<CanvasGroup>("../Hidden3");
+		var h4 = GetNode<CanvasGroup>("../Hidden4");
+		var h5 = GetNode<CanvasGroup>("../Hidden5");
+		var h6 = GetNode<CanvasGroup>("../Hidden6");
+		
+		if (!h1.Visible && !h2.Visible && !h3.Visible && !h4.Visible && !h5.Visible && !h6.Visible)
+		{
+			currentTask = 1;
+			UpdateCodeBoxText();
+			UpdateTaskDescription();
+			var code = GetNode<CanvasLayer>("../CanvasLayer"); 
+			code.Visible = true;
+			h1.Visible=true;
 		}
 	}
 
@@ -302,15 +344,35 @@ public partial class CodeEditing2 : CanvasLayer
 		}
 		else
 		{
-			//atsidaro durys negaliu ieit bum bum
 
-			door.Frame = 1;
-			doorCollision.Disabled = true;  
-
-			
 			taskDescription.Text = "[color=green][b]Visos užduotys baigtos![/b][/color] Sveikiname!";
+		var code = GetNode<CanvasLayer>("../CanvasLayer");
+		code.Visible = false;
+		
+		
+		
+		var node = GetNode("../CharacterBody2D/stopwatch_label");
+		var stopwatchLabel = node as StopwatchLabel;
+		stopwatchLabel.Stop();
+		
 		}
 	}
+	
+	
+	void PrintSceneTree(Node node, string indent = "")
+{
+	GD.Print(indent + node.Name + " (" + node.GetType() + ")");
+	foreach (Node child in node.GetChildren())
+	{
+		PrintSceneTree(child, indent + "  ");
+	}
+}
+
+// Call this in _Ready()
+
+
+
+
 	private void UpdateCodeBoxText()
 	{
 		if (currentTask < tasks.Count)

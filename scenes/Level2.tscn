@@ -1076,12 +1076,12 @@ public class Pasisveikinimas {
     }"
 
 [node name="RichTextLabel5" type="RichTextLabel" parent="."]
-offset_left = 6764.0
-offset_top = 395.0
-offset_right = 7436.0
-offset_bottom = 488.0
+offset_left = 6585.0
+offset_top = 351.0
+offset_right = 7253.0
+offset_bottom = 456.0
 theme_override_font_sizes/normal_font_size = 35
-text = "Ar tau patiko 2 lygis?
+text = "Kuris iš šių C# kodo fragmentų teisingai sukuria naują kintamųjų sąrašą, kuriame galima saugoti sveikus skaičius (int)?
 
 
 "
@@ -1135,22 +1135,22 @@ theme_override_font_sizes/font_size = 31
 text = "C++"
 
 [node name="Label6" type="Label" parent="."]
-offset_left = 7182.0
-offset_top = 491.0
-offset_right = 7277.0
-offset_bottom = 582.0
+offset_left = 7093.0
+offset_top = 493.0
+offset_right = 7368.0
+offset_bottom = 584.0
 theme_override_colors/font_color = Color(0.752941, 1, 0, 1)
 theme_override_font_sizes/font_size = 31
-text = "Ne"
+text = "int List = new int();"
 
 [node name="Label7" type="Label" parent="."]
-offset_left = 7182.0
-offset_top = 109.0
-offset_right = 7277.0
-offset_bottom = 200.0
+offset_left = 6923.0
+offset_top = 105.0
+offset_right = 7431.0
+offset_bottom = 196.0
 theme_override_colors/font_color = Color(0.752941, 1, 0, 1)
 theme_override_font_sizes/font_size = 31
-text = "Taip"
+text = "List<int> skaiciai = new List<int>();"
 
 [node name="Label5" type="Label" parent="."]
 offset_left = 5626.0

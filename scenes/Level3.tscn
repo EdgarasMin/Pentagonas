@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cmgj43naheui6"]
+[gd_scene load_steps=35 format=3 uid="uid://cmgj43naheui6"]
 
 [ext_resource type="Texture2D" uid="uid://dhov7oql8eck8" path="res://assets/Level3/bac 3.png" id="1_btfua"]
 [ext_resource type="Texture2D" uid="uid://jr456bqwiche" path="res://assets/Level3/box 3a.png" id="2_2qekl"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bopqcg4i1lxp2" path="res://assets/Level3/gem1.png" id="8_kph0q"]
 [ext_resource type="Texture2D" uid="uid://dmwbvaom7fvoj" path="res://assets/Level3/gem4.png" id="9_okd43"]
 [ext_resource type="Texture2D" uid="uid://cwlvagp4iugcd" path="res://assets/Level3/box 3n.png" id="10_mbhic"]
-[ext_resource type="Script" path="res://scripts/CharacterBody2d2.cs" id="11_m1e20"]
+[ext_resource type="Script" path="res://scripts/Lv3.cs" id="11_52qgl"]
 [ext_resource type="Texture2D" uid="uid://cpsnvpkkkljow" path="res://assets/front.png" id="12_dtke4"]
 [ext_resource type="Texture2D" uid="uid://dwhmcbl74sjgg" path="res://assets/front_leg.png" id="13_5y6gk"]
 [ext_resource type="Texture2D" uid="uid://b86m57befc1wu" path="res://assets/front_leg2.png" id="14_44ny4"]
@@ -25,7 +25,8 @@
 [ext_resource type="Script" path="res://scripts/HeroTemp.cs" id="23_omg1c"]
 [ext_resource type="AudioStream" uid="uid://by2maf38wlj6i" path="res://music/Walking_1.mp3" id="24_u7rji"]
 [ext_resource type="PackedScene" uid="uid://bujj1bnmismal" path="res://scenes/pauseMenu.tscn" id="25_fjxc5"]
-[ext_resource type="Script" path="res://scripts/CodeEditing.cs" id="27_0xhyv"]
+[ext_resource type="Script" path="res://scripts/StopwatchLabel.cs" id="26_1bcks"]
+[ext_resource type="Script" path="res://scenes/Lv3Task1.cs" id="27_u0c5b"]
 [ext_resource type="Texture2D" uid="uid://ce08qytvbfscg" path="res://assets/pngwing.com (5).png" id="28_k8kpm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jl41s"]
@@ -103,7 +104,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ych2o"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_el7io"]
 bg_color = Color(0.350224, 0.505087, 0.491675, 0.847059)
 border_width_left = 4
 border_width_top = 4
@@ -111,7 +112,7 @@ border_width_right = 4
 border_width_bottom = 4
 border_color = Color(0.144063, 0.144063, 0.144062, 1)
 
-[sub_resource type="Theme" id="Theme_p6in2"]
+[sub_resource type="Theme" id="Theme_3ffv6"]
 default_font_size = 18
 
 [node name="Level3" type="Node2D"]
@@ -1166,8 +1167,8 @@ scale = Vector2(0.3, 0.316666)
 texture = ExtResource("5_yckog")
 
 [node name="Gem4" type="Sprite2D" parent="Buttons"]
-position = Vector2(2053, 810)
-scale = Vector2(0.494444, 0.477778)
+position = Vector2(2046, 800)
+scale = Vector2(0.247222, 0.255556)
 texture = ExtResource("9_okd43")
 
 [node name="Hidden1" type="CanvasGroup" parent="."]
@@ -1805,7 +1806,7 @@ texture = ExtResource("10_mbhic")
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(1112, 202)
 scale = Vector2(0.110904, 0.115773)
-script = ExtResource("11_m1e20")
+script = ExtResource("11_52qgl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(9.01758, -8.6377)
@@ -1829,10 +1830,8 @@ bus = &"SFX"
 [node name="CanvasLayer2" type="CanvasLayer" parent="CharacterBody2D/AnimatedSprite2D"]
 
 [node name="Control" parent="CharacterBody2D/AnimatedSprite2D/CanvasLayer2" instance=ExtResource("25_fjxc5")]
-offset_left = 158.0
-offset_top = -357.0
-offset_right = 158.0
-offset_bottom = -357.0
+offset_top = 2.0
+offset_bottom = 2.0
 metadata/_edit_use_anchors_ = true
 
 [node name="stopwatch_label" type="Label" parent="CharacterBody2D"]
@@ -1842,10 +1841,11 @@ offset_right = 8443.0
 offset_bottom = -3784.0
 theme_override_font_sizes/font_size = 500
 text = "00:00:000"
+script = ExtResource("26_1bcks")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
-script = ExtResource("27_0xhyv")
+script = ExtResource("27_u0c5b")
 
 [node name="PanelCode" type="Panel" parent="CanvasLayer"]
 anchors_preset = 15
@@ -1857,8 +1857,9 @@ offset_right = -154.0
 offset_bottom = -140.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ych2o")
-metadata/_edit_use_anchors_ = true
+theme_override_styles/panel = SubResource("StyleBoxFlat_el7io")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="CanvasLayer"]
 
 [node name="TaskDescription" type="RichTextLabel" parent="CanvasLayer"]
 top_level = true
@@ -1869,36 +1870,31 @@ offset_bottom = 838.0
 theme_override_colors/table_border = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 17
 bbcode_enabled = true
-text = "[color=orange][b]Turi sugebėti priimti vartotojo įvestį. C++ programavimo kalboje tai atliekama naudojant komandą cin, kuri leidžia nuskaityti vartotojo įvestą tekstą ar skaičių[/b] [/color]
-
-[color=#FF6347][b]*[/b][/color]*Tavo užduotis yra priimti konsole įvestį, kuri yra skaičius 7, ir ją išvesti ekrane.
-
-[color=lightblue]Paaiškinimas:
-
-cin reiškia „console input“ – tai būdas gauti duomenis iš vartotojo.
-
-\">>\" yra operatorius, kuris nurodo, kad duomenys turi būti saugomi nurodytoje kintamojoje.
-
-Pvz., jei nori priimti skaičių, gali naudoti:
-cin >> kintamasis;
-
-Kiekvieną kartą, kai naudotojas įveda reikšmę ir paspaudžia Enter mygtuką, ši reikšmė bus priskirta kintamajam.
-Atmink, kad turi įvesti teisingą duomenų tipą. Jei kintamasis yra tipo int, įvesk sveiką skaičių!"
-metadata/_edit_use_anchors_ = true
 
 [node name="CodeEdit1" type="CodeEdit" parent="CanvasLayer"]
 offset_left = 929.0
 offset_top = 376.0
 offset_right = 1283.0
 offset_bottom = 786.0
-theme = SubResource("Theme_p6in2")
+theme = SubResource("Theme_3ffv6")
 theme_override_colors/font_selected_color = Color(0, 0, 0.290196, 1)
-text = "cout << \"Hello, World!\" << endl;
+text = "#include <iostream>
+
+using namespace std;
+
+int main() {
+
+   cout << \"Hello, World!\" << endl;
+    return 0;
+
+}
+
+
+
     "
 code_completion_enabled = true
 auto_brace_completion_enabled = true
 auto_brace_completion_highlight_matching = true
-metadata/_edit_use_anchors_ = true
 
 [node name="Submit" type="Button" parent="CanvasLayer"]
 offset_left = 954.0
@@ -1906,7 +1902,6 @@ offset_top = 849.0
 offset_right = 1035.0
 offset_bottom = 888.0
 text = "Pateikti"
-metadata/_edit_use_anchors_ = true
 
 [node name="Save" type="Button" parent="CanvasLayer"]
 offset_left = 1093.0
@@ -1914,7 +1909,6 @@ offset_top = 853.0
 offset_right = 1172.0
 offset_bottom = 891.0
 text = "išsaugoti"
-metadata/_edit_use_anchors_ = true
 
 [node name="Refresh" type="Button" parent="CanvasLayer"]
 anchors_preset = -1
@@ -1924,7 +1918,6 @@ offset_left = 1222.0
 offset_top = 844.0
 offset_right = 1123.16
 offset_bottom = 800.6
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Refresh"]
 layout_mode = 1
@@ -1935,7 +1928,6 @@ offset_right = 47.0
 offset_bottom = 46.0
 texture = ExtResource("28_k8kpm")
 expand_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="PanelConsole" type="Panel" parent="CanvasLayer"]
 anchors_preset = 15
@@ -1947,8 +1939,7 @@ offset_right = -1148.0
 offset_bottom = -509.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ych2o")
-metadata/_edit_use_anchors_ = true
+theme_override_styles/panel = SubResource("StyleBoxFlat_el7io")
 
 [node name="Submit" type="Button" parent="CanvasLayer/PanelConsole"]
 layout_mode = 0
@@ -1958,7 +1949,6 @@ offset_right = 484.0
 offset_bottom = 315.0
 text = "enter
 "
-metadata/_edit_use_anchors_ = true
 
 [node name="Console" type="TextEdit" parent="CanvasLayer/PanelConsole"]
 layout_mode = 0
@@ -1966,7 +1956,6 @@ offset_left = 17.0
 offset_top = 15.0
 offset_right = 475.0
 offset_bottom = 271.0
-metadata/_edit_use_anchors_ = true
 
 [node name="ConsoleLine" type="TextEdit" parent="CanvasLayer/PanelConsole"]
 layout_mode = 0
@@ -1975,4 +1964,3 @@ offset_top = 280.0
 offset_right = 412.0
 offset_bottom = 316.0
 placeholder_text = "> "
-metadata/_edit_use_anchors_ = true
