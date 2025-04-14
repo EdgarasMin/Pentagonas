@@ -24,10 +24,18 @@ animations = [{
 "loop": true,
 "name": &"move",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wapyj")
+}],
+"loop": true,
+"name": &"still",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tcv2r"]
-radius = 489.083
+radius = 253.45
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tdkae"]
 radius = 164.21
@@ -37,7 +45,7 @@ script = ExtResource("1_thfb1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rybcx")
-animation = &"move"
+animation = &"still"
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(1, -3)

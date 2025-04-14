@@ -5,7 +5,7 @@ var speed = 50
 var player_chase = false
 var player = null
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if player_chase:
 		position += (player.position - position)/ speed
 		$AnimatedSprite2D.scale = Vector2(0.1, 0.1)
@@ -13,15 +13,15 @@ func _physics_process(delta):
 		
 	else:
 		$AnimatedSprite2D.scale = Vector2(0.1, 0.1)
-		$AnimatedSprite2D.play("move")
+		$AnimatedSprite2D.play("still")
 
 
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(body):
 	player = body
 	player_chase = true
 
-func _on_area_2d_body_exited(body: Node2D) -> void:
+func _on_area_2d_body_exited(body):
 	player = body
-	player_chase = true
+	player_chase = false

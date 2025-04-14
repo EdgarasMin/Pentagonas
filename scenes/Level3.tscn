@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cmgj43naheui6"]
+[gd_scene load_steps=36 format=3 uid="uid://cmgj43naheui6"]
 
 [ext_resource type="Texture2D" uid="uid://dhov7oql8eck8" path="res://assets/Level3/bac 3.png" id="1_btfua"]
 [ext_resource type="Texture2D" uid="uid://jr456bqwiche" path="res://assets/Level3/box 3a.png" id="2_2qekl"]
@@ -11,23 +11,24 @@
 [ext_resource type="Texture2D" uid="uid://dmwbvaom7fvoj" path="res://assets/Level3/gem4.png" id="9_okd43"]
 [ext_resource type="Texture2D" uid="uid://cwlvagp4iugcd" path="res://assets/Level3/box 3n.png" id="10_mbhic"]
 [ext_resource type="Script" path="res://scripts/Lv3.cs" id="11_52qgl"]
-[ext_resource type="Texture2D" uid="uid://cpsnvpkkkljow" path="res://assets/front.png" id="12_dtke4"]
-[ext_resource type="Texture2D" uid="uid://dwhmcbl74sjgg" path="res://assets/front_leg.png" id="13_5y6gk"]
-[ext_resource type="Texture2D" uid="uid://b86m57befc1wu" path="res://assets/front_leg2.png" id="14_44ny4"]
-[ext_resource type="Texture2D" uid="uid://vf1w88p1tt3j" path="res://assets/side2_leg.png" id="15_nhwxq"]
-[ext_resource type="Texture2D" uid="uid://ddt64m2yf0sh" path="res://assets/side2.png" id="16_c3kee"]
-[ext_resource type="Texture2D" uid="uid://h75ukc2ft6ux" path="res://assets/side1_leg2.png" id="17_vpv7i"]
-[ext_resource type="Texture2D" uid="uid://bxhxlw7dt424d" path="res://assets/side2_leg2.png" id="18_d5xvs"]
-[ext_resource type="Texture2D" uid="uid://cb4r4hx57gjrt" path="res://assets/side1.png" id="19_n0tbv"]
-[ext_resource type="Texture2D" uid="uid://bwuhpu4reh2qb" path="res://assets/side1_leg.png" id="20_2myhx"]
-[ext_resource type="Texture2D" uid="uid://c22rbanxfuiye" path="res://assets/back_leg.png" id="21_4k7rq"]
-[ext_resource type="Texture2D" uid="uid://d12aoab3kaej3" path="res://assets/back_leg2.png" id="22_3iedb"]
+[ext_resource type="Texture2D" uid="uid://cpsnvpkkkljow" path="res://assets/Animacija/front.png" id="12_dtke4"]
+[ext_resource type="Texture2D" uid="uid://dwhmcbl74sjgg" path="res://assets/Animacija/front_leg.png" id="13_5y6gk"]
+[ext_resource type="Texture2D" uid="uid://b86m57befc1wu" path="res://assets/Animacija/front_leg2.png" id="14_44ny4"]
+[ext_resource type="Texture2D" uid="uid://vf1w88p1tt3j" path="res://assets/Animacija/side2_leg.png" id="15_nhwxq"]
+[ext_resource type="Texture2D" uid="uid://ddt64m2yf0sh" path="res://assets/Animacija/side2.png" id="16_c3kee"]
+[ext_resource type="Texture2D" uid="uid://h75ukc2ft6ux" path="res://assets/Animacija/side1_leg2.png" id="17_vpv7i"]
+[ext_resource type="Texture2D" uid="uid://bxhxlw7dt424d" path="res://assets/Animacija/side2_leg2.png" id="18_d5xvs"]
+[ext_resource type="Texture2D" uid="uid://cb4r4hx57gjrt" path="res://assets/Animacija/side1.png" id="19_n0tbv"]
+[ext_resource type="Texture2D" uid="uid://bwuhpu4reh2qb" path="res://assets/Animacija/side1_leg.png" id="20_2myhx"]
+[ext_resource type="Texture2D" uid="uid://c22rbanxfuiye" path="res://assets/Animacija/back_leg.png" id="21_4k7rq"]
+[ext_resource type="Texture2D" uid="uid://d12aoab3kaej3" path="res://assets/Animacija/back_leg2.png" id="22_3iedb"]
 [ext_resource type="Script" path="res://scripts/HeroTemp.cs" id="23_omg1c"]
 [ext_resource type="AudioStream" uid="uid://by2maf38wlj6i" path="res://music/Walking_1.mp3" id="24_u7rji"]
 [ext_resource type="PackedScene" uid="uid://bujj1bnmismal" path="res://scenes/pauseMenu.tscn" id="25_fjxc5"]
 [ext_resource type="Script" path="res://scripts/StopwatchLabel.cs" id="26_1bcks"]
 [ext_resource type="Script" path="res://scripts/Lv3Task1.cs" id="27_u0c5b"]
 [ext_resource type="Texture2D" uid="uid://ce08qytvbfscg" path="res://assets/pngwing.com (5).png" id="28_k8kpm"]
+[ext_resource type="PackedScene" uid="uid://duuvlji1k4tya" path="res://scenes/enemy.tscn" id="29_suh7r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jl41s"]
 size = Vector2(12.9998, 14.7171)
@@ -1816,6 +1817,8 @@ texture = ExtResource("10_mbhic")
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(1112, 202)
 scale = Vector2(0.110904, 0.115773)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("11_52qgl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
@@ -1984,3 +1987,6 @@ offset_right = 1915.0
 offset_bottom = 192.0
 theme_override_font_sizes/normal_font_size = 21
 text = "Sveiki atvykę į trečiąjį lygį!  Jūsų užduotis yra padėti  sujungti elektros grandinę, spaudžiant mygtukus, kad elektra pasiektų visus brangakmenius labirinte. Kiekvienas mygtukas(B raidė) įjungia tam tikrą elektros liniją, o jūsų tikslas – sujungti visas linijas taip, kad elektra pasiektų brangakmenius per trumpiausią įmanomą laiką. "
+
+[node name="enemy" parent="." instance=ExtResource("29_suh7r")]
+position = Vector2(295, 658)
