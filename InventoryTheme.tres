@@ -1,3 +1,15 @@
-[gd_resource type="Theme" format=3 uid="uid://bw8htm1kbs28q"]
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://up1ot3p664tb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_17n4b"]
+bg_color = Color(0.889042, 0.460407, 0.3419, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+corner_detail = 7
 
 [resource]
+default_font_size = 0
+/colors/okey = Color(0, 0, 0, 1)
+TextureButton/styles/uhh = SubResource("StyleBoxFlat_17n4b")

@@ -15,14 +15,14 @@ public partial class Area2d4 : Area2D
 				//langas.Show();
 			//GD.Print("Character entered the area!");
 			
-			//GetTree().ChangeSceneToFile("res://scenes/HeroScene.tscn");
+			//GetTree().ChangeSceneToFile("res://scenes/Level1.tscn");
 			CallDeferred("changeScene");
 			
 		}
 	}
 	private void changeScene()
 	{
-		GetTree().ChangeSceneToFile("res://scenes/level1.tscn");
+		GetTree().ChangeSceneToFile("res://scenes/Level1.tscn");
 	}
 	
 	private void OnAreaBodyExited(Node body)
