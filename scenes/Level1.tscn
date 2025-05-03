@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://ciiuwkr5egx34"]
+[gd_scene load_steps=34 format=3 uid="uid://ciiuwkr5egx34"]
 
 [ext_resource type="Script" path="res://scripts/CharacterBody2d.cs" id="1_36hu4"]
 [ext_resource type="Texture2D" uid="uid://cpsnvpkkkljow" path="res://assets/front.png" id="2_dnaew"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://scripts/HeroTemp.cs" id="14_5ioo0"]
 [ext_resource type="AudioStream" uid="uid://by2maf38wlj6i" path="res://music/Walking_1.mp3" id="15_bqstm"]
 [ext_resource type="PackedScene" uid="uid://bujj1bnmismal" path="res://scenes/pauseMenu.tscn" id="16_8ukof"]
+[ext_resource type="Script" path="res://scripts/StopwatchLabel.cs" id="17_mf8gv"]
 [ext_resource type="Script" path="res://scripts/CodeEditing2.cs" id="17_slt34"]
 [ext_resource type="Texture2D" uid="uid://ce08qytvbfscg" path="res://assets/pngwing.com (5).png" id="18_qc4uk"]
 [ext_resource type="Texture2D" uid="uid://bylnw5x3wth1u" path="res://door level1-2.png" id="19_dr32k"]
@@ -211,6 +212,15 @@ bus = &"SFX"
 
 [node name="Control" parent="CharacterBody2D/AnimatedSprite2D/CanvasLayer2" instance=ExtResource("16_8ukof")]
 metadata/_edit_use_anchors_ = true
+
+[node name="stopwatch_label" type="Label" parent="CharacterBody2D"]
+offset_left = 5789.0
+offset_top = -4630.0
+offset_right = 8443.0
+offset_bottom = -3784.0
+theme_override_font_sizes/font_size = 500
+text = "00:00:000"
+script = ExtResource("17_mf8gv")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false

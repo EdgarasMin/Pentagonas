@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://c2tbrtxq3l5wl"]
+[gd_scene load_steps=36 format=3 uid="uid://c2tbrtxq3l5wl"]
 
 [ext_resource type="Texture2D" uid="uid://c75vc0pv0fdrs" path="res://assets/Level2/Ground.png" id="1_j1t0g"]
 [ext_resource type="Texture2D" uid="uid://ba1gedlkko2ns" path="res://assets/Level2/Portal.png" id="1_soubu"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://dhroe83hbpl14" path="res://assets/Level2/wall2.png" id="18_kqr1h"]
 [ext_resource type="Texture2D" uid="uid://mca05vncmhm7" path="res://assets/Level2/wall3.png" id="19_nnu3n"]
 [ext_resource type="AudioStream" uid="uid://by2maf38wlj6i" path="res://music/Walking_1.mp3" id="19_pnh53"]
+[ext_resource type="Script" path="res://scripts/StopwatchLabel.cs" id="23_2mcj3"]
 [ext_resource type="Texture2D" uid="uid://ikum0rudr4kl" path="res://assets/Level2/Pointer.png" id="23_ijinf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e8ic6"]
@@ -1076,13 +1077,12 @@ public class Pasisveikinimas {
     }"
 
 [node name="RichTextLabel5" type="RichTextLabel" parent="."]
-offset_left = 6585.0
-offset_top = 351.0
-offset_right = 7253.0
-offset_bottom = 456.0
+offset_left = 6509.0
+offset_top = 332.0
+offset_right = 7290.0
+offset_bottom = 490.0
 theme_override_font_sizes/normal_font_size = 35
 text = "Kuris iš šių C# kodo fragmentų teisingai sukuria naują kintamųjų sąrašą, kuriame galima saugoti sveikus skaičius (int)?
-
 
 "
 
@@ -1215,6 +1215,15 @@ offset_top = -4.0
 offset_right = 1.0
 offset_bottom = -4.0
 metadata/_edit_use_anchors_ = true
+
+[node name="stopwatch_label" type="Label" parent="CharacterBody2D"]
+offset_left = 5789.0
+offset_top = -4630.0
+offset_right = 8443.0
+offset_bottom = -3784.0
+theme_override_font_sizes/font_size = 500
+text = "00:00:000"
+script = ExtResource("23_2mcj3")
 
 [node name="Pointer3" type="Sprite2D" parent="."]
 position = Vector2(1876, 416)

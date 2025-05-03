@@ -39,12 +39,18 @@ public partial class HeroTemp : AnimatedSprite2D
 	public override void _Process(double delta)
 	{
 		
-		var code = GetNode<CanvasLayer>("../../CanvasLayer"); 
-		if (code.Visible)
+		var code = GetNode<CanvasLayer>("../../CanvasLayer");
+		if (CodeEditing.Instance != null && CodeEditing.Instance.editorShown)
 		{
 			// If the editor is visible, don't process movement
 			return;
 		}
+		/*if(code!=null)   //ERROR
+		if (code.Visible)
+		{
+			// If the editor is visible, don't process movement
+			return;
+		}*/
 		
 		// Track if the character is moving in this frame
 		bool isMoving = false;

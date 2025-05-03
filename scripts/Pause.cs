@@ -8,6 +8,7 @@ public partial class Pause : Control
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		
 		Button resume = GetNode<Button>("PanelContainer/VBoxContainer/Resume");
 		Button options = GetNode<Button>("PanelContainer/VBoxContainer/Options");
 		Button mainMenu = GetNode<Button>("PanelContainer/VBoxContainer/mainMenu");
