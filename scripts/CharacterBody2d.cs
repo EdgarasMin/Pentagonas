@@ -14,6 +14,7 @@ public partial class CharacterBody2d : CharacterBody2D
 	{
 		//Clears bugs when scenes have already open objects
 		CodeEditing2.ExitTree();
+		
 		GD.Print("Character ready: ");
 		musicScene = GetNode<Music>("/root/Music");
 		musicScene.switchSong("Song4");

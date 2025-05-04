@@ -31,6 +31,7 @@ public partial class Lv3 : CharacterBody2D
 	
 	public override void _Ready()
 	{
+		//Lv3Task1.ExitTree();
 		// Any initialization code here
 		EmitSignal(SignalName.HealthChanged, Health, MaxHealth);
 		//EmitSignal(SignalName.HealthChanged, Health, MaxHealth);

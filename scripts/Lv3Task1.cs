@@ -30,7 +30,11 @@ public partial class Lv3Task1 : CanvasLayer
 	public HeroTemp heroTemp;
 
 	public static Lv3Task1 Instance { get; private set; }
-
+	public static void ExitTree()
+{
+	GD.Print("CodeEditing2 exited tree — clearing singleton instance");
+	Instance = null;
+}
 	private const string COMPILER_API = "https://godbolt.org/api/compiler/g102/compile";
 	private HttpRequest request;
 	// Užduoties klasė

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ByteBound: The Code Quest"
-run/main_scene="res://scenes/Prisijungimas.tscn"
+run/main_scene="res://scenes/Level3.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
