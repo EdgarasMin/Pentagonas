@@ -303,6 +303,7 @@ UpdateCodeBoxText();
 			if (currentTask < tasks.Count && output.Contains(tasks[currentTask].ExpectedOutput))
 			{
 				AppendToConsole("Task completed successfully!");
+				GetTree().ChangeSceneToFile("res://scenes/node_2d.tscn");
 				currentTask++;
 				UpdateTaskDescription();
 				UpdateCodeBoxText();
