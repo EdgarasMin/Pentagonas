@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://cmgj43naheui6"]
+[gd_scene load_steps=50 format=3 uid="uid://cmgj43naheui6"]
 
 [ext_resource type="Texture2D" uid="uid://dhov7oql8eck8" path="res://assets/Level3/bac 3.png" id="1_btfua"]
 [ext_resource type="Texture2D" uid="uid://jr456bqwiche" path="res://assets/Level3/box 3a.png" id="2_2qekl"]
@@ -37,7 +37,6 @@
 [ext_resource type="PackedScene" uid="uid://duuvlji1k4tya" path="res://scenes/enemy.tscn" id="29_suh7r"]
 [ext_resource type="Texture2D" uid="uid://ct3f7kfe8ywql" path="res://assets/Inventorius/raktas.png" id="30_qxjdj"]
 [ext_resource type="Texture2D" uid="uid://eh27pif8nvxk" path="res://assets/Inventorius/energija.png" id="31_ahsgs"]
-[ext_resource type="PackedScene" uid="uid://cpuvivauhj201" path="res://scenes/HealthBar.tscn" id="31_kwnxc"]
 [ext_resource type="Texture2D" uid="uid://3hmlwnym7iwp" path="res://assets/Inventorius/map.png" id="32_p00y4"]
 [ext_resource type="Texture2D" uid="uid://bgr3oglj84x6g" path="res://assets/Inventorius/vaistinele.png" id="33_tjioh"]
 
@@ -1933,10 +1932,7 @@ rotation = -0.785397
 position = Vector2(18.0336, -17.2752)
 shape = SubResource("CircleShape2D_qgf4j")
 
-[node name="HealthBar" parent="CharacterBody2D" instance=ExtResource("31_kwnxc")]
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("27_u0c5b")
 
 [node name="PanelCode" type="Panel" parent="CanvasLayer"]
@@ -2012,6 +2008,7 @@ offset_right = 1123.16
 offset_bottom = 800.6
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Refresh"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 offset_left = -2.0
