@@ -1,91 +1,95 @@
 using Godot;
 using System;
-
 public partial class HeroTemp : AnimatedSprite2D
 {
-	// Movement variables
 	int speed = 500;
 	public Vector2 vel = Vector2.Zero;
-	
-	// Audio references
 	public Music musicScene;
 	public AudioStreamPlayer walkSound;
-	
-	// Game state references
 	private GameManageris gameManageris;
-	
-	// Combat variables
-	bool enemy_inattack_range = false;
-	bool enemy_attack_cooldown = true;
-	int health = 100;
-	bool player_alive = true;
 
-	// Animation states
+	// Reset velocity to zero at the start of each frame
+
+
+
+
+	// Animation states - fixed the typo in walk_right
 	private enum AnimationState
 	{
 		idle,
 		walk_left,
-		walk_right,
+		walk_right,  // Fixed typo: was wal_right
 		walk_top,
 		walk_bottom
 	}
 	
-	private AnimationState currentState = AnimationState.idle;
+	private AnimationState currentState = AnimationState.idle;  // Fixed: lowercase idle
 	
 	public override void _Ready()
 	{
 		gameManageris = GetNode<GameManageris>("/root/GameManageris");
 		gameManageris.SaveCurrentScene();
 		walkSound = GetNode<AudioStreamPlayer>("Walking");
+		//musicScene = GetNode<Music>("/root/Music");
+		//musicScene.switchSong("Song4");
 		GD.Print("HeroTemp script is running!");
 		Play("idle");
 	}
 	
 	public override void _Process(double delta)
 	{
-		var code = GetNode<CanvasLayer>("../../CanvasLayer"); 
-		if (code.Visible)
+		
+		var code = GetNode<CanvasLayer>("../../CanvasLayer");
+		if (CodeEditing.Instance != null && CodeEditing.Instance.editorShown)
 		{
-			// If editor UI is visible, don't process movement
+			// If the editor is visible, don't process movement
 			return;
 		}
+		/*if(code!=null)   //ERROR
+		if (code.Visible)
+		{
+			// If the editor is visible, don't process movement
+			return;
+		}*/
 		
-		// Movement and animation handling
+		// Track if the character is moving in this frame
 		bool isMoving = false;
 		AnimationState newState = currentState;
 		
-		// Horizontal movement
+		// Update velocity and animation state based on input
 		if (Input.IsActionPressed("Move_L"))
 		{
+		
 			newState = AnimationState.walk_left;
 			isMoving = true;
 		}
 		else if (Input.IsActionPressed("Move_R"))
 		{
-			newState = AnimationState.walk_right;
+		
+			newState = AnimationState.walk_right;  // Fixed: using correct enum value
 			isMoving = true;
 		}
 		
-		// Vertical movement
 		if (Input.IsActionPressed("Move_U"))
 		{
+		
 			newState = AnimationState.walk_top;
 			isMoving = true;
 		}
 		else if (Input.IsActionPressed("Move_D"))
 		{
+		
 			newState = AnimationState.walk_bottom;
 			isMoving = true;
 		}
 		
-		// Handle idle state
+		// If not moving, go to idle state
 		if (!isMoving)
 		{
 			walkSound.Stop();
 			newState = AnimationState.idle;
 		}
 		
-		// Play walking sound if moving
 		if (isMoving && !walkSound.Playing)
 		{
 			walkSound.Play();
@@ -97,6 +101,9 @@ public partial class HeroTemp : AnimatedSprite2D
 			currentState = newState;
 			UpdateAnimation();
 		}
+	
+		
+		
 	}
 	
 	private void UpdateAnimation()
@@ -121,8 +128,4 @@ public partial class HeroTemp : AnimatedSprite2D
 				break;
 		}
 	}
-
-	
-
-	
 }

@@ -32,6 +32,11 @@ public partial class CodeEditing2 : CanvasLayer
 
 	private const string COMPILER_API = "https://godbolt.org/api/compiler/g102/compile";
 	private HttpRequest request;
+	public static void ExitTree()
+{
+	GD.Print("CodeEditing2 exited tree — clearing singleton instance");
+	Instance = null;
+}
 	// Užduoties klasė
 	public class Task
 	{
@@ -59,6 +64,9 @@ public partial class CodeEditing2 : CanvasLayer
 
 	public override void _Ready()
 	{
+		
+		
+		
 		// Try to get the Submit button node and ensure it's found
 		// Initialize HTTPRequest (must have the node in your scene)
 		request = GetNode<HttpRequest>("HTTPRequest");

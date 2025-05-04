@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://cb4r4hx57gjrt" path="res://assets/side1.png" id="10_sl4n8"]
 [ext_resource type="Texture2D" uid="uid://bwuhpu4reh2qb" path="res://assets/side1_leg.png" id="11_iphw7"]
 [ext_resource type="Texture2D" uid="uid://c22rbanxfuiye" path="res://assets/back_leg.png" id="12_7f23l"]
-[ext_resource type="Texture2D" uid="uid://0r4vboy603xp" path="res://assets/back.png" id="13_wx2x6"]
 [ext_resource type="Texture2D" uid="uid://d12aoab3kaej3" path="res://assets/back_leg2.png" id="14_6mfdf"]
 [ext_resource type="Script" path="res://scripts/HeroTemp.cs" id="15_ltjrf"]
 [ext_resource type="AudioStream" uid="uid://by2maf38wlj6i" path="res://music/Walking_1.mp3" id="16_s0e6g"]
@@ -33,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://b57p3kr83mt5y" path="res://assets/priešas/untitled1.png" id="31_mpi5o"]
 [ext_resource type="Texture2D" uid="uid://c37ee21hwdixj" path="res://assets/priešas/untitled2.png" id="32_c5xsd"]
 [ext_resource type="Texture2D" uid="uid://quftmeas2nup" path="res://assets/priešas/untitled.png" id="33_pfnm4"]
+[ext_resource type="Script" path="res://scripts/StopwatchLabel.cs" id="34_qjh5y"]
 [ext_resource type="Script" path="res://scripts/notMovingEnemy.gd" id="34_vxci1"]
 [ext_resource type="Script" path="res://scripts/InventoryUI.cs" id="35_ewb42"]
 [ext_resource type="StyleBox" uid="uid://c2llxtb2p0dry" path="res://buttonInventory.tres" id="36_jqaah"]
@@ -93,7 +93,7 @@ size = Vector2(122, 188.25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xte7g"]
 size = Vector2(229.928, 480.067)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_i7rnn"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_w7e70"]
 animations = [{
 "frames": [],
 "loop": true,
@@ -111,9 +111,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("4_ia5lj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_3xdko")
 }, {
 "duration": 1.0,
 "texture": ExtResource("5_5xsup")
@@ -153,9 +150,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("12_7f23l")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_wx2x6")
 }, {
 "duration": 1.0,
 "texture": ExtResource("14_6mfdf")
@@ -511,23 +505,41 @@ scale = Vector2(0.110904, 0.115773)
 script = ExtResource("2_18oye")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(9.01758, -8.6377)
+position = Vector2(9.01709, -8.6377)
 shape = SubResource("RectangleShape2D_xte7g")
 one_way_collision_margin = 0.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(36.0674, -112.29)
-sprite_frames = SubResource("SpriteFrames_i7rnn")
-animation = &"walk_top"
+position = Vector2(63.1182, -60.4631)
+sprite_frames = SubResource("SpriteFrames_w7e70")
+animation = &"walk_right"
 script = ExtResource("15_ltjrf")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D/AnimatedSprite2D"]
-position = Vector2(-54.1007, 120.926)
+position = Vector2(-9.01662, -34.5491)
 scale = Vector2(9.01681, 8.63759)
 
 [node name="Walking" type="AudioStreamPlayer" parent="CharacterBody2D/AnimatedSprite2D"]
 stream = ExtResource("16_s0e6g")
 bus = &"SFX"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="CharacterBody2D/AnimatedSprite2D"]
+
+[node name="Control" parent="CharacterBody2D/AnimatedSprite2D/CanvasLayer2" instance=ExtResource("17_fijip")]
+offset_left = -5.0
+offset_top = 2.0
+offset_right = -5.0
+offset_bottom = 2.0
+metadata/_edit_use_anchors_ = true
+
+[node name="stopwatch_label" type="Label" parent="CharacterBody2D"]
+offset_left = 5825.07
+offset_top = -4742.29
+offset_right = 8479.07
+offset_bottom = -3896.29
+theme_override_font_sizes/font_size = 500
+text = "00:00:000"
+script = ExtResource("34_qjh5y")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

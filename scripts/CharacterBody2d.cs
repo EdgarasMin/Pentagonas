@@ -12,7 +12,9 @@ public partial class CharacterBody2d : CharacterBody2D
 	
 	public override void _Ready()
 	{
-	   
+		//Clears bugs when scenes have already open objects
+		CodeEditing2.ExitTree();
+		GD.Print("Character ready: ");
 		musicScene = GetNode<Music>("/root/Music");
 		musicScene.switchSong("Song4");
 		
@@ -45,9 +47,10 @@ public partial class CharacterBody2d : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
+		
 		if (CodeEditing2.Instance != null && CodeEditing2.Instance.editorShown)
 		{
-			// If the editor is visible, don't process movement
+			GD.Print("Error: ");
 			return;
 		}
 
