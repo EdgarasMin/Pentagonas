@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://duuvlji1k4tya"]
+[gd_scene load_steps=12 format=3 uid="uid://duuvlji1k4tya"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_thfb1"]
 [ext_resource type="Texture2D" uid="uid://baqj64e48hus1" path="res://assets/priešas/priešas.png" id="2_wapyj"]
 [ext_resource type="Texture2D" uid="uid://b57p3kr83mt5y" path="res://assets/priešas/untitled1.png" id="3_quaoe"]
 [ext_resource type="Texture2D" uid="uid://c37ee21hwdixj" path="res://assets/priešas/untitled2.png" id="4_6htx8"]
 [ext_resource type="Texture2D" uid="uid://quftmeas2nup" path="res://assets/priešas/untitled.png" id="5_ggyte"]
+[ext_resource type="PackedScene" uid="uid://b6g7adilkx1os" path="res://scenes/health_bar.tscn" id="6_ycmsx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rybcx"]
 animations = [{
@@ -35,13 +36,16 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tcv2r"]
-radius = 253.45
+radius = 559.129
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tdkae"]
-radius = 164.21
+radius = 230.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o2bhs"]
-radius = 360.2
+radius = 288.513
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4dl2l"]
+radius = 630.179
 
 [node name="enemy" type="CharacterBody2D"]
 script = ExtResource("1_thfb1")
@@ -57,7 +61,6 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
 position = Vector2(4, 0)
 shape = SubResource("CircleShape2D_tcv2r")
 
@@ -68,13 +71,23 @@ shape = SubResource("CircleShape2D_tdkae")
 [node name="AttackCooldown" type="Timer" parent="."]
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
-visible = false
-collision_layer = 3
-collision_mask = 3
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
-visible = false
 shape = SubResource("CircleShape2D_o2bhs")
+
+[node name="HealthBar" parent="." instance=ExtResource("6_ycmsx")]
+offset_left = -117.0
+offset_top = 300.0
+offset_right = 120.0
+offset_bottom = 353.0
+
+[node name="DetectionArea" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_4dl2l")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

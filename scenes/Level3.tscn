@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://cmgj43naheui6"]
+[gd_scene load_steps=51 format=3 uid="uid://cmgj43naheui6"]
 
 [ext_resource type="Texture2D" uid="uid://dhov7oql8eck8" path="res://assets/Level3/bac 3.png" id="1_btfua"]
 [ext_resource type="Texture2D" uid="uid://jr456bqwiche" path="res://assets/Level3/box 3a.png" id="2_2qekl"]
@@ -37,6 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://duuvlji1k4tya" path="res://scenes/enemy.tscn" id="29_suh7r"]
 [ext_resource type="Texture2D" uid="uid://ct3f7kfe8ywql" path="res://assets/Inventorius/raktas.png" id="30_qxjdj"]
 [ext_resource type="Texture2D" uid="uid://eh27pif8nvxk" path="res://assets/Inventorius/energija.png" id="31_ahsgs"]
+[ext_resource type="PackedScene" uid="uid://b6g7adilkx1os" path="res://scenes/health_bar.tscn" id="31_ybe0m"]
 [ext_resource type="Texture2D" uid="uid://3hmlwnym7iwp" path="res://assets/Inventorius/map.png" id="32_p00y4"]
 [ext_resource type="Texture2D" uid="uid://bgr3oglj84x6g" path="res://assets/Inventorius/vaistinele.png" id="33_tjioh"]
 
@@ -1895,7 +1896,7 @@ one_way_collision_margin = 0.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(63.1178, -60.4631)
 sprite_frames = SubResource("SpriteFrames_t1ud1")
-animation = &"attack_right"
+animation = &"idle"
 script = ExtResource("23_omg1c")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D/AnimatedSprite2D"]
@@ -1929,10 +1930,17 @@ position = Vector2(9.0168, -43.188)
 rotation = -0.785397
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/AttackArea"]
-position = Vector2(18.0336, -17.2752)
+position = Vector2(62.1497, -11.1427)
 shape = SubResource("CircleShape2D_qgf4j")
 
+[node name="HealthBar" parent="CharacterBody2D" instance=ExtResource("31_ybe0m")]
+offset_left = -90.0
+offset_top = 311.0
+offset_right = 216.0
+offset_bottom = 389.0
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("27_u0c5b")
 
 [node name="PanelCode" type="Panel" parent="CanvasLayer"]

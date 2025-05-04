@@ -12,7 +12,8 @@ public partial class Lv3 : CharacterBody2D
 	// Combat properties
 	public int Health = 100;
 	public int MaxHealth = 100;
-	public int AttackDamage = 25;  
+	public int MinHealth = 0;
+	public int AttackDamage = 10;  
 	private float attackCooldown = 0.5f; // Attack cooldown in seconds
 	private float attackTimer = 0.0f;
 	private bool isInvulnerable = false;
@@ -75,16 +76,44 @@ public partial class Lv3 : CharacterBody2D
 		}
 	}
 	
-	private void Die()
+	private async void Die()
+{
+	// Handle player death
+	GD.Print("Player died!");
+	
+	// Disable movement
+	SetProcess(false);
+	SetPhysicsProcess(false);
+	
+	// Find and stop the stopwatch
+	var stopwatchLabel = GetTree().Root.FindChild("stopwatch_label", true, false);
+	if (stopwatchLabel != null && stopwatchLabel is StopwatchLabel stopwatch)
 	{
-		// Handle player death
-		// Could restart level, show game over, etc.
-		GD.Print("Player died!");
-		
-		// For now, just disable movement
-		SetProcess(false);
-		SetPhysicsProcess(false);
+		stopwatch.Stop();
 	}
+	else
+	{
+		GD.Print("Stopwatch label not found!");
+	}
+	
+	// Show death animation or effect
+	if (animatedSprite != null)
+	{
+		// Flash red and fade out
+		Modulate = new Color(1, 0, 0, 1);
+		
+		// Create a tween for fade out effect
+		var tween = CreateTween();
+		tween.TweenProperty(this, "modulate", new Color(1, 0, 0, 0.2f), 1.0f);
+		tween.Play();
+	}
+	
+	// Wait for 3 seconds before restarting
+	await ToSignal(GetTree().CreateTimer(3.0f), "timeout");
+	
+	// Restart the level
+	GetTree().ReloadCurrentScene();
+}
 	
 	// Method to attack enemies
 	private void Attack()
@@ -272,7 +301,7 @@ public partial class Lv3 : CharacterBody2D
 			{
 				isAttacking = false;
 				// Return to idle animation based on facing direction
-				animatedSprite.Play(facingRight ? "idle_right" : "idle_left");
+				animatedSprite.Play(facingRight ? "idle" : "idle");
 			}
 		}
 
@@ -289,7 +318,7 @@ public partial class Lv3 : CharacterBody2D
 				facingRight = false;
 				if (animatedSprite != null && !isAttacking)
 				{
-					animatedSprite.Play("idle_left");
+					animatedSprite.Play("idle");
 				}
 			}
 			if (Input.IsActionPressed("Move_R"))
@@ -298,7 +327,7 @@ public partial class Lv3 : CharacterBody2D
 				facingRight = true;
 				if (animatedSprite != null && !isAttacking)
 				{
-					animatedSprite.Play("idle_right");
+					animatedSprite.Play("idle");
 				}
 			}
 			if (Input.IsActionPressed("Move_U"))
@@ -328,7 +357,7 @@ public partial class Lv3 : CharacterBody2D
 		{
 			isAttacking = false;
 			// Return to idle animation based on facing direction
-			animatedSprite.Play(facingRight ? "idle_right" : "idle_left");
+			animatedSprite.Play(facingRight ? "idle" : "idle");
 			
 			// Disconnect the signal to avoid it being called for other animations
 			if (animatedSprite.IsConnected("animation_finished", new Callable(this, nameof(OnAttackAnimationFinished))))
