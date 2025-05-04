@@ -13,15 +13,15 @@ public partial class InventoryUI : CanvasLayer
         var grid = GetNodeOrNull<GridContainer>("Panel/GridContainer");
         if (grid == null)
         {
-            GD.Print("Gridas neveikia");
+            //GD.Print("Gridas neveikia");
         }
         else
         {
-            GD.Print("Gridas Veikia");
+            //GD.Print("Gridas Veikia");
             foreach (Button button in grid.GetChildren())
             {
                 button.GuiInput += (InputEvent @event) => OnSlotGuiInput(button, @event);
-                GD.Print("paeme mygtukus");
+                //GD.Print("paeme mygtukus");
             }
         }
 

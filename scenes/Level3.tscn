@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cmgj43naheui6"]
+[gd_scene load_steps=49 format=3 uid="uid://cmgj43naheui6"]
 
 [ext_resource type="Texture2D" uid="uid://dhov7oql8eck8" path="res://assets/Level3/bac 3.png" id="1_btfua"]
 [ext_resource type="Texture2D" uid="uid://jr456bqwiche" path="res://assets/Level3/box 3a.png" id="2_2qekl"]
@@ -33,6 +33,11 @@
 [ext_resource type="Texture2D" uid="uid://eh27pif8nvxk" path="res://assets/Inventorius/energija.png" id="31_ahsgs"]
 [ext_resource type="Texture2D" uid="uid://3hmlwnym7iwp" path="res://assets/Inventorius/map.png" id="32_p00y4"]
 [ext_resource type="Texture2D" uid="uid://bgr3oglj84x6g" path="res://assets/Inventorius/vaistinele.png" id="33_tjioh"]
+[ext_resource type="Script" path="res://scripts/mapScript.cs" id="34_xx3bw"]
+[ext_resource type="Texture2D" uid="uid://dxj3ec0gulg2y" path="res://assets/Screenshot 2025-05-04 180943.png" id="35_lr5ff"]
+[ext_resource type="Texture2D" uid="uid://cdr6b6xad2awv" path="res://assets/Screenshot 2025-05-04 180256.png" id="36_old0g"]
+[ext_resource type="Texture2D" uid="uid://b61vhuweyh1ho" path="res://assets/Screenshot 2025-05-04 180509.png" id="37_ptfwx"]
+[ext_resource type="Texture2D" uid="uid://lmldrawidpan" path="res://assets/Screenshot 2025-05-04 180659.png" id="38_amxae"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jl41s"]
 size = Vector2(12.9998, 14.7171)
@@ -138,6 +143,14 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="Theme" id="Theme_s18xa"]
 /styles/okay = SubResource("StyleBoxFlat_vut2t")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_47inp"]
+bg_color = Color(0.34902, 0.505882, 0.490196, 0.847059)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 7
+border_color = Color(0.099986, 0.099986, 0.0999859, 1)
 
 [node name="Level3" type="Node2D"]
 position = Vector2(-3, -3)
@@ -2178,3 +2191,107 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(1, 0.690196, 0.454902, 1)
 theme_override_font_sizes/font_size = 23
 text = "Inventorius"
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("34_xx3bw")
+
+[node name="Panel" type="Panel" parent="CanvasLayer3"]
+offset_left = 111.0
+offset_top = 155.0
+offset_right = 809.0
+offset_bottom = 626.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_47inp")
+
+[node name="Label" type="Label" parent="CanvasLayer3/Panel"]
+offset_left = 252.0
+offset_right = 415.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 33
+text = "Žemėlapis"
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer3/Panel"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 94.0
+offset_right = 681.0
+offset_bottom = 449.0
+theme_override_constants/h_separation = 64
+theme_override_constants/v_separation = 9
+columns = 4
+
+[node name="Button" type="Button" parent="CanvasLayer3/Panel/GridContainer"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer3/Panel/GridContainer/Button"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("35_lr5ff")
+expand_mode = 2
+
+[node name="Įvadinis" type="Label" parent="CanvasLayer3/Panel/GridContainer/Button"]
+offset_top = 110.0
+offset_right = 128.0
+offset_bottom = 156.0
+theme_override_font_sizes/font_size = 33
+text = "Įvadinis"
+
+[node name="Button2" type="Button" parent="CanvasLayer3/Panel/GridContainer"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer3/Panel/GridContainer/Button2"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 0
+offset_right = 110.0
+offset_bottom = 110.0
+texture = ExtResource("36_old0g")
+expand_mode = 2
+
+[node name="1lygis" type="Label" parent="CanvasLayer3/Panel/GridContainer/Button2"]
+offset_top = 110.0
+offset_right = 128.0
+offset_bottom = 156.0
+theme_override_font_sizes/font_size = 33
+text = "1 Lygis"
+
+[node name="Button3" type="Button" parent="CanvasLayer3/Panel/GridContainer"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer3/Panel/GridContainer/Button3"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("37_ptfwx")
+expand_mode = 2
+
+[node name="2lygis" type="Label" parent="CanvasLayer3/Panel/GridContainer/Button3"]
+offset_top = 110.0
+offset_right = 128.0
+offset_bottom = 156.0
+theme_override_font_sizes/font_size = 33
+text = "2 Lygis"
+
+[node name="Button4" type="Button" parent="CanvasLayer3/Panel/GridContainer"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer3/Panel/GridContainer/Button4"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("38_amxae")
+expand_mode = 2
+
+[node name="3lygis" type="Label" parent="CanvasLayer3/Panel/GridContainer/Button4"]
+offset_top = 110.0
+offset_right = 128.0
+offset_bottom = 156.0
+theme_override_font_sizes/font_size = 33
+text = "3 Lygis"
