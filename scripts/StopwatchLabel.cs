@@ -8,7 +8,13 @@ public partial class StopwatchLabel : Label
 	public bool stopWatch = false;
 	
 
-	
+	 public void ResetTimer()
+	{
+		elapsedTime = 0f;
+
+
+		// Visible = false; // Pvz., paslėpti
+	}
 	public override void _Process(double delta)
 	{
 		elapsedTime = Global.elapsedTime;

@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://ck6pt5ps2lrji"]
+[gd_scene load_steps=75 format=3 uid="uid://ck6pt5ps2lrji"]
 
 [ext_resource type="Script" path="res://scripts/Node2d.cs" id="1_gnw4h"]
 [ext_resource type="Script" path="res://scripts/CharacterBody2d.cs" id="1_mnma1"]
@@ -25,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://by2maf38wlj6i" path="res://music/Walking_1.mp3" id="15_jb2bm"]
 [ext_resource type="PackedScene" uid="uid://bujj1bnmismal" path="res://scenes/pauseMenu.tscn" id="21_p10wo"]
 [ext_resource type="Script" path="res://scripts/Enemy.cs" id="25_ml28o"]
+[ext_resource type="Script" path="res://scripts/StopwatchLabel.cs" id="25_xp42k"]
 [ext_resource type="Texture2D" uid="uid://baqj64e48hus1" path="res://assets/priešas/priešas.png" id="26_l7oy6"]
 [ext_resource type="Texture2D" uid="uid://b57p3kr83mt5y" path="res://assets/priešas/untitled1.png" id="27_rpcks"]
 [ext_resource type="Texture2D" uid="uid://c37ee21hwdixj" path="res://assets/priešas/untitled2.png" id="28_b5351"]
@@ -1295,6 +1296,15 @@ scale = Vector2(9.01681, 8.63759)
 [node name="Walking" type="AudioStreamPlayer" parent="CharacterBody2D/AnimatedSprite2D"]
 stream = ExtResource("15_jb2bm")
 bus = &"SFX"
+
+[node name="stopwatch_label" type="Label" parent="CharacterBody2D"]
+offset_left = 5789.0
+offset_top = -4630.0
+offset_right = 8443.0
+offset_bottom = -3784.0
+theme_override_font_sizes/font_size = 500
+text = "00:00:000"
+script = ExtResource("25_xp42k")
 
 [node name="press" type="Area2D" parent="."]
 

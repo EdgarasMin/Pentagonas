@@ -356,9 +356,11 @@ UpdateCodeBoxText();
 		
 		
 		
-		var node = GetNode("../CharacterBody2D/stopwatch_label");
-		var stopwatchLabel = node as StopwatchLabel;
-		stopwatchLabel.Stop();
+		var stopwatchLabel = GetTree().Root.FindChild("stopwatch_label", true, false);
+		if (stopwatchLabel != null && stopwatchLabel is StopwatchLabel stopwatch)
+		{
+			//stopwatch.Stop();
+		}
 		
 		}
 	}

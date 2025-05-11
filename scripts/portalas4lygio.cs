@@ -22,7 +22,12 @@ public partial class portalas4lygio : Area2D
 	}
 	private void changeScene()
 	{
-		GetTree().ChangeSceneToFile("res://scenes/main_menu.tscn");
+		var stopwatchLabel = GetTree().Root.FindChild("stopwatch_label", true, false);
+		if (stopwatchLabel != null && stopwatchLabel is StopwatchLabel stopwatch)
+		{
+			//stopwatch.Stop();
+		}
+		GetTree().ChangeSceneToFile("res://scenes/rekordai.tscn");
 	}
 	
 	private void OnAreaBodyExited(Node body)
@@ -36,6 +41,7 @@ public partial class portalas4lygio : Area2D
 	// Connect signal on _Ready
 	public override void _Ready()
 	{
+		
 		specificCharacter = GetNode<CharacterBody2D>($"../CharacterBody2D");
 		//langas = GetNode<AcceptDialog>("AcceptDialog");
 		// Connect the 'body_entered' signal to the method

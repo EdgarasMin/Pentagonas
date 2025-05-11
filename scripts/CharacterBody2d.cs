@@ -12,6 +12,21 @@ public partial class CharacterBody2d : CharacterBody2D
 	
 	public override void _Ready()
 	{
+		var stopwatchLabel = GetTree().Root.FindChild("stopwatch_label", true, false);
+		if (stopwatchLabel != null && stopwatchLabel is StopwatchLabel stopwatch)
+		{
+			stopwatch.stopWatch=false;
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		//Clears bugs when scenes have already open objects
 		CodeEditing2.ExitTree();
 		

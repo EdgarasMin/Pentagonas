@@ -11,12 +11,12 @@ public partial class MainMenu : Control
 	{
 		
 		ClickingSound.Play();
-		GD.Print("Click sound was played");
+
 	}
 	private void PlayHoveringSound(Button button)
 	{
 		HoveringSound.Play();
-		GD.Print("Hovering sound was played");
+
 	}
 	private AudioStreamPlayer ClickingSound;
 	private	AudioStreamPlayer HoveringSound;
@@ -76,6 +76,7 @@ public partial class MainMenu : Control
 
 	private void OnStartNewGamePressed()
 	{
+		Global.elapsedTime = 0L;
 		GD.Print("Start Game Button Pressed");
 
 		if (!IsInsideTree())
