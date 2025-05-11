@@ -90,7 +90,7 @@ public partial class Lv3 : CharacterBody2D
 	var stopwatchLabel = GetTree().Root.FindChild("stopwatch_label", true, false);
 	if (stopwatchLabel != null && stopwatchLabel is StopwatchLabel stopwatch)
 	{
-		stopwatch.Stop();
+		//stopwatch.Stop();
 	}
 	else
 	{

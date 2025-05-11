@@ -24,6 +24,7 @@ public  partial  class CharacterBody2d2 : CharacterBody2D
 			if(collider1 is StaticBody2D staticBody){
 			if ( staticBody.Name == "Portal1"||staticBody.Name == "Portal3"||staticBody.Name == "Portal5"||staticBody.Name == "Portal9")
 			{
+
 				Teleport(0,475);
 
 				// Optional: custom logic here

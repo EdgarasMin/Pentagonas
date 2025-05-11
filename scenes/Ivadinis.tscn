@@ -1,6 +1,7 @@
-[gd_scene load_steps=63 format=3 uid="uid://bkdgmgklaq4sn"]
+[gd_scene load_steps=64 format=3 uid="uid://bkdgmgklaq4sn"]
 
 [ext_resource type="Texture2D" uid="uid://dg78jpngdn7u1" path="res://assets/Ivadinis/preview.png" id="1_2rexs"]
+[ext_resource type="Script" path="res://scenes/Ivadinis.cs" id="1_d6qut"]
 [ext_resource type="Script" path="res://scripts/CharacterBody2d.cs" id="2_18oye"]
 [ext_resource type="Script" path="res://scripts/Area2d.cs" id="2_f1y6r"]
 [ext_resource type="Texture2D" uid="uid://cpsnvpkkkljow" path="res://assets/front.png" id="3_3xdko"]
@@ -211,6 +212,7 @@ border_width_bottom = 7
 border_color = Color(0.099986, 0.099986, 0.0999859, 1)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_d6qut")
 
 [node name="Fonas" type="TextureRect" parent="."]
 offset_right = 40.0

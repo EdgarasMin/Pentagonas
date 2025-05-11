@@ -66,6 +66,7 @@ public partial class Prisijungimas : Control
 		// Check login credentials
 		if (ValidateLogin(username, password))
 		{
+			Global.user=username;
 			GD.Print("Login successful");
 			GetTree().ChangeSceneToFile("res://scenes/main_menu.tscn");
 		}
