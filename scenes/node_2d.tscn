@@ -1454,9 +1454,9 @@ offset_left = 355.0
 offset_top = 551.0
 offset_right = 877.0
 offset_bottom = 808.0
-theme_override_font_sizes/font_size = 19
+theme_override_font_sizes/font_size = 25
 text = "Sveiki atvykę į ketvirtą lygį!
-Jums reikės pereiti labirintą neliečiant priešų ir sudėlioti kodą kuris sukeistu dviejų kintamujų vertes iš dalių esančių labirintę. Tuomet nulenkite labirinto viduryje esančią svirtį ir pabaikite lygį."
+Jums reikės pereiti labirintą neliečiant priešų ir sudėlioti kodą (norint pasirinkti teisingą kodo dalį reikia paspausti B mygtuką), kuris sukeistu dviejų kintamųjų vertes iš dalių esančių labirintę.  Tuomet nulenkite labirinto viduryje esančią svirtį ir pabaikite lygį."
 autowrap_mode = 2
 
 [node name="portalas" type="Area2D" parent="."]

@@ -697,5 +697,5 @@ offset_left = 685.0
 offset_top = 308.0
 offset_right = 1266.0
 offset_bottom = 441.0
-theme_override_font_sizes/normal_font_size = 21
-text = "Sveiki atvykę į 1 lygį, norit pereiti lygį jums reikia priiėjus prie ekrano ir paspaudus ( ` )  mygtuką atlikti užduotį.  Atlikus užduotį gausite raktą su kuriuo galėsite atrakinti duris į kitą lygį."
+theme_override_font_sizes/normal_font_size = 25
+text = "Sveiki atvykę į pirmąjį lygį, norit pereiti lygį jums reikia prieiti prie ekrano ir paspaudus ( ` )  mygtuką atlikti užduotį.  Atlikus užduotį gausite raktą su kuriuo galėsite atrakinti duris į kitą lygį."
