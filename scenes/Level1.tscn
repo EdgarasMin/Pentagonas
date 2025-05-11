@@ -1,18 +1,18 @@
 [gd_scene load_steps=48 format=3 uid="uid://ciiuwkr5egx34"]
 
 [ext_resource type="Script" path="res://scripts/CharacterBody2d.cs" id="1_36hu4"]
-[ext_resource type="Texture2D" uid="uid://cpsnvpkkkljow" path="res://assets/Animacija/front.png" id="2_dnaew"]
-[ext_resource type="Texture2D" uid="uid://dwhmcbl74sjgg" path="res://assets/Animacija/front_leg.png" id="3_66wya"]
-[ext_resource type="Texture2D" uid="uid://b86m57befc1wu" path="res://assets/Animacija/front_leg2.png" id="4_cshd7"]
-[ext_resource type="Texture2D" uid="uid://vf1w88p1tt3j" path="res://assets/Animacija/side2_leg.png" id="5_yfxc2"]
-[ext_resource type="Texture2D" uid="uid://ddt64m2yf0sh" path="res://assets/Animacija/side2.png" id="6_6fktp"]
-[ext_resource type="Texture2D" uid="uid://h75ukc2ft6ux" path="res://assets/Animacija/side1_leg2.png" id="7_mcwvq"]
-[ext_resource type="Texture2D" uid="uid://bxhxlw7dt424d" path="res://assets/Animacija/side2_leg2.png" id="8_7fjo5"]
-[ext_resource type="Texture2D" uid="uid://cb4r4hx57gjrt" path="res://assets/Animacija/side1.png" id="9_6cd08"]
-[ext_resource type="Texture2D" uid="uid://bwuhpu4reh2qb" path="res://assets/Animacija/side1_leg.png" id="10_27ifm"]
-[ext_resource type="Texture2D" uid="uid://c22rbanxfuiye" path="res://assets/Animacija/back_leg.png" id="11_81sgq"]
-[ext_resource type="Texture2D" uid="uid://0r4vboy603xp" path="res://assets/Animacija/back.png" id="12_is7em"]
-[ext_resource type="Texture2D" uid="uid://d12aoab3kaej3" path="res://assets/Animacija/back_leg2.png" id="13_lcuox"]
+[ext_resource type="Texture2D" uid="uid://cpsnvpkkkljow" path="res://assets/front.png" id="2_dnaew"]
+[ext_resource type="Texture2D" uid="uid://dwhmcbl74sjgg" path="res://assets/front_leg.png" id="3_66wya"]
+[ext_resource type="Texture2D" uid="uid://b86m57befc1wu" path="res://assets/front_leg2.png" id="4_cshd7"]
+[ext_resource type="Texture2D" uid="uid://vf1w88p1tt3j" path="res://assets/side2_leg.png" id="5_yfxc2"]
+[ext_resource type="Texture2D" uid="uid://ddt64m2yf0sh" path="res://assets/side2.png" id="6_6fktp"]
+[ext_resource type="Texture2D" uid="uid://h75ukc2ft6ux" path="res://assets/side1_leg2.png" id="7_mcwvq"]
+[ext_resource type="Texture2D" uid="uid://bxhxlw7dt424d" path="res://assets/side2_leg2.png" id="8_7fjo5"]
+[ext_resource type="Texture2D" uid="uid://cb4r4hx57gjrt" path="res://assets/side1.png" id="9_6cd08"]
+[ext_resource type="Texture2D" uid="uid://bwuhpu4reh2qb" path="res://assets/side1_leg.png" id="10_27ifm"]
+[ext_resource type="Texture2D" uid="uid://c22rbanxfuiye" path="res://assets/back_leg.png" id="11_81sgq"]
+[ext_resource type="Texture2D" uid="uid://0r4vboy603xp" path="res://assets/back.png" id="12_is7em"]
+[ext_resource type="Texture2D" uid="uid://d12aoab3kaej3" path="res://assets/back_leg2.png" id="13_lcuox"]
 [ext_resource type="Script" path="res://scripts/HeroTemp.cs" id="14_5ioo0"]
 [ext_resource type="AudioStream" uid="uid://by2maf38wlj6i" path="res://music/Walking_1.mp3" id="15_bqstm"]
 [ext_resource type="PackedScene" uid="uid://bujj1bnmismal" path="res://scenes/pauseMenu.tscn" id="16_8ukof"]
@@ -691,3 +691,11 @@ offset_right = 128.0
 offset_bottom = 156.0
 theme_override_font_sizes/font_size = 33
 text = "3 Lygis"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 685.0
+offset_top = 308.0
+offset_right = 1266.0
+offset_bottom = 441.0
+theme_override_font_sizes/normal_font_size = 21
+text = "Sveiki atvykę į 1 lygį, norit pereiti lygį jums reikia priiėjus prie ekrano ir paspaudus ( ` )  mygtuką atlikti užduotį.  Atlikus užduotį gausite raktą su kuriuo galėsite atrakinti duris į kitą lygį."

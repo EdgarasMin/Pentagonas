@@ -13,7 +13,7 @@ public partial class Lv3 : CharacterBody2D
 	public int Health = 100;
 	public int MaxHealth = 100;
 	public int MinHealth = 0;
-	public int AttackDamage = 10;  
+	public int AttackDamage = 20;  
 	private float attackCooldown = 0.5f; // Attack cooldown in seconds
 	private float attackTimer = 0.0f;
 	private bool isInvulnerable = false;
