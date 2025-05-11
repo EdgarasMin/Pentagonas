@@ -1,6 +1,10 @@
 {
   "FastestTimes": [
     {
+      "Time": 82.79622,
+      "User": "admin"
+    },
+    {
       "Time": 107.73036,
       "User": "admin"
     },
@@ -13,7 +17,7 @@
       "User": "Vartotojas2"
     },
     {
-      "Time": 337.73036,
+      "Time": 337.73035,
       "User": "Vartotojas3"
     }
   ]
