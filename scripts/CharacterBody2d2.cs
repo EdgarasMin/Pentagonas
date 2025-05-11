@@ -6,6 +6,13 @@ public  partial  class CharacterBody2d2 : CharacterBody2D
 	void Teleport(int x, int y){
 		Position = new Vector2(x,y);
 	}
+	AnimatedSprite2D sprite;
+	private bool isSpinning = false;
+	private float spinTimeLeft = 3f;
+	public float RotationSpeed = 360f; // degrees per second
+	public int newScene = 0;
+	
+	private AudioStreamPlayer soundTP;
 	void Collision()
 	{
 		for (int i = 0; i < GetSlideCollisionCount(); i++)
@@ -54,9 +61,11 @@ public  partial  class CharacterBody2d2 : CharacterBody2D
 			}
 			if (staticBody.Name == "Portal10")
 			{
-				GetTree().ChangeSceneToFile("res://scenes/Level3.tscn");
+				//GetTree().ChangeSceneToFile("res://scenes/Level3.tscn");
 				// Optional: custom logic here
 				// Example: QueueFree(), Play effect, etc.
+				isSpinning = true;
+				AudioManager.PlaySound(soundTP.Stream);
 			}
 			}
 		}
@@ -66,16 +75,36 @@ public  partial  class CharacterBody2d2 : CharacterBody2D
 	public int Speed = 800;
 
 	private Vector2 vel = Vector2.Zero;
-	
+	public override void _Ready()
+	{
+		sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		soundTP = GetNode<AudioStreamPlayer>("TP");
+	}
 
 	public override void _PhysicsProcess(double delta)
 	{
-		
+		float deltaTime = (float)delta;
 		if (CodeEditing.Instance != null && CodeEditing.Instance.editorShown)
 		{
 			// If the editor is visible, don't process movement
 			return;
 		}
+		
+		if (isSpinning)
+	{
+		sprite.Rotation += Mathf.DegToRad(RotationSpeed * deltaTime);
+		spinTimeLeft -= deltaTime;
+
+		if (spinTimeLeft <= 0f)
+		{
+			isSpinning = false;
+			spinTimeLeft = 0f;
+			GetTree().ChangeSceneToFile("res://scenes/Level3.tscn");
+
+			//GD.Print("Changed scene");
+			//sprite.Rotation = 0f; // <-- Reset rotation after spin
+		}
+	}
 
 		// Dampen velocity slightly
 		vel *= 0.55f;

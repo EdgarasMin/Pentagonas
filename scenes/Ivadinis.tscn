@@ -3,21 +3,21 @@
 [ext_resource type="Texture2D" uid="uid://dg78jpngdn7u1" path="res://assets/Ivadinis/preview.png" id="1_2rexs"]
 [ext_resource type="Script" path="res://scripts/CharacterBody2d.cs" id="2_18oye"]
 [ext_resource type="Script" path="res://scripts/Area2d.cs" id="2_f1y6r"]
-[ext_resource type="Texture2D" uid="uid://cpsnvpkkkljow" path="res://assets/Animacija/front.png" id="3_3xdko"]
+[ext_resource type="Texture2D" uid="uid://cpsnvpkkkljow" path="res://assets/front.png" id="3_3xdko"]
 [ext_resource type="Texture2D" uid="uid://3hmlwnym7iwp" path="res://assets/Inventorius/map.png" id="4_0alp8"]
-[ext_resource type="Texture2D" uid="uid://dwhmcbl74sjgg" path="res://assets/Animacija/front_leg.png" id="4_ia5lj"]
-[ext_resource type="Texture2D" uid="uid://b86m57befc1wu" path="res://assets/Animacija/front_leg2.png" id="5_5xsup"]
+[ext_resource type="Texture2D" uid="uid://dwhmcbl74sjgg" path="res://assets/front_leg.png" id="4_ia5lj"]
+[ext_resource type="Texture2D" uid="uid://b86m57befc1wu" path="res://assets/front_leg2.png" id="5_5xsup"]
 [ext_resource type="Texture2D" uid="uid://ct3f7kfe8ywql" path="res://assets/Inventorius/raktas.png" id="5_ef6bv"]
-[ext_resource type="Texture2D" uid="uid://vf1w88p1tt3j" path="res://assets/Animacija/side2_leg.png" id="6_lrwfg"]
+[ext_resource type="Texture2D" uid="uid://vf1w88p1tt3j" path="res://assets/side2_leg.png" id="6_lrwfg"]
 [ext_resource type="Texture2D" uid="uid://eh27pif8nvxk" path="res://assets/Inventorius/energija.png" id="6_rafq5"]
 [ext_resource type="Texture2D" uid="uid://bgr3oglj84x6g" path="res://assets/Inventorius/vaistinele.png" id="7_7xfa6"]
-[ext_resource type="Texture2D" uid="uid://ddt64m2yf0sh" path="res://assets/Animacija/side2.png" id="7_lo5gv"]
-[ext_resource type="Texture2D" uid="uid://h75ukc2ft6ux" path="res://assets/Animacija/side1_leg2.png" id="8_amtbp"]
-[ext_resource type="Texture2D" uid="uid://bxhxlw7dt424d" path="res://assets/Animacija/side2_leg2.png" id="9_4apat"]
-[ext_resource type="Texture2D" uid="uid://cb4r4hx57gjrt" path="res://assets/Animacija/side1.png" id="10_sl4n8"]
-[ext_resource type="Texture2D" uid="uid://bwuhpu4reh2qb" path="res://assets/Animacija/side1_leg.png" id="11_iphw7"]
-[ext_resource type="Texture2D" uid="uid://c22rbanxfuiye" path="res://assets/Animacija/back_leg.png" id="12_7f23l"]
-[ext_resource type="Texture2D" uid="uid://d12aoab3kaej3" path="res://assets/Animacija/back_leg2.png" id="14_6mfdf"]
+[ext_resource type="Texture2D" uid="uid://ddt64m2yf0sh" path="res://assets/side2.png" id="7_lo5gv"]
+[ext_resource type="Texture2D" uid="uid://h75ukc2ft6ux" path="res://assets/side1_leg2.png" id="8_amtbp"]
+[ext_resource type="Texture2D" uid="uid://bxhxlw7dt424d" path="res://assets/side2_leg2.png" id="9_4apat"]
+[ext_resource type="Texture2D" uid="uid://cb4r4hx57gjrt" path="res://assets/side1.png" id="10_sl4n8"]
+[ext_resource type="Texture2D" uid="uid://bwuhpu4reh2qb" path="res://assets/side1_leg.png" id="11_iphw7"]
+[ext_resource type="Texture2D" uid="uid://c22rbanxfuiye" path="res://assets/back_leg.png" id="12_7f23l"]
+[ext_resource type="Texture2D" uid="uid://d12aoab3kaej3" path="res://assets/back_leg2.png" id="14_6mfdf"]
 [ext_resource type="Script" path="res://scripts/HeroTemp.cs" id="15_ltjrf"]
 [ext_resource type="AudioStream" uid="uid://by2maf38wlj6i" path="res://music/Walking_1.mp3" id="16_s0e6g"]
 [ext_resource type="PackedScene" uid="uid://bujj1bnmismal" path="res://scenes/pauseMenu.tscn" id="17_fijip"]
@@ -26,12 +26,12 @@
 [ext_resource type="Texture2D" uid="uid://caf1e6b0g4306" path="res://assets/Ivadinis/wall_f.png" id="20_sw5cw"]
 [ext_resource type="Texture2D" uid="uid://csvomqysmgbwt" path="res://assets/Ivadinis/wall_v2.png" id="22_vmpqn"]
 [ext_resource type="Texture2D" uid="uid://bbihm855e0lqf" path="res://assets/Ivadinis/sign.png" id="23_j0y0o"]
-[ext_resource type="Script" path="res://scripts/Area2d4.cs" id="24_xgl4m"]
 [ext_resource type="Texture2D" uid="uid://ba1gedlkko2ns" path="res://assets/Level2/Portal.png" id="25_fwepb"]
 [ext_resource type="Texture2D" uid="uid://baqj64e48hus1" path="res://assets/priešas/priešas.png" id="30_tewoy"]
 [ext_resource type="Texture2D" uid="uid://b57p3kr83mt5y" path="res://assets/priešas/untitled1.png" id="31_mpi5o"]
 [ext_resource type="Texture2D" uid="uid://c37ee21hwdixj" path="res://assets/priešas/untitled2.png" id="32_c5xsd"]
 [ext_resource type="Texture2D" uid="uid://quftmeas2nup" path="res://assets/priešas/untitled.png" id="33_pfnm4"]
+[ext_resource type="AudioStream" uid="uid://b1vyp4wwjhyf1" path="res://music/teleport-sound-46215.mp3" id="34_12kf0"]
 [ext_resource type="Script" path="res://scripts/StopwatchLabel.cs" id="34_qjh5y"]
 [ext_resource type="Script" path="res://scripts/notMovingEnemy.gd" id="34_vxci1"]
 [ext_resource type="Script" path="res://scripts/InventoryUI.cs" id="35_ewb42"]
@@ -517,8 +517,7 @@ shape = SubResource("RectangleShape2D_n74j1")
 position = Vector2(6507, 594)
 shape = SubResource("RectangleShape2D_jfhoo")
 
-[node name="Area2D4" type="Area2D" parent="."]
-script = ExtResource("24_xgl4m")
+[node name="Area2D4" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
 position = Vector2(6268, 628)
@@ -572,6 +571,9 @@ offset_bottom = -3896.29
 theme_override_font_sizes/font_size = 500
 text = "00:00:000"
 script = ExtResource("34_qjh5y")
+
+[node name="TP" type="AudioStreamPlayer" parent="CharacterBody2D"]
+stream = ExtResource("34_12kf0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

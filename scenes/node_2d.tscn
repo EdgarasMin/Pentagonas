@@ -25,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://by2maf38wlj6i" path="res://music/Walking_1.mp3" id="15_jb2bm"]
 [ext_resource type="PackedScene" uid="uid://bujj1bnmismal" path="res://scenes/pauseMenu.tscn" id="21_p10wo"]
 [ext_resource type="Script" path="res://scripts/Enemy.cs" id="25_ml28o"]
+[ext_resource type="AudioStream" uid="uid://b1vyp4wwjhyf1" path="res://music/teleport-sound-46215.mp3" id="25_v28wi"]
 [ext_resource type="Texture2D" uid="uid://baqj64e48hus1" path="res://assets/priešas/priešas.png" id="26_l7oy6"]
 [ext_resource type="Texture2D" uid="uid://b57p3kr83mt5y" path="res://assets/priešas/untitled1.png" id="27_rpcks"]
 [ext_resource type="Texture2D" uid="uid://c37ee21hwdixj" path="res://assets/priešas/untitled2.png" id="28_b5351"]
@@ -32,7 +33,6 @@
 [ext_resource type="Texture2D" uid="uid://quftmeas2nup" path="res://assets/priešas/untitled.png" id="30_lycja"]
 [ext_resource type="Script" path="res://scripts/Enemy3.cs" id="31_3ws7l"]
 [ext_resource type="Script" path="res://scripts/Enemy2.cs" id="32_14onx"]
-[ext_resource type="Script" path="res://scripts/portalas4lygio.cs" id="33_mk3hw"]
 [ext_resource type="Texture2D" uid="uid://ba1gedlkko2ns" path="res://assets/Level2/Portal.png" id="34_0tmwk"]
 [ext_resource type="Script" path="res://scripts/InventoryUI.cs" id="35_kto2m"]
 [ext_resource type="StyleBox" uid="uid://c2llxtb2p0dry" path="res://buttonInventory.tres" id="36_38qwb"]
@@ -1296,6 +1296,9 @@ scale = Vector2(9.01681, 8.63759)
 stream = ExtResource("15_jb2bm")
 bus = &"SFX"
 
+[node name="TP" type="AudioStreamPlayer" parent="CharacterBody2D"]
+stream = ExtResource("25_v28wi")
+
 [node name="press" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="press"]
@@ -1459,8 +1462,7 @@ text = "Sveiki atvykę į ketvirtą lygį!
 Jums reikės pereiti labirintą neliečiant priešų ir sudėlioti kodą kuris sukeistu dviejų kintamujų vertes iš dalių esančių labirintę. Tuomet nulenkite labirinto viduryje esančią svirtį ir pabaikite lygį."
 autowrap_mode = 2
 
-[node name="portalas" type="Area2D" parent="."]
-script = ExtResource("33_mk3hw")
+[node name="portalas" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="portalas"]
 position = Vector2(3113, 943)
