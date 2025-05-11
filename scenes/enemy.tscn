@@ -36,16 +36,16 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tcv2r"]
-radius = 559.129
+radius = 801.531
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tdkae"]
-radius = 230.0
+radius = 208.01
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o2bhs"]
-radius = 288.513
+radius = 647.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4dl2l"]
-radius = 630.179
+radius = 3877.67
 
 [node name="enemy" type="CharacterBody2D"]
 script = ExtResource("1_thfb1")
@@ -71,6 +71,7 @@ shape = SubResource("CircleShape2D_tdkae")
 [node name="AttackCooldown" type="Timer" parent="."]
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 2
 
@@ -84,7 +85,6 @@ offset_right = 120.0
 offset_bottom = 353.0
 
 [node name="DetectionArea" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 shape = SubResource("CircleShape2D_4dl2l")

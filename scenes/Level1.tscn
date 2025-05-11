@@ -695,3 +695,11 @@ offset_right = 128.0
 offset_bottom = 156.0
 theme_override_font_sizes/font_size = 33
 text = "3 Lygis"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 685.0
+offset_top = 308.0
+offset_right = 1266.0
+offset_bottom = 441.0
+theme_override_font_sizes/normal_font_size = 25
+text = "Sveiki atvykę į pirmąjį lygį, norit pereiti lygį jums reikia prieiti prie ekrano ir paspaudus ( ` )  mygtuką atlikti užduotį.  Atlikus užduotį gausite raktą su kuriuo galėsite atrakinti duris į kitą lygį."
