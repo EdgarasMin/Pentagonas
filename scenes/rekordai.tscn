@@ -55,3 +55,13 @@ text = "(Rekordų sąrašas tuščias)"
 layout_mode = 2
 text = "GRĮŽTI
 "
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 19.0
+offset_right = 1485.0
+offset_bottom = 156.0
+theme_override_colors/font_color = Color(0.996078, 0.258824, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "ROBOTAS ČEMPIONAS!"
