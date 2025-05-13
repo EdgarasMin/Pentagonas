@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://cmgj43naheui6"]
+[gd_scene load_steps=62 format=3 uid="uid://cmgj43naheui6"]
 
 [ext_resource type="Texture2D" uid="uid://dhov7oql8eck8" path="res://assets/Level3/bac 3.png" id="1_btfua"]
 [ext_resource type="Texture2D" uid="uid://jr456bqwiche" path="res://assets/Level3/box 3a.png" id="2_2qekl"]
@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://ct3f7kfe8ywql" path="res://assets/Inventorius/raktas.png" id="30_qxjdj"]
 [ext_resource type="Texture2D" uid="uid://eh27pif8nvxk" path="res://assets/Inventorius/energija.png" id="31_ahsgs"]
 [ext_resource type="PackedScene" uid="uid://b6g7adilkx1os" path="res://scenes/health_bar.tscn" id="31_ybe0m"]
+[ext_resource type="AudioStream" uid="uid://dcgi4lx2gyxuw" path="res://music/attacking.wav" id="32_ahfbh"]
 [ext_resource type="Texture2D" uid="uid://3hmlwnym7iwp" path="res://assets/Inventorius/map.png" id="32_p00y4"]
 [ext_resource type="Texture2D" uid="uid://bgr3oglj84x6g" path="res://assets/Inventorius/vaistinele.png" id="33_tjioh"]
 [ext_resource type="Script" path="res://scripts/mapScript.cs" id="41_fvkgf"]
@@ -214,6 +215,9 @@ border_width_top = 6
 border_width_right = 6
 border_width_bottom = 7
 border_color = Color(0.099986, 0.099986, 0.0999859, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_llwyk"]
+radius = 102.005
 
 [node name="Level3" type="Node2D"]
 position = Vector2(-3, -3)
@@ -1928,7 +1932,7 @@ one_way_collision_margin = 0.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(63.1178, -60.4631)
 sprite_frames = SubResource("SpriteFrames_t1ud1")
-animation = &"idle"
+animation = &"attack_left"
 script = ExtResource("23_omg1c")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D/AnimatedSprite2D"]
@@ -1970,6 +1974,10 @@ offset_left = -90.0
 offset_top = 311.0
 offset_right = 216.0
 offset_bottom = 389.0
+
+[node name="AttackSoundPlayer" type="AudioStreamPlayer" parent="CharacterBody2D"]
+stream = ExtResource("32_ahfbh")
+volume_db = 5.258
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
@@ -2568,3 +2576,18 @@ offset_right = 128.0
 offset_bottom = 156.0
 theme_override_font_sizes/font_size = 33
 text = "3 Lygis"
+
+[node name="KeyPickup" type="Area2D" parent="."]
+top_level = true
+position = Vector2(707, 93)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KeyPickup"]
+top_level = true
+position = Vector2(704, 101)
+shape = SubResource("CircleShape2D_llwyk")
+one_way_collision_margin = 19.5
+
+[node name="Sprite2D" type="Sprite2D" parent="KeyPickup"]
+texture = ExtResource("30_qxjdj")
+
+[connection signal="body_entered" from="KeyPickup" to="KeyPickup" method="_on_body_entered"]

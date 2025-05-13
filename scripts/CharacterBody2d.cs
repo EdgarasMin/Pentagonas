@@ -1,4 +1,4 @@
-using Godot;
+﻿using Godot;
 using System;
 
 public partial class CharacterBody2d : CharacterBody2D
@@ -14,8 +14,8 @@ public partial class CharacterBody2d : CharacterBody2D
 	private float spinTimeLeft = 3f;
 	public float RotationSpeed = 360f; // degrees per second
 	public int newScene = 0;
-	
-	private AudioStreamPlayer soundTP;
+    private CollisionShape2D doorCollision;
+    private AudioStreamPlayer soundTP;
 	
 	public override void _Ready()
 	{
@@ -24,18 +24,18 @@ public partial class CharacterBody2d : CharacterBody2D
 		{
 			stopwatch.stopWatch=false;
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		//Clears bugs when scenes have already open objects
-		CodeEditing2.ExitTree();
+
+        AddToGroup("Player");
+
+
+
+
+
+
+
+
+        //Clears bugs when scenes have already open objects
+        CodeEditing2.ExitTree();
 		sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		GD.Print("Character ready: ");
 		musicScene = GetNode<Music>("/root/Music");
@@ -169,7 +169,36 @@ public partial class CharacterBody2d : CharacterBody2D
 		Velocity = vel*32 * (float)delta;
 		MoveAndSlide();
 	}
-   
-	
+    public void TryUnlockDoor()
+    {
+        var nearbyDoors = GetTree().GetNodesInGroup("Door");
+
+        foreach (var node in nearbyDoors)
+        {
+            if (node is StaticBody2D door && Position.DistanceTo(door.Position) < 100)
+            {
+                GD.Print("🚪 Door unlocked!");
+
+				// Disable "nu"
+				doorCollision = GetNodeOrNull<CollisionShape2D>("../StaticBody2D3/nu");
+                doorCollision.Disabled = true;
+
+                // Play animation "2"
+                var animSprite = door.GetNodeOrNull<AnimatedSprite2D>("DoorAnimatedSprite2d");
+                if (animSprite != null)
+                {
+                    animSprite.Play("2");
+                }
+
+                return;
+            }
+        }
+
+        GD.Print("No nearby door to unlock.");
+    }
+
+
+
+
 
 }

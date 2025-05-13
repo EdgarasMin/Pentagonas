@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://ck6pt5ps2lrji"]
+[gd_scene load_steps=76 format=3 uid="uid://ck6pt5ps2lrji"]
 
 [ext_resource type="Script" path="res://scripts/Node2d.cs" id="1_gnw4h"]
 [ext_resource type="Script" path="res://scripts/CharacterBody2d.cs" id="1_mnma1"]
@@ -234,6 +234,9 @@ border_width_top = 6
 border_width_right = 6
 border_width_bottom = 7
 border_color = Color(0.099986, 0.099986, 0.0999859, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1awc8"]
+radius = 102.005
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_gnw4h")
@@ -1768,3 +1771,18 @@ offset_right = 128.0
 offset_bottom = 156.0
 theme_override_font_sizes/font_size = 33
 text = "3 Lygis"
+
+[node name="KeyPickup" type="Area2D" parent="."]
+top_level = true
+position = Vector2(605, 910)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KeyPickup"]
+top_level = true
+position = Vector2(605, 913)
+shape = SubResource("CircleShape2D_1awc8")
+one_way_collision_margin = 19.5
+
+[node name="Sprite2D" type="Sprite2D" parent="KeyPickup"]
+texture = ExtResource("37_6s1nm")
+
+[connection signal="body_entered" from="KeyPickup" to="KeyPickup" method="_on_body_entered"]

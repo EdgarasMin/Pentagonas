@@ -1,5 +1,6 @@
-[gd_scene load_steps=49 format=3 uid="uid://ciiuwkr5egx34"]
+[gd_scene load_steps=51 format=3 uid="uid://ciiuwkr5egx34"]
 
+[ext_resource type="Script" path="res://scripts/KeyPickup.cs" id="1_4jfvb"]
 [ext_resource type="Script" path="res://scripts/CharacterBody2d.cs" id="1_36hu4"]
 [ext_resource type="Texture2D" uid="uid://cpsnvpkkkljow" path="res://assets/front.png" id="2_dnaew"]
 [ext_resource type="Texture2D" uid="uid://dwhmcbl74sjgg" path="res://assets/front_leg.png" id="3_66wya"]
@@ -33,6 +34,9 @@
 [ext_resource type="Texture2D" uid="uid://cdr6b6xad2awv" path="res://assets/Screenshot 2025-05-04 180256.png" id="30_5bp53"]
 [ext_resource type="Texture2D" uid="uid://b61vhuweyh1ho" path="res://assets/Screenshot 2025-05-04 180509.png" id="31_4cj4q"]
 [ext_resource type="Texture2D" uid="uid://lmldrawidpan" path="res://assets/Screenshot 2025-05-04 180659.png" id="32_3l7bu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7iueh"]
+radius = 102.005
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i3uda"]
 load_path = "res://.godot/imported/Dizainas_Level1.png-7e622b776ea03b5122decb9230f255c8.ctex"
@@ -183,6 +187,20 @@ border_color = Color(0.099986, 0.099986, 0.0999859, 1)
 [node name="Node2D" type="Node2D"]
 position = Vector2(193, 155)
 
+[node name="KeyPickup" type="Area2D" parent="."]
+top_level = true
+position = Vector2(8, 220)
+script = ExtResource("1_4jfvb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KeyPickup"]
+top_level = true
+position = Vector2(0, 220)
+shape = SubResource("CircleShape2D_7iueh")
+one_way_collision_margin = 19.5
+
+[node name="Sprite2D" type="Sprite2D" parent="KeyPickup"]
+texture = ExtResource("24_cwklo")
+
 [node name="Openart-7b15c5c6-38b8-4f64-97e2-a606Ad4e2349" type="Sprite2D" parent="."]
 position = Vector2(743, 376)
 scale = Vector2(1.97371, 1.75856)
@@ -222,7 +240,7 @@ position = Vector2(-336.589, 768.508)
 scale = Vector2(2.53, 2.254)
 shape = SubResource("RectangleShape2D_37gau")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
 position = Vector2(618, 472)
 scale = Vector2(0.110904, 0.115773)
 script = ExtResource("1_36hu4")
@@ -385,7 +403,7 @@ offset_right = 412.0
 offset_bottom = 316.0
 placeholder_text = "> "
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+[node name="StaticBody2D3" type="StaticBody2D" parent="." groups=["Door"]]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D3"]
 position = Vector2(-510.789, 502.257)
@@ -697,9 +715,11 @@ theme_override_font_sizes/font_size = 33
 text = "3 Lygis"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 685.0
-offset_top = 308.0
-offset_right = 1266.0
-offset_bottom = 441.0
+offset_left = 736.0
+offset_top = 135.0
+offset_right = 1369.0
+offset_bottom = 329.0
 theme_override_font_sizes/normal_font_size = 25
 text = "Sveiki atvykę į pirmąjį lygį, norit pereiti lygį jums reikia prieiti prie ekrano ir paspaudus ( ` )  mygtuką atlikti užduotį.  Atlikus užduotį gausite raktą su kuriuo galėsite atrakinti duris į kitą lygį."
+
+[connection signal="body_entered" from="KeyPickup" to="KeyPickup" method="_on_body_entered"]

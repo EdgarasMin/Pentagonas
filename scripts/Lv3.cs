@@ -24,9 +24,11 @@ public partial class Lv3 : CharacterBody2D
 	private AnimatedSprite2D animatedSprite;
 	private bool facingRight = true;
 	private bool isAttacking = false;
-	
-	// Signal for UI updates if needed
-	[Signal]
+
+    private AudioStreamPlayer attackSound;
+
+    // Signal for UI updates if needed
+    [Signal]
 	public delegate void HealthChangedEventHandler(int currentHealth, int maxHealth);
 	
 	public override void _Ready()
@@ -45,9 +47,12 @@ public partial class Lv3 : CharacterBody2D
 		{
 			GD.Print("AnimatedSprite2D not found! Make sure to add it to your player scene.");
 		}
-	}
-	
-	void Teleport(int x, int y)
+
+        attackSound = GetNode<AudioStreamPlayer>("AttackSoundPlayer");
+
+    }
+
+    void Teleport(int x, int y)
 	{
 		Position = new Vector2(x, y);
 	}
@@ -123,9 +128,14 @@ public partial class Lv3 : CharacterBody2D
 			return;
 			
 		GD.Print("Player attacking!");
-		
-		// Play attack animation based on facing direction
-		if (animatedSprite != null)
+
+        if (attackSound != null)
+        {
+            attackSound.Play();
+        }
+
+        // Play attack animation based on facing direction
+        if (animatedSprite != null)
 		{
 			isAttacking = true;
 			

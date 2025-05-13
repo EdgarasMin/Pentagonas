@@ -31,6 +31,10 @@ window/size/viewport_height=1080
 
 project/assembly_name="ByteBound- The Code Quest"
 
+[global_group]
+
+Player=""
+
 [input]
 
 Move_R={
