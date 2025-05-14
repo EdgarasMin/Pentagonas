@@ -172,10 +172,13 @@ public partial class CharacterBody2d : CharacterBody2D
     public void TryUnlockDoor()
     {
         var nearbyDoors = GetTree().GetNodesInGroup("Door");
-
+		if(nearbyDoors.Count == 0)
+		{
+			GD.Print("nera duru grupes paimtos");
+		}
         foreach (var node in nearbyDoors)
         {
-            if (node is StaticBody2D door && Position.DistanceTo(door.Position) < 100)
+            if (node is StaticBody2D door && Position.DistanceTo(door.Position) < 500)
             {
                 GD.Print("🚪 Door unlocked!");
 
@@ -185,9 +188,10 @@ public partial class CharacterBody2d : CharacterBody2D
 
                 // Play animation "2"
                 var animSprite = door.GetNodeOrNull<AnimatedSprite2D>("DoorAnimatedSprite2d");
+				
                 if (animSprite != null)
                 {
-                    animSprite.Play("2");
+                    animSprite.Frame = 1;
                 }
 
                 return;

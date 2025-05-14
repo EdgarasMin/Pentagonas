@@ -165,7 +165,7 @@ border_width_right = 3
 border_width_bottom = 3
 border_color = Color(0.34, 0.017, 0.167733, 0.454902)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mpnv"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_upi3t"]
 bg_color = Color(1, 0.290731, 0.541124, 1)
 border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 5
@@ -174,7 +174,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="Theme" id="Theme_gmec5"]
-/styles/okay = SubResource("StyleBoxFlat_2mpnv")
+/styles/okay = SubResource("StyleBoxFlat_upi3t")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rc8up"]
 bg_color = Color(0.34902, 0.505882, 0.490196, 0.847059)

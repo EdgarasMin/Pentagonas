@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://ck6pt5ps2lrji"]
+[gd_scene load_steps=78 format=3 uid="uid://ck6pt5ps2lrji"]
 
 [ext_resource type="Script" path="res://scripts/Node2d.cs" id="1_gnw4h"]
 [ext_resource type="Script" path="res://scripts/CharacterBody2d.cs" id="1_mnma1"]
@@ -46,6 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://cdr6b6xad2awv" path="res://assets/Screenshot 2025-05-04 180256.png" id="43_2w8sh"]
 [ext_resource type="Texture2D" uid="uid://b61vhuweyh1ho" path="res://assets/Screenshot 2025-05-04 180509.png" id="44_6108d"]
 [ext_resource type="Texture2D" uid="uid://lmldrawidpan" path="res://assets/Screenshot 2025-05-04 180659.png" id="45_ww27c"]
+[ext_resource type="Script" path="res://scripts/KeyPickup.cs" id="47_td4qg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5cq8x"]
 size = Vector2(2007.5, 20)
@@ -236,6 +237,9 @@ border_width_bottom = 7
 border_color = Color(0.099986, 0.099986, 0.0999859, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1awc8"]
+radius = 102.005
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xalit"]
 radius = 102.005
 
 [node name="Node2D" type="Node2D"]
@@ -1276,7 +1280,7 @@ offset_right = 1651.0
 offset_bottom = 2303.0
 text = "GD.Print(x)"
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
 position = Vector2(618, 472)
 scale = Vector2(0.110904, 0.115773)
 script = ExtResource("1_mnma1")
@@ -1772,17 +1776,32 @@ offset_bottom = 156.0
 theme_override_font_sizes/font_size = 33
 text = "3 Lygis"
 
-[node name="KeyPickup" type="Area2D" parent="."]
+[node name="BoostPickup" type="Area2D" parent="."]
 top_level = true
 position = Vector2(605, 910)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KeyPickup"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoostPickup"]
 top_level = true
 position = Vector2(605, 913)
 shape = SubResource("CircleShape2D_1awc8")
 one_way_collision_margin = 19.5
 
+[node name="Sprite2D" type="Sprite2D" parent="BoostPickup"]
+texture = ExtResource("38_n66qn")
+
+[node name="KeyPickup" type="Area2D" parent="."]
+top_level = true
+position = Vector2(735, 725)
+script = ExtResource("47_td4qg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KeyPickup"]
+top_level = true
+position = Vector2(743, 725)
+shape = SubResource("CircleShape2D_xalit")
+one_way_collision_margin = 19.5
+
 [node name="Sprite2D" type="Sprite2D" parent="KeyPickup"]
 texture = ExtResource("37_6s1nm")
 
+[connection signal="body_entered" from="BoostPickup" to="BoostPickup" method="_on_body_entered"]
 [connection signal="body_entered" from="KeyPickup" to="KeyPickup" method="_on_body_entered"]

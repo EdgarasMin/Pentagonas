@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using ByteBoundTheCodeQuest.scripts;
 
 public partial class InventoryUI : CanvasLayer
 {
@@ -53,10 +54,13 @@ public partial class InventoryUI : CanvasLayer
                 {
                     GD.Print($"Using item: {item.ItemName}");
                     UseItem(item);
-                    slotItems.Remove(button); // Optional: remove after use
-                    var icon = button.GetNodeOrNull<TextureRect>("ItemIcon");
-                    if (icon != null)
-                        icon.Texture = null;
+                    if (item.ItemType != "key")
+                    {
+                        slotItems.Remove(button);
+                        var icon = button.GetNodeOrNull<TextureRect>("ItemIcon");
+                        if (icon != null)
+                            icon.Texture = null;
+                    }
                 }
             }
             else if (mouseEvent.Pressed) // Single click logic for dragging
@@ -118,7 +122,7 @@ public partial class InventoryUI : CanvasLayer
             case "unlock_door":
                 if (player.HasMethod("TryUnlockDoor"))
                 {
-                    player.Call("TryUnlockDoor");
+                    player.Call("TryUnlockDoor"); // patogu call daryti jeigu nera metodo netyc
                 }
                 else
                 {
@@ -127,15 +131,21 @@ public partial class InventoryUI : CanvasLayer
                 break;
 
             case "heal":
-                if (player is Node playerNode)
+                if (player is Lv3 lv3Player)
                 {
-                    var health = (int)playerNode.Get("Health");
-                    var maxHealth = (int)playerNode.Get("MaxHealth");
-
-                    playerNode.Set("Health", Mathf.Min(health + item.Value, maxHealth));
-                    playerNode.Call("EmitSignal", "HealthChanged", playerNode.Get("Health"), maxHealth);
+                    var currentHealth = lv3Player.Health;
+                    var maxHealth = lv3Player.MaxHealth;
+                    var newHealth = Mathf.Min(currentHealth + item.Value, maxHealth);
+                    lv3Player.SetHealth(newHealth);
+                    GD.Print("SetHealth pavyko: " + newHealth);
+                }
+                else
+                {
+                    GD.PrintErr("Player is not Lv3, negalima naudoti SetHealth()");
                 }
                 break;
+
+
 
             case "speed_boost":
                 if (player.HasMethod("ApplySpeedBoost"))

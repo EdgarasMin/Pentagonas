@@ -34,6 +34,7 @@ project/assembly_name="ByteBound- The Code Quest"
 [global_group]
 
 Player=""
+Door=""
 
 [input]
 

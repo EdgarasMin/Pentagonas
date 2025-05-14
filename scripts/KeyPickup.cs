@@ -7,6 +7,7 @@ public partial class KeyPickup : Area2D
 
     public override void _Ready()
     {
+        GD.Print("KeyPickup _Ready start");
         BodyEntered += _on_body_entered;
     }
 
