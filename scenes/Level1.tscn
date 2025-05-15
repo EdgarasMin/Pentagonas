@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://ciiuwkr5egx34"]
+[gd_scene load_steps=48 format=3 uid="uid://ciiuwkr5egx34"]
 
 [ext_resource type="Script" path="res://scripts/KeyPickup.cs" id="1_4jfvb"]
 [ext_resource type="Script" path="res://scripts/CharacterBody2d.cs" id="1_36hu4"]
@@ -26,9 +26,6 @@
 [ext_resource type="Script" path="res://scripts/InventoryUI.cs" id="22_ao7u6"]
 [ext_resource type="StyleBox" uid="uid://c2llxtb2p0dry" path="res://buttonInventory.tres" id="23_m40cs"]
 [ext_resource type="Texture2D" uid="uid://ct3f7kfe8ywql" path="res://assets/Inventorius/raktas.png" id="24_cwklo"]
-[ext_resource type="Texture2D" uid="uid://eh27pif8nvxk" path="res://assets/Inventorius/energija.png" id="25_v7cpq"]
-[ext_resource type="Texture2D" uid="uid://3hmlwnym7iwp" path="res://assets/Inventorius/map.png" id="26_2usdo"]
-[ext_resource type="Texture2D" uid="uid://bgr3oglj84x6g" path="res://assets/Inventorius/vaistinele.png" id="27_sj40x"]
 [ext_resource type="Script" path="res://scripts/mapScript.cs" id="28_5a675"]
 [ext_resource type="Texture2D" uid="uid://dxj3ec0gulg2y" path="res://assets/Screenshot 2025-05-04 180943.png" id="29_fpave"]
 [ext_resource type="Texture2D" uid="uid://cdr6b6xad2awv" path="res://assets/Screenshot 2025-05-04 180256.png" id="30_5bp53"]
@@ -188,6 +185,7 @@ border_color = Color(0.099986, 0.099986, 0.0999859, 1)
 position = Vector2(193, 155)
 
 [node name="KeyPickup" type="Area2D" parent="."]
+visible = false
 top_level = true
 position = Vector2(8, 220)
 script = ExtResource("1_4jfvb")
@@ -461,7 +459,6 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme = SubResource("Theme_gmec5")
-texture = ExtResource("24_cwklo")
 expand_mode = 2
 stretch_mode = 5
 
@@ -476,7 +473,6 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme = SubResource("Theme_gmec5")
-texture = ExtResource("25_v7cpq")
 expand_mode = 2
 stretch_mode = 5
 
@@ -491,7 +487,6 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme = SubResource("Theme_gmec5")
-texture = ExtResource("26_2usdo")
 expand_mode = 2
 stretch_mode = 5
 
@@ -506,7 +501,6 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme = SubResource("Theme_gmec5")
-texture = ExtResource("27_sj40x")
 expand_mode = 2
 stretch_mode = 5
 

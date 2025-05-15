@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Emis\\Documents\\GitHub\\Pentagonas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|c:\\users\\emis\\documents\\github\\pentagonas\\scripts\\lv3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|solutionrelative:scripts\\lv3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|c:\\users\\emis\\documents\\github\\pentagonas\\scripts\\healthpickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|solutionrelative:scripts\\healthpickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|c:\\users\\emis\\documents\\github\\pentagonas\\scripts\\keypickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|solutionrelative:scripts\\keypickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|c:\\users\\emis\\documents\\github\\pentagonas\\scripts\\inventoryui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|solutionrelative:scripts\\inventoryui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|c:\\users\\emis\\documents\\github\\pentagonas\\scripts\\keypickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|solutionrelative:scripts\\keypickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|c:\\users\\emis\\documents\\github\\pentagonas\\scripts\\lv3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|solutionrelative:scripts\\lv3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{80298ABD-B371-4297-A878-81CB8E881DEB}|ByteBound- The Code Quest.csproj|c:\\users\\emis\\documents\\github\\pentagonas\\scripts\\inventoryitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -97,23 +97,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 177,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "HealthPickup.cs",
               "DocumentMoniker": "C:\\Users\\Emis\\Documents\\GitHub\\Pentagonas\\scripts\\HealthPickup.cs",
               "RelativeDocumentMoniker": "scripts\\HealthPickup.cs",
               "ToolTip": "C:\\Users\\Emis\\Documents\\GitHub\\Pentagonas\\scripts\\HealthPickup.cs",
               "RelativeToolTip": "scripts\\HealthPickup.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwCEAAABSAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwCsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T19:08:23.749Z"
+              "WhenOpened": "2025-05-14T19:08:23.749Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "KeyPickup.cs",
               "DocumentMoniker": "C:\\Users\\Emis\\Documents\\GitHub\\Pentagonas\\scripts\\KeyPickup.cs",
               "RelativeDocumentMoniker": "scripts\\KeyPickup.cs",
@@ -121,7 +122,21 @@
               "RelativeToolTip": "scripts\\KeyPickup.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T23:47:47.476Z"
+              "WhenOpened": "2025-05-12T23:47:47.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Lv3.cs",
+              "DocumentMoniker": "C:\\Users\\Emis\\Documents\\GitHub\\Pentagonas\\scripts\\Lv3.cs",
+              "RelativeDocumentMoniker": "scripts\\Lv3.cs",
+              "ToolTip": "C:\\Users\\Emis\\Documents\\GitHub\\Pentagonas\\scripts\\Lv3.cs",
+              "RelativeToolTip": "scripts\\Lv3.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIgBAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T22:49:20.808Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -131,9 +146,10 @@
               "RelativeDocumentMoniker": "scripts\\InventoryUI.cs",
               "ToolTip": "C:\\Users\\Emis\\Documents\\GitHub\\Pentagonas\\scripts\\InventoryUI.cs",
               "RelativeToolTip": "scripts\\InventoryUI.cs",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAgwKIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAcwIEAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T20:07:06.016Z"
+              "WhenOpened": "2025-04-13T20:07:06.016Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -145,7 +161,8 @@
               "RelativeToolTip": "scripts\\InventoryItem.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T23:38:15.988Z"
+              "WhenOpened": "2025-05-12T23:38:15.988Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -158,19 +175,6 @@
               "ViewState": "AgIAAAoAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-11T21:32:20.89Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Lv3.cs",
-              "DocumentMoniker": "C:\\Users\\Emis\\Documents\\GitHub\\Pentagonas\\scripts\\Lv3.cs",
-              "RelativeDocumentMoniker": "scripts\\Lv3.cs",
-              "ToolTip": "C:\\Users\\Emis\\Documents\\GitHub\\Pentagonas\\scripts\\Lv3.cs",
-              "RelativeToolTip": "scripts\\Lv3.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHwBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T22:49:20.808Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",

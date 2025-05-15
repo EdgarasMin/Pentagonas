@@ -16,8 +16,13 @@ public partial class CharacterBody2d : CharacterBody2D
 	public int newScene = 0;
     private CollisionShape2D doorCollision;
     private AudioStreamPlayer soundTP;
-	
-	public override void _Ready()
+
+    private bool isSpeedBoosted = false;
+    private float speedBoostTimer = 0f;
+    private int originalSpeed;
+
+
+    public override void _Ready()
 	{
 		var stopwatchLabel = GetTree().Root.FindChild("stopwatch_label", true, false);
 		if (stopwatchLabel != null && stopwatchLabel is StopwatchLabel stopwatch)
@@ -165,8 +170,21 @@ public partial class CharacterBody2d : CharacterBody2D
 
 		Collision();
 
-		// Set the built-in velocity and move
-		Velocity = vel*32 * (float)delta;
+        // Handle speed boost timer
+        if (isSpeedBoosted)
+        {
+            speedBoostTimer -= (float)delta;
+            if (speedBoostTimer <= 0)
+            {
+                isSpeedBoosted = false;
+                Speed = originalSpeed;
+                GD.Print("⏱️ Speed boost ended.");
+            }
+        }
+
+
+        // Set the built-in velocity and move
+        Velocity = vel*32 * (float)delta;
 		MoveAndSlide();
 	}
     public void TryUnlockDoor()
@@ -200,6 +218,18 @@ public partial class CharacterBody2d : CharacterBody2D
 
         GD.Print("No nearby door to unlock.");
     }
+    public void ApplySpeedBoost(int duration)
+    {
+        if (isSpeedBoosted)
+            return;
+
+        GD.Print($"🚀 Speed boost for {duration} seconds!");
+        isSpeedBoosted = true;
+        originalSpeed = Speed;
+        Speed *= 2;
+        speedBoostTimer = duration;
+    }
+
 
 
 

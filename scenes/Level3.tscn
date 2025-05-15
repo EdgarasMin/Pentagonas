@@ -209,7 +209,7 @@ border_width_right = 3
 border_width_bottom = 3
 border_color = Color(0.34, 0.017, 0.167733, 0.454902)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mpnv"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dhni6"]
 bg_color = Color(1, 0.290731, 0.541124, 1)
 border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 5
@@ -218,7 +218,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="Theme" id="Theme_u04xl"]
-/styles/okay = SubResource("StyleBoxFlat_2mpnv")
+/styles/okay = SubResource("StyleBoxFlat_dhni6")
 
 [node name="Level3" type="Node2D"]
 position = Vector2(-3, -3)
@@ -2444,7 +2444,6 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme = SubResource("Theme_u04xl")
-texture = ExtResource("30_qxjdj")
 expand_mode = 2
 stretch_mode = 5
 
@@ -2459,7 +2458,6 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme = SubResource("Theme_u04xl")
-texture = ExtResource("31_ahsgs")
 expand_mode = 2
 stretch_mode = 5
 
