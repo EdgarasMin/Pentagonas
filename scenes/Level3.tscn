@@ -2472,7 +2472,6 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme = SubResource("Theme_u04xl")
-texture = ExtResource("32_p00y4")
 expand_mode = 2
 stretch_mode = 5
 
@@ -2487,7 +2486,6 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme = SubResource("Theme_u04xl")
-texture = ExtResource("33_tjioh")
 expand_mode = 2
 stretch_mode = 5
 
