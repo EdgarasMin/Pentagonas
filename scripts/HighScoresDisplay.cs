@@ -12,58 +12,42 @@ public partial class HighScoresDisplay : Control
 	// Papildomas Label pranešimui, jei nėra įrašų (nebūtina)
 	[Export] private Label _noScoresLabel;
 	
+	// Add reference to the winning sound player
+	[Export] private AudioStreamPlayer _winningSound;
+	
 	private HighScoreManager _scoreManager;
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	public async void PrintCurrentScores()
 	{
-	_scoreManager = GetNode<HighScoreManager>("/root/HighScoreManager");
-	Label latestTimeLabel = GetNode<Label>("MarginContainer/VBoxContainer/LatestTimeLabel");
-	Label fastestTimesLabel = GetNode<Label>("MarginContainer/VBoxContainer/FastestTimesLabel");
-	
-	//_scoreManager._Ready();
-	// This prints immediately.
-	
-
-	// Wait for 0.3 seconds without blocking the main thread.
-	await ToSignal(GetTree().CreateTimer(0.3f), "timeout");
-	latestTimeLabel.Text = Global.allData1;
-	fastestTimesLabel.Text = Global.allData2;
-	// This prints only after 0.3 seconds have passed.
-	GD.Print("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
-}     
-
-
-
-
-
-
-
-
-
-
-
+		_scoreManager = GetNode<HighScoreManager>("/root/HighScoreManager");
+		Label latestTimeLabel = GetNode<Label>("MarginContainer/VBoxContainer/LatestTimeLabel");
+		Label fastestTimesLabel = GetNode<Label>("MarginContainer/VBoxContainer/FastestTimesLabel");
+		
+		// Wait for 0.3 seconds without blocking the main thread.
+		await ToSignal(GetTree().CreateTimer(0.3f), "timeout");
+		latestTimeLabel.Text = Global.allData1;
+		fastestTimesLabel.Text = Global.allData2;
+		
+		// Play winning sound
+		PlayWinningSound();
+		
+		GD.Print("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
+	}     
 
 	public override void _Ready()
 	{
-		
 		PrintCurrentScores();
-		
 		
 		Button mainMenuButton = GetNode<Button>("MarginContainer/VBoxContainer/Button");
 		mainMenuButton.Pressed += OnMainMenuPressed;
 		
+		// Initialize winning sound reference if not set via Export
+		if (_winningSound == null)
+		{
+			_winningSound = GetNode<AudioStreamPlayer>("Winning");
+		}
+		
 		// Gauname HighScoreManager – įsitikinkite, kad jis yra užregistruotas kaip Autoload.
-
 		if (_scoreManager == null)
 		{
 			GD.PrintErr("HighScoresDisplay: HighScoreManager nerastas! Įsitikinkite, kad jis nustatytas kaip Autoload.");
@@ -81,6 +65,19 @@ public partial class HighScoresDisplay : Control
 		// Atlikti duomenų atnaujinimą
 		UpdateLatestTime();
 		PopulateScores();
+	}
+
+	private void PlayWinningSound()
+	{
+		if (_winningSound != null && !_winningSound.Playing)
+		{
+			GD.Print("Playing winning sound!");
+			_winningSound.Play();
+		}
+		else if (_winningSound == null)
+		{
+			GD.PrintErr("HighScoresDisplay: _winningSound is not assigned!");
+		}
 	}
 
 	private void UpdateLatestTime()
@@ -156,6 +153,9 @@ public partial class HighScoresDisplay : Control
 		{
 			UpdateLatestTime();
 			PopulateScores();
+			
+			// Play winning sound when the scene becomes visible
+			PlayWinningSound();
 		}
 	}
 }

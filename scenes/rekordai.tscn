@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4okw3ug6jw8x"]
+[gd_scene load_steps=3 format=3 uid="uid://b4okw3ug6jw8x"]
 
 [ext_resource type="Script" path="res://scripts/HighScoresDisplay.cs" id="1_mehik"]
+[ext_resource type="AudioStream" uid="uid://cnrc88fhejgc5" path="res://music/winning.mp3" id="2_p12nq"]
 
 [node name="Rekordai" type="Control"]
 layout_mode = 3
@@ -65,3 +66,6 @@ offset_bottom = 156.0
 theme_override_colors/font_color = Color(0.996078, 0.258824, 0, 1)
 theme_override_font_sizes/font_size = 100
 text = "ROBOTAS ČEMPIONAS!"
+
+[node name="Winning" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_p12nq")

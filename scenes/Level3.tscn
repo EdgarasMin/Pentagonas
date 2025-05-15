@@ -2106,8 +2106,8 @@ placeholder_text = "> "
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 1153.0
 offset_top = 17.0
-offset_right = 1915.0
-offset_bottom = 192.0
+offset_right = 1951.0
+offset_bottom = 236.0
 theme_override_font_sizes/normal_font_size = 21
 text = "Sveiki atvykę į trečiąjį lygį!  Jūsų užduotis yra padėti  sujungti elektros grandinę, spaudžiant mygtukus, kad elektra pasiektų visus brangakmenius labirinte. B raidės mygtukas įjungia tam tikrą elektros liniją, o jūsų tikslas – sujungti visas linijas taip, kad elektra pasiektų brangakmenius per trumpiausią įmanomą laiką. Taip pat šiame lygyje yra priešai, juos nugalėti gali paspaudęs z mygtuką. "
 
