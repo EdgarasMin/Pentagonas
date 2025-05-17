@@ -1299,6 +1299,7 @@ scale = Vector2(9.01681, 8.63759)
 
 [node name="Walking" type="AudioStreamPlayer" parent="CharacterBody2D/AnimatedSprite2D"]
 stream = ExtResource("15_jb2bm")
+volume_db = -40.0
 bus = &"SFX"
 
 [node name="stopwatch_label" type="Label" parent="CharacterBody2D"]

@@ -66,7 +66,8 @@ public  partial  class CharacterBody2d2 : CharacterBody2D
 				// Optional: custom logic here
 				// Example: QueueFree(), Play effect, etc.
 				isSpinning = true;
-				AudioManager.PlaySound(soundTP.Stream);
+				if (!soundTP.Playing)
+					soundTP.Play();
 			}
 			}
 		}
@@ -100,6 +101,8 @@ public  partial  class CharacterBody2d2 : CharacterBody2D
 		{
 			isSpinning = false;
 			spinTimeLeft = 0f;
+			if (soundTP.Playing)
+				soundTP.Stop();
 			GetTree().ChangeSceneToFile("res://scenes/Level3.tscn");
 
 			//GD.Print("Changed scene");

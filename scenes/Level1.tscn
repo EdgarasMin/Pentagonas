@@ -260,6 +260,7 @@ scale = Vector2(9.01681, 8.63759)
 
 [node name="Walking" type="AudioStreamPlayer" parent="CharacterBody2D/AnimatedSprite2D"]
 stream = ExtResource("15_bqstm")
+volume_db = -40.0
 bus = &"SFX"
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="CharacterBody2D/AnimatedSprite2D"]
@@ -278,6 +279,7 @@ script = ExtResource("17_mf8gv")
 
 [node name="TP" type="AudioStreamPlayer" parent="CharacterBody2D"]
 stream = ExtResource("18_luxp2")
+bus = &"SFX"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
