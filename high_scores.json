@@ -17,6 +17,10 @@
       "User": "user"
     },
     {
+      "Time": 44.37713,
+      "User": "user"
+    },
+    {
       "Time": 82.79622,
       "User": "admin"
     },
@@ -35,10 +39,6 @@
     {
       "Time": 156.87173,
       "User": "user"
-    },
-    {
-      "Time": 207.73036,
-      "User": "Vartotojas1"
     }
   ]
 }
