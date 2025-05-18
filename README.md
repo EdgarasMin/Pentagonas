@@ -29,7 +29,7 @@ Krita – piešimo programa, naudota žaidimo aplinkos, objektų iliustravimui. 
 
 
 
-Testavimas ir jo rezultatai (gali būti failas saugykloje)
+Testavimas ir jo rezultatai
 
 | Veiksmas                       | Norimas rezultatas                                                                 | Gautas rezultatas                                                                 |
 |--------------------------------|------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
@@ -47,7 +47,7 @@ Testavimas ir jo rezultatai (gali būti failas saugykloje)
 
 
 
-Trumpa naudotojo dokumentacija (gali būti failas saugykloje arba wiki puslapis)
+Trumpa naudotojo dokumentacija
 
 
 
