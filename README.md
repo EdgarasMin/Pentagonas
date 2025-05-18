@@ -25,7 +25,7 @@ C++ – Tai žaidime naudojama programavimo kalba kaip  klausimams bei kodo užd
 Krita – piešimo programa, naudota žaidimo aplinkos, objektų iliustravimui. Leido kurti originalius 2D grafinius elementus.
 
 
-![99be490d78fee2d63c53dd84267679ec](https://github.com/user-attachments/assets/551a5bc2-31e2-4277-9d81-8683360859d2)
+
 
 
 
@@ -76,6 +76,7 @@ Kaip įrašyti ir paleisti žaidimą
 Atsidaryti https://github.com/EdgarasMin/Pentagonas/tree/tpAnimacija
 Atsisiųsti failą iš <> Code (žalios spalvos mygtuko) 
 bei įrašyti Godot programą iš interneto (geriausia 4.3 versiją)
+![image](https://github.com/user-attachments/assets/a90c17b2-ffaa-4706-89a5-637f8b3e80cd)
 
 Atsidrę Godot programą išsiarchyvuoti žaidimą. Toliau įkelti žaidimo failus kaip pavaizduota paveikslėlyje.
 
@@ -89,36 +90,46 @@ Atsidrę Godot programą išsiarchyvuoti žaidimą. Toliau įkelti žaidimo fail
 
 
 
+![image](https://github.com/user-attachments/assets/b3739447-d89a-47ec-aa85-2a0b0a963d7f)
 
 Belieka paspausti F5 mygtuką arba simbolį kitame paveikslėlyje ir žaidimas atsidarys.
+![image](https://github.com/user-attachments/assets/59830638-098f-4dc7-9b32-0db1648272a2)
 
 
 Žaidimas yra linijinio tipo, tad norint pereiti į kitą lygį reikės įveikti dabartinį. Paleidus žaidimą atsidarys naujas langas, kuriame bus matomas žaidimo vaizdas. Naudotojas pradėjęs žaidimą turės prisijungti prie savo paskyros, arba sukurti nauja paskyra paspaudęs mygtuką “Registruotis”. 
 
+![image](https://github.com/user-attachments/assets/14ac13b8-10f3-4a69-9791-7f9204c8d894)
 
 (Kuriant naują paskyra vardas negali būti užimtas ir slaptažodis turi būti iš bent 8 simbolių). Prisijungus naudotojui bus rodomas pagrindinis meniu su keturiais mygtukų pasirinkimais: “Naujas žaidimas”, “Esamas žaidimas”, “Nustatymai”, “Ate ir iki”. 
 
+![image](https://github.com/user-attachments/assets/cdfbb6cf-5c4d-4fb8-89f8-62790d356f06)
 
 
 Paspaudus: “Ate ir iki” programa užbaigs darbą, “Nustatymai” atidarys nustatymų langą, 
 
+![image](https://github.com/user-attachments/assets/42e3bb08-f178-4145-ab3d-ef95a4aabd33)
 
 “Esamas Žaidimas” leis pratęsti kur buvo baigta ir “Naujas žaidimas” pradės naują žaidimą nuo įvadinio lygio, kuriame bus supažindinama su reikalingais mygtukais. (WASD judėjimui, I inventoriui, ` kodo rašymui, M žemėlapiui). 
+![image](https://github.com/user-attachments/assets/7366a2d7-d0c3-4aaf-b933-8d16016a79f4)
 
 Perėjus įvadinį lygį žaidėjui bus nuvesti į pirmą žaidimo lygį.
+![image](https://github.com/user-attachments/assets/c810d9e9-2764-4111-a601-05d1d5cd7f53)
 
 Pirmame lygyje naudotojas turės programavimo užduotį. (Atsakymas: kodo redagavimo lange pakeisti žodį “World” į “Dungeon”), tuomet atsidarys durys ir bus galima pereiti į antrą žaidimo lygį. Antras žaidimo lygis yra apie žaidėjo pasirinkimus, kur perskaičius klausimą reikės pasirinkti portalą su tinkamu atsakymu. 
+![image](https://github.com/user-attachments/assets/9901ac1f-2253-4436-b361-2debc6158d3e)
+
 
 (Teisingi atsakymai antrame lygyje yra: Java, Klasė – tai šablonas, apibrėžiantis duomenis ir elgseną. Objektas – tai klasės pavyzdys., C++, List<int> skaiciai = new List<int>();)
 Teisingai pasirinkus visus portalus žaidėjas pateks į trečią lygį. Trečiame lygyje kovojant su priešu žaidėjui reikia suvedžioti signalus į visus brangakmenius, tuomet bus gauta kodavimo užduotis. (Kodavimo užduoties atsakymas x=7).
 
+![image](https://github.com/user-attachments/assets/c014e8ae-145f-49c9-92c5-4908023cd007)
 
-![image](https://github.com/user-attachments/assets/7061d9b4-05f5-4a3d-a2b5-c5d9a488f6ae)
+
 
 
 Įveikus trečią lygį žaidėjas pateks į paskutinį, ketvirtą žaidimo lygį. Šiame lygyje žaidėjas bėgdamas nuo priešų turės sudėlioti kodą iš dalių randamų labirinte ir nulenkti viduryje esančią svirtį, kad atrakintų portalą ir baigtų žaidimą.
 
-
+![image](https://github.com/user-attachments/assets/7061d9b4-05f5-4a3d-a2b5-c5d9a488f6ae)
 
 
 
