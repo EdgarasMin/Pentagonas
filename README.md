@@ -1,12 +1,9 @@
-
-Techninė užduotis
-
 Komandos pavadinimas - „Pentagonas”
 Projekto komandos nariai:
-·         Edgaras Miniotas IFIN-3/4 (edgarasminiotas@gmail.com) - Projekto vadovas, programuotojas ir dizaineris. Atsakingas už lygių kūrimą, jų veikimo logika bei projekto koordinavimą.
-·         Gerda Jurkutė IFIN-3/4 (gerjur@ktu.lt) - Projekto raštininkė, testuotoja ir dizainerė. Atliko žaidimo testavimą, pagrindinių veikėjų modeliavimą ir animacijos veikimą. Prisidėjo prie mechanikų veikimo.
-·         Emilis Skukauskas IFIN-3/4 (emisku1@ktu.lt) - Programuotojas, dizaineris. Prisidėjo prie žaidimo žaidimo vartotojo sąsajos kūrimo, mechanikų įgyvendinimo bei lygių funkcijų papildymo.
-·         Benediktas Šimas  IFIN-3/4 (benediktas.simas777@gmail.com) – Dizaineris, programuotojas. Rūpinosi, garso efektais ir foninės muzikos integracija, padėjo kurti UI elementus bei žaidimo lygius.
+· Edgaras Miniotas IFIN-3/4 (edgarasminiotas@gmail.com) - Projekto vadovas, programuotojas ir dizaineris. Atsakingas už lygių kūrimą, jų veikimo logika bei projekto koordinavimą.
+· Gerda Jurkutė IFIN-3/4 (gerjur@ktu.lt) - Projekto raštininkė, testuotoja ir dizainerė. Atliko žaidimo testavimą, pagrindinių veikėjų modeliavimą ir animacijos veikimą. Prisidėjo prie mechanikų veikimo.
+· Emilis Skukauskas IFIN-3/4 (emisku1@ktu.lt) - Programuotojas, dizaineris. Prisidėjo prie žaidimo žaidimo vartotojo sąsajos kūrimo, mechanikų įgyvendinimo bei lygių funkcijų papildymo.
+· Benediktas Šimas  IFIN-3/4 (benediktas.simas777@gmail.com) – Dizaineris, programuotojas. Rūpinosi, garso efektais ir foninės muzikos integracija, padėjo kurti UI elementus bei žaidimo lygius.
 
 
 „ByteBound: The Code Quest“ – tai 2D nuotykių ir galvosūkių žaidimas, kuriame pagrindinis veikėjas keliauja per požeminį labirintą, sprendžia užduotis ir įveikia kliūtis pasitelkdamas programavimo logiką. Žaidimas skirtas ne tik smagiam laiko praleidimui, bet ir padeda žaidėjams įgyti ar įtvirtinti žinias apie C++ programavimo kalbą.
