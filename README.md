@@ -31,39 +31,19 @@ Krita – piešimo programa, naudota žaidimo aplinkos, objektų iliustravimui. 
 
 Testavimas ir jo rezultatai (gali būti failas saugykloje)
 
-Veiksmas 
-Norimas rezultatas
-Gautas rezultatas
-Žaidėjo registracija
-Žaidėjas susikuria vartotojo vardą ir slaptažodį, su kuriais gali prisijungti prie žaidimo.
-Sėkmingai užsiregistravęs žaidėjas gali prisijungti prie žaidimo.
-Prisijungimas
-Žaidėjas gali prisijungti prie žaidimo naudodamas sukurtus duomenis, kurie yra saugomi.
-Žaidėjas prisijungia prie žaidimo naudodamas registracijos metu sukurtus duomenis.
-Naujo žaidimo paleidimas
-Prasideda naujas žaidimas nuo įvadinio lygio.
-Paspaudus „Naujas žaidimas“, paleidžiamas įvadinis lygis.
-Nustatymų keitimas
-Pakeitus nustatymus, jie yra išsaugomi.
-Nustatymų lange galima pakeisti ir išsaugoti nustatymus.
-Esamo žaidimo paleidimas
-Tęsiamas ankstesnis žaidimas nuo išsaugoto lygio.
-Paspaudus „Esamas žaidimas“, paleidžiamas paskutinis išsaugotas lygis.
-Konsolės atidarymas
-Paspaudus “`” mygtuką pirmame lygyje atidaromas konsolės langas
-` mygtukas pirmame lygyje atidaro konsolės langą, kuriame galima atlikti užduotį.
-Inventorius
-Paspaudus „I“ mygtuką, visuose lygiuose žaidėjas gali pasiekti inventorių.
-Naudodamas „I“ mygtuką, žaidėjas gali pasiekti inventorių ir juo naudotis.
-Sąveika su objektais žaidime
-Žaidėjas gali judinti nurodytus objektus naudodamas „B“ mygtuką.
-Paspaudus „B“ mygtuką, žaidėjas gali judinti ar sąveikauti su nurodytais objektais.
-Veikėjo judėjimas
-Veikėjas juda žaidime naudojant „W“, „A“, „S“, „D“ mygtukus.
-Paspaudus atitinkamą mygtuką, veikėjas juda į nurodytą pusę.
-Žaidimo laimėjimas
-Parodoma rekordų lentelė su 10 greičiausių laikų.
-Įveikus paskutinį lygį, rodomas rezultatų langas su užfiksuotais greičiausiais laikais.
+| Veiksmas                       | Norimas rezultatas                                                                 | Gautas rezultatas                                                                 |
+|--------------------------------|------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
+| Žaidėjo registracija           | Žaidėjas susikuria vartotojo vardą ir slaptažodį, su kuriais gali prisijungti prie žaidimo. | Sėkmingai užsiregistravęs žaidėjas gali prisijungti prie žaidimo.                |
+| Prisijungimas                  | Žaidėjas gali prisijungti prie žaidimo naudodamas sukurtus duomenis, kurie yra saugomi.     | Žaidėjas prisijungia prie žaidimo naudodamas registracijos metu sukurtus duomenis. |
+| Naujo žaidimo paleidimas       | Prasideda naujas žaidimas nuo įvadinio lygio.                                      | Paspaudus „Naujas žaidimas“, paleidžiamas įvadinis lygis.                        |
+| Nustatymų keitimas             | Pakeitus nustatymus, jie yra išsaugomi.                                           | Nustatymų lange galima pakeisti ir išsaugoti nustatymus.                         |
+| Esamo žaidimo paleidimas       | Tęsiamas ankstesnis žaidimas nuo išsaugoto lygio.                                 | Paspaudus „Esamas žaidimas“, paleidžiamas paskutinis išsaugotas lygis.           |
+| Konsolės atidarymas            | Paspaudus “\`” mygtuką pirmame lygyje atidaromas konsolės langas                   | ` mygtukas pirmame lygyje atidaro konsolės langą, kuriame galima atlikti užduotį. |
+| Inventorius                    | Paspaudus „I“ mygtuką, visuose lygiuose žaidėjas gali pasiekti inventorių.        | Naudodamas „I“ mygtuką, žaidėjas gali pasiekti inventorių ir juo naudotis.       |
+| Sąveika su objektais žaidime   | Žaidėjas gali judinti nurodytus objektus naudodamas „B“ mygtuką.                   | Paspaudus „B“ mygtuką, žaidėjas gali judinti ar sąveikauti su nurodytais objektais. |
+| Veikėjo judėjimas              | Veikėjas juda žaidime naudojant „W“, „A“, „S“, „D“ mygtukus.                       | Paspaudus atitinkamą mygtuką, veikėjas juda į nurodytą pusę.                     |
+| Žaidimo laimėjimas             | Parodoma rekordų lentelė su 10 greičiausių laikų.                                  | Įveikus paskutinį lygį, rodomas rezultatų langas su užfiksuotais greičiausiais laikais. |
+
 
 
 
