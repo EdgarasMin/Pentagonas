@@ -56,7 +56,7 @@
 
 
 
-Testavimas ir jo rezultatai
+## Testavimas ir jo rezultatai
 
 | Veiksmas                       | Norimas rezultatas                                                                 | Gautas rezultatas                                                                 |
 |--------------------------------|------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
@@ -74,7 +74,7 @@ Testavimas ir jo rezultatai
 
 
 
-Trumpa naudotojo dokumentacija
+## Trumpa naudotojo dokumentacija
 
 
 
