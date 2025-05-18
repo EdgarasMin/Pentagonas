@@ -1,6 +1,6 @@
-# 🎮 ByteBound: The Code Quest
+# ByteBound: The Code Quest
 
-## 👥 Komandos pavadinimas – „Pentagonas”
+## Komandos pavadinimas – „Pentagonas”
 
 ### Projekto komandos nariai:
 
@@ -18,14 +18,14 @@
 
 ---
 
-## 🧩 Apie žaidimą
+## Apie žaidimą
 
 **„ByteBound: The Code Quest“** – tai 2D nuotykių ir galvosūkių žaidimas, kuriame pagrindinis veikėjas keliauja per požeminį labirintą, sprendžia užduotis ir įveikia kliūtis pasitelkdamas programavimo logiką.  
 Žaidimas skirtas ne tik smagiam laiko praleidimui, bet ir padeda žaidėjams įgyti ar įtvirtinti žinias apie **C++ programavimo kalbą**.
 
 ---
 
-## 🛠️ Funkcionalumas
+## Funkcionalumas
 
 - **Kodo įvedimas** – žaidėjas gali įvesti paprastą C++ stiliaus kodą, kuris aktyvuoja veiksmus (pvz., atrakina duris).
 - **Interaktyvūs klausimai** – žaidėjas pasirenka teisingus atsakymus į klausimus apie programavimo pagrindus.
@@ -37,7 +37,7 @@
 
 ---
 
-## 💻 Naudotos technologijos
+## Naudotos technologijos
 
 - **Git ir GitHub** – naudoti versijų kontrolei ir bendradarbiavimui komandoje. Git leido sekti visus kodo pakeitimus, o GitHub – patogiai talpinti projektą ir dirbti keliems žmonėms vienu metu.
 - **Jira** – naudota darbų planavimui ir komandiniam valdymui. Joje buvo kuriami sprintai, planuojami darbai, paskirstomos užduotys tarp komandos narių ir stebimas progreso įgyvendinimas.
