@@ -113,14 +113,15 @@ Pirmame lygyje naudotojas turės programavimo užduotį. (Atsakymas: kodo redaga
 Teisingai pasirinkus visus portalus žaidėjas pateks į trečią lygį. Trečiame lygyje kovojant su priešu žaidėjui reikia suvedžioti signalus į visus brangakmenius, tuomet bus gauta kodavimo užduotis. (Kodavimo užduoties atsakymas x=7).
 
 
+![image](https://github.com/user-attachments/assets/7061d9b4-05f5-4a3d-a2b5-c5d9a488f6ae)
 
 
 Įveikus trečią lygį žaidėjas pateks į paskutinį, ketvirtą žaidimo lygį. Šiame lygyje žaidėjas bėgdamas nuo priešų turės sudėlioti kodą iš dalių randamų labirinte ir nulenkti viduryje esančią svirtį, kad atrakintų portalą ir baigtų žaidimą.
 
-![image](https://github.com/user-attachments/assets/9ab7e6bf-f99c-49a2-b47f-87315c50bbca)
+
 
 
 
 Baigus žaidimą bus matomi rekordai, per kiek laiko buvo įveiktas žaidimas. 
-
+![image](https://github.com/user-attachments/assets/9ab7e6bf-f99c-49a2-b47f-87315c50bbca)
 
