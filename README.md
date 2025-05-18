@@ -21,7 +21,7 @@
 ## Apie žaidimą
 
 **„ByteBound: The Code Quest“** – tai 2D nuotykių ir galvosūkių žaidimas, kuriame pagrindinis veikėjas keliauja per požeminį labirintą, sprendžia užduotis ir įveikia kliūtis pasitelkdamas programavimo logiką.  
-Žaidimas skirtas ne tik smagiam laiko praleidimui, bet ir padeda žaidėjams įgyti ar įtvirtinti žinias apie **C++ programavimo kalbą**.
+Žaidimas skirtas ne tik smagiam laiko praleidimui, bet ir padeda žaidėjams įgyti ar įtvirtinti žinias apie C++ programavimo kalbą.
 
 ---
 
