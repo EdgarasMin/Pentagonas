@@ -28,7 +28,7 @@ C++ – Tai žaidime naudojama programavimo kalba kaip  klausimams bei kodo užd
 Krita – piešimo programa, naudota žaidimo aplinkos, objektų iliustravimui. Leido kurti originalius 2D grafinius elementus.
 
 
-
+![99be490d78fee2d63c53dd84267679ec](https://github.com/user-attachments/assets/551a5bc2-31e2-4277-9d81-8683360859d2)
 
 
 
@@ -81,6 +81,7 @@ Atsisiųsti failą iš <> Code (žalios spalvos mygtuko)
 bei įrašyti Godot programą iš interneto (geriausia 4.3 versiją)
 
 Atsidrę Godot programą išsiarchyvuoti žaidimą. Toliau įkelti žaidimo failus kaip pavaizduota paveikslėlyje.
+
 
 
 
