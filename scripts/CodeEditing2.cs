@@ -306,24 +306,32 @@ public partial class CodeEditing2 : CanvasLayer
 	{
 		codeBox.Text = tasks[currentTask].CodeBoxText;
 	}
-	private void UpdateTaskDescription()
-	{
-		if (currentTask < tasks.Count)
-		{
-			taskDescription.Text = "[color=green][b]Užduotis:[/b][/color] " + tasks[currentTask].Description;
-		}
-		else
-		{
-			//atsidaro durys negaliu ieit bum bum
+    private void UpdateTaskDescription()
+    {
+        if (currentTask < tasks.Count)
+        {
+            taskDescription.Text = "[color=green][b]Užduotis:[/b][/color] " + tasks[currentTask].Description;
+        }
+        else
+        {
+            
 
-			door.Frame = 1;
-			doorCollision.Disabled = true;  
+            // ✅ Raktas tampa matomas
+            var keyPickup = GetTree().CurrentScene.FindChild("KeyPickup", true, false);
+            if (keyPickup != null)
+            {
+                keyPickup.Set("visible", true);
+            }
+            else
+            {
+                GD.PrintErr("❌ KeyPickup not found in scene!");
+            }
 
-			
-			taskDescription.Text = "[color=green][b]Visos užduotys baigtos![/b][/color] Sveikiname!";
-		}
-	}
-	private void UpdateCodeBoxText()
+            taskDescription.Text = "[color=green][b]Visos užduotys baigtos![/b][/color] Sveikiname!";
+        }
+    }
+
+    private void UpdateCodeBoxText()
 	{
 		if (currentTask < tasks.Count)
 		{

@@ -1215,6 +1215,7 @@ scale = Vector2(9.01681, 8.63759)
 
 [node name="Walking" type="AudioStreamPlayer" parent="CharacterBody2D/AnimatedSprite2D"]
 stream = ExtResource("19_pnh53")
+volume_db = -40.0
 bus = &"SFX"
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="CharacterBody2D/AnimatedSprite2D"]
@@ -1237,6 +1238,7 @@ script = ExtResource("23_lx8pn")
 
 [node name="TP" type="AudioStreamPlayer" parent="CharacterBody2D"]
 stream = ExtResource("24_lisnf")
+bus = &"SFX"
 
 [node name="Pointer3" type="Sprite2D" parent="."]
 position = Vector2(1876, 416)

@@ -1,24 +1,44 @@
 {
   "FastestTimes": [
     {
+      "Time": 0,
+      "User": "user"
+    },
+    {
+      "Time": 0,
+      "User": "user"
+    },
+    {
+      "Time": 0,
+      "User": "user"
+    },
+    {
+      "Time": 0,
+      "User": "user"
+    },
+    {
+      "Time": 44.37713,
+      "User": "user"
+    },
+    {
       "Time": 82.79622,
       "User": "admin"
+    },
+    {
+      "Time": 105.53403,
+      "User": "user"
+    },
+    {
+      "Time": 106.182625,
+      "User": "user"
     },
     {
       "Time": 107.73036,
       "User": "admin"
     },
     {
-      "Time": 207.73036,
-      "User": "Vartotojas1"
-    },
-    {
-      "Time": 227.73036,
-      "User": "Vartotojas2"
-    },
-    {
-      "Time": 337.73035,
-      "User": "Vartotojas3"
+      "Time": 156.87173,
+      "User": "user"
     }
   ]
 }

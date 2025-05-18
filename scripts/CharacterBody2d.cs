@@ -14,9 +14,14 @@ public partial class CharacterBody2d : CharacterBody2D
 	private float spinTimeLeft = 3f;
 	public float RotationSpeed = 360f; // degrees per second
 	public int newScene = 0;
-	
+	private CollisionShape2D doorCollision;
 	private AudioStreamPlayer soundTP;
-	
+
+	private bool isSpeedBoosted = false;
+	private float speedBoostTimer = 0f;
+	private int originalSpeed;
+
+
 	public override void _Ready()
 	{
 		var stopwatchLabel = GetTree().Root.FindChild("stopwatch_label", true, false);
@@ -24,16 +29,16 @@ public partial class CharacterBody2d : CharacterBody2D
 		{
 			stopwatch.stopWatch=false;
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+		AddToGroup("Player");
+
+
+
+
+
+
+
+
 		//Clears bugs when scenes have already open objects
 		CodeEditing2.ExitTree();
 		sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
@@ -57,7 +62,8 @@ public partial class CharacterBody2d : CharacterBody2D
 				
 				//GetTree().ChangeSceneToFile("res://scenes/Level2.tscn");
 				isSpinning = true;
-				AudioManager.PlaySound(soundTP.Stream);
+				if (!soundTP.Playing)
+					soundTP.Play();
 				newScene = 1;
 				GD.Print("1 act");
 				// Optional: custom logic here
@@ -68,7 +74,8 @@ public partial class CharacterBody2d : CharacterBody2D
 				
 				//GetTree().ChangeSceneToFile("res://scenes/Level2.tscn");
 				isSpinning = true;
-				AudioManager.PlaySound(soundTP.Stream);
+				if (!soundTP.Playing)
+					soundTP.Play();
 				newScene = 2;
 				GD.Print("2 act");
 				// Optional: custom logic here
@@ -80,7 +87,8 @@ public partial class CharacterBody2d : CharacterBody2D
 				
 				//GetTree().ChangeSceneToFile("res://scenes/Level2.tscn");
 				isSpinning = true;
-				AudioManager.PlaySound(soundTP.Stream);
+				if (!soundTP.Playing)
+					soundTP.Play();
 				newScene = 3;
 				GD.Print("3 act");
 				// Optional: custom logic here
@@ -115,6 +123,8 @@ public partial class CharacterBody2d : CharacterBody2D
 		{
 			isSpinning = false;
 			spinTimeLeft = 0f;
+			if (soundTP.Playing)
+				soundTP.Stop();
 			
 			//GetTree().ChangeSceneToFile("res://scenes/Level2.tscn");
 			switch(newScene)
@@ -165,11 +175,69 @@ public partial class CharacterBody2d : CharacterBody2D
 
 		Collision();
 
+		// Handle speed boost timer
+		if (isSpeedBoosted)
+		{
+			speedBoostTimer -= (float)delta;
+			if (speedBoostTimer <= 0)
+			{
+				isSpeedBoosted = false;
+				Speed = originalSpeed;
+				GD.Print("⏱️ Speed boost ended.");
+			}
+		}
+
+
 		// Set the built-in velocity and move
 		Velocity = vel*32 * (float)delta;
 		MoveAndSlide();
 	}
-   
-	
+	public void TryUnlockDoor()
+	{
+		var nearbyDoors = GetTree().GetNodesInGroup("Door");
+		if(nearbyDoors.Count == 0)
+		{
+			GD.Print("nera duru grupes paimtos");
+		}
+		foreach (var node in nearbyDoors)
+		{
+			if (node is StaticBody2D door && Position.DistanceTo(door.Position) < 500)
+			{
+				GD.Print("🚪 Door unlocked!");
+
+				// Disable "nu"
+				doorCollision = GetNodeOrNull<CollisionShape2D>("../StaticBody2D3/nu");
+				doorCollision.Disabled = true;
+
+				// Play animation "2"
+				var animSprite = door.GetNodeOrNull<AnimatedSprite2D>("DoorAnimatedSprite2d");
+				
+				if (animSprite != null)
+				{
+					animSprite.Frame = 1;
+				}
+
+				return;
+			}
+		}
+
+		GD.Print("No nearby door to unlock.");
+	}
+	public void ApplySpeedBoost(int duration)
+	{
+		if (isSpeedBoosted)
+			return;
+
+		GD.Print($"🚀 Speed boost for {duration} seconds!");
+		isSpeedBoosted = true;
+		originalSpeed = Speed;
+		Speed *= 2;
+		speedBoostTimer = duration;
+	}
+
+
+
+
+
 
 }
