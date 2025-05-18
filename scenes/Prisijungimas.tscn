@@ -88,15 +88,6 @@ theme_override_fonts/font = ExtResource("1_qqoxs")
 theme_override_font_sizes/font_size = 29
 text = "ž"
 
-[node name="Label5" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 892.0
-offset_top = 408.0
-offset_right = 1223.0
-offset_bottom = 446.0
-theme_override_font_sizes/font_size = 21
-text = "admin (usr and passw.)"
-
 [node name="Button" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 713.0
