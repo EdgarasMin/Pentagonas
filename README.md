@@ -1,28 +1,55 @@
-Komandos pavadinimas - „Pentagonas”
-Projekto komandos nariai:
-· Edgaras Miniotas IFIN-3/4 (edgarasminiotas@gmail.com) - Projekto vadovas, programuotojas ir dizaineris. Atsakingas už lygių kūrimą, jų veikimo logika bei projekto koordinavimą.
-· Gerda Jurkutė IFIN-3/4 (gerjur@ktu.lt) - Projekto raštininkė, testuotoja ir dizainerė. Atliko žaidimo testavimą, pagrindinių veikėjų modeliavimą ir animacijos veikimą. Prisidėjo prie mechanikų veikimo.
-· Emilis Skukauskas IFIN-3/4 (emisku1@ktu.lt) - Programuotojas, dizaineris. Prisidėjo prie žaidimo žaidimo vartotojo sąsajos kūrimo, mechanikų įgyvendinimo bei lygių funkcijų papildymo.
-· Benediktas Šimas  IFIN-3/4 (benediktas.simas777@gmail.com) – Dizaineris, programuotojas. Rūpinosi, garso efektais ir foninės muzikos integracija, padėjo kurti UI elementus bei žaidimo lygius.
+# 🎮 ByteBound: The Code Quest
+
+## 👥 Komandos pavadinimas – „Pentagonas”
+
+### Projekto komandos nariai:
+
+- **Edgaras Miniotas** – IFIN-3/4 (edgarasminiotas@gmail.com)  
+  Projekto vadovas, programuotojas ir dizaineris. Atsakingas už lygių kūrimą, jų veikimo logiką bei projekto koordinavimą.
+
+- **Gerda Jurkutė** – IFIN-3/4 (gerjur@ktu.lt)  
+  Projekto raštininkė, testuotoja ir dizainerė. Atliko žaidimo testavimą, pagrindinių veikėjų modeliavimą ir animacijos veikimą. Prisidėjo prie mechanikų veikimo.
+
+- **Emilis Skukauskas** – IFIN-3/4 (emisku1@ktu.lt)  
+  Programuotojas ir dizaineris. Prisidėjo prie žaidimo vartotojo sąsajos kūrimo, mechanikų įgyvendinimo bei lygių funkcijų papildymo.
+
+- **Benediktas Šimas** – IFIN-3/4 (benediktas.simas777@gmail.com)  
+  Dizaineris ir programuotojas. Rūpinosi garso efektais ir foninės muzikos integracija, padėjo kurti UI elementus bei žaidimo lygius.
+
+---
+
+## 🧩 Apie žaidimą
+
+**„ByteBound: The Code Quest“** – tai 2D nuotykių ir galvosūkių žaidimas, kuriame pagrindinis veikėjas keliauja per požeminį labirintą, sprendžia užduotis ir įveikia kliūtis pasitelkdamas programavimo logiką.  
+Žaidimas skirtas ne tik smagiam laiko praleidimui, bet ir padeda žaidėjams įgyti ar įtvirtinti žinias apie **C++ programavimo kalbą**.
+
+---
+
+## 🛠️ Funkcionalumas
+
+- **Kodo įvedimas** – žaidėjas gali įvesti paprastą C++ stiliaus kodą, kuris aktyvuoja veiksmus (pvz., atrakina duris).
+- **Interaktyvūs klausimai** – žaidėjas pasirenka teisingus atsakymus į klausimus apie programavimo pagrindus.
+- **Kodo sudėliojimas** – žaidėjas turi sudėlioti kodo fragmentus tinkama tvarka.
+- **Garso efektai ir muzika** – įdiegti garso takeliai ir efektai, kurie sustiprina žaidimo atmosferą.
+- **Priešai** – kai kuriuose lygiuose yra funkcionalūs priešai, trukdantys įveikti lygį.
+- **Naudotojo sąsaja (UI)** – sukurti aiškūs meniu, valdikliai ir rezultatų lentelės.
+- **Laiko rekordų sistema** – įveikus visus lygius, žaidėjas gauna suvestinę su pasiekimais.
+
+---
+
+## 💻 Naudotos technologijos
+
+- **Git ir GitHub** – naudoti versijų kontrolei ir bendradarbiavimui komandoje. Git leido sekti visus kodo pakeitimus, o GitHub – patogiai talpinti projektą ir dirbti keliems žmonėms vienu metu.
+- **Jira** – naudota darbų planavimui ir komandiniam valdymui. Joje buvo kuriami sprintai, planuojami darbai, paskirstomos užduotys tarp komandos narių ir stebimas progreso įgyvendinimas.
+- **C#** – pagrindinė žaidimo programavimo kalba. Ji pasirinkta dėl puikios integracijos su Godot varikliu, aiškios ir tvarkingos sintaksės, panašios į C++.
+- **Godot Engine** – atvirojo kodo žaidimų variklis, leidžiantis kurti 2D ir 3D žaidimus. Pasirinktas dėl lankstumo, geros dokumentacijos ir paprastumo naujokams.
+- **C++** – naudojama žaidimo užduotyse kaip teminė programavimo kalba. Tai leidžia žaidėjams praktiškai susipažinti su C++ pagrindais žaismingu būdu.
+- **Krita** – piešimo programa, naudota žaidimo aplinkos, objektų ir UI elementų kūrimui.
+- **Blender** – naudotas modeliavimui ir animacijoms. Leido kurti žaidimo veikėjus bei vizualius elementus.
+- **Audacity / Freesound** – naudoti garso efektų redagavimui ir integravimui į žaidimą.
 
 
-„ByteBound: The Code Quest“ – tai 2D nuotykių ir galvosūkių žaidimas, kuriame pagrindinis veikėjas keliauja per požeminį labirintą, sprendžia užduotis ir įveikia kliūtis pasitelkdamas programavimo logiką. Žaidimas skirtas ne tik smagiam laiko praleidimui, bet ir padeda žaidėjams įgyti ar įtvirtinti žinias apie C++ programavimo kalbą.
- 
-Funkcionalumas:
-Kodo įvedimas: žaidėjas gali įvesti paprastą C++ stiliaus kodą, kuris aktyvuoja veiksmus (pvz., atrakina duris).
-Interaktyvūs klausimai: Lygyje žaidėjas turi pasirinkti teisingus atsakymus į klausimus apie programavimo pagrindus.
-Kodo sudėliojimas: Lygyje žaidėjas turi sudėlioti kodo fragmentus tinkama tvarka.
-Garso efektai ir muzika: įdiegti garso takeliai ir efektai, kurie sustiprina žaidimo atmosferą.
-Priešai: Kai kuriuose lygiuose yra funkcionalūs priešai trukdantys įveikti lygį.
-UI (naudotojo sąsaja): sukurti lengvai suprantami meniu, mygtukai ir rezultatų lentelės.
-Laiko rekordų sistema: įveikus visus lygius, žaidėjas gauna informacinę suvestinę su pasiekimais.
-Naudotos technologijos:
-Git ir GitHub – naudoti versijų kontrolei ir bendradarbiavimui komandoje. Git leido sekti visus kodo pakeitimus, o GitHub – patogiai talpinti projektą ir dirbti keliems žmonėms vienu metu.
-Jira – naudota darbų planavimui ir komandiniam valdymui. Joje buvo kuriami sprintai, planuojami darbai, paskirstomos užduotys tarp komandos narių ir stebimas progreso įgyvendinimas.
-C# – pagrindinė žaidimo programavimo kalba. Ji pasirinkta dėl puikios integracijos su Godot varikliu, taip pat dėl savo aiškios sintaksės, panašios į C++ struktūrą.
-Godot Engine – tai atvirojo kodo žaidimų variklis, leidžiantis kurti 2D ir 3D žaidimus. Jis pasirinktas dėl savo lankstumo, geros dokumentacijos ir paprastumo naujokams.
-C++ – Tai žaidime naudojama programavimo kalba kaip  klausimams bei kodo užduotims. Tai leidžia žaidėjams praktiškai susipažinti su C++ pagrindais smagiai žaidžiant.
-Krita – piešimo programa, naudota žaidimo aplinkos, objektų iliustravimui. Leido kurti originalius 2D grafinius elementus.
+
 
 
 
